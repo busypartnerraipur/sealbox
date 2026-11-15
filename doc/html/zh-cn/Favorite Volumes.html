@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，VeraCrypt可提供似是而非的否认能力。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，Sealbox可提供似是而非的否认能力。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -28,7 +28,7 @@
 <p>
 <a href="Documentation.html">文档</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="VeraCrypt%20Volume.html">VeraCrypt 卷</a>
+<a href="VeraCrypt%20Volume.html">Sealbox 卷</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Favorite%20Volumes.html">常用卷</a>
 </p></div>
@@ -47,10 +47,10 @@
 <p>
 <strong>注意：</strong> 请参考 <a href="Issues%20and%20Limitations.html">已知问题和限制</a> 部分，了解在启用Windows “快速启动” 功能时可能影响常用卷的问题。
 </p>
-<h3>要将VeraCrypt卷配置为常用卷，请按照以下步骤操作：</h3>
+<h3>要将Sealbox卷配置为常用卷，请按照以下步骤操作：</h3>
 <ol>
 <li>挂载该卷（挂载到您希望每次都挂载到的驱动器号）。</li>
-<li>在VeraCrypt主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
+<li>在Sealbox主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
 <li>此时应会出现 “常用卷管理器” 窗口。在该窗口中，您可以为该卷设置各种选项（见下文）。</li>
 <li>单击 “确定”。</li>
 </ol>
@@ -59,22 +59,22 @@
 <p>要进行此设置，请按照以下步骤操作：</p>
 <ol>
 <li>挂载您希望在登录时自动挂载的卷（挂载到您希望每次都挂载到的驱动器号）。</li>
-<li>在VeraCrypt主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
+<li>在Sealbox主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
 <li>此时应会出现 “常用卷管理器” 窗口。在该窗口中，启用 “登录时挂载选定卷” 选项，然后单击 “确定”。</li>
 </ol>
 <p>然后，当您登录Windows时，系统会要求您输入卷的密码（和/或密钥文件），如果密码正确，该卷将被挂载。<br>
 <br>
-注意：如果您启用了预启动身份验证密码的缓存（“设置” &gt; “系统加密”），并且这些卷使用与系统分区/驱动器相同的密码，VeraCrypt将不会提示您输入密码。</p>
+注意：如果您启用了预启动身份验证密码的缓存（“设置” &gt; “系统加密”），并且这些卷使用与系统分区/驱动器相同的密码，Sealbox将不会提示您输入密码。</p>
 <p>选定的或所有常用卷可以在其宿主设备连接到计算机时自动挂载。要进行此设置，请按照以下步骤操作：</p>
 <ol>
 <li>挂载该卷（挂载到您希望每次都挂载到的驱动器号）。</li>
-<li>在VeraCrypt主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
+<li>在Sealbox主窗口的驱动器列表中，右键单击已挂载的卷，然后选择 “添加到常用卷”。</li>
 <li>此时应会出现 “常用卷管理器” 窗口。在该窗口中，启用 “宿主设备连接时挂载选定卷” 选项，然后单击 “确定”。</li>
 </ol>
-<p>然后，当您将包含VeraCrypt卷的USB闪存驱动器插入USB端口时，系统会要求您输入卷的密码（和/或密钥文件）（除非已缓存），如果密码正确，该卷将被挂载。<br>
+<p>然后，当您将包含Sealbox卷的USB闪存驱动器插入USB端口时，系统会要求您输入卷的密码（和/或密钥文件）（除非已缓存），如果密码正确，该卷将被挂载。<br>
 <br>
-注意：如果您启用了预启动身份验证密码的缓存（“设置” &gt; “系统加密”），并且该卷使用与系统分区/驱动器相同的密码，VeraCrypt将不会提示您输入密码。</p>
-<p>可以为每个常用卷分配一个特殊标签。此标签与文件系统标签不同，它会在VeraCrypt用户界面中显示，而不是显示卷的路径。要分配此类标签，请按照以下步骤操作：</p>
+注意：如果您启用了预启动身份验证密码的缓存（“设置” &gt; “系统加密”），并且该卷使用与系统分区/驱动器相同的密码，Sealbox将不会提示您输入密码。</p>
+<p>可以为每个常用卷分配一个特殊标签。此标签与文件系统标签不同，它会在Sealbox用户界面中显示，而不是显示卷的路径。要分配此类标签，请按照以下步骤操作：</p>
 <ol>
 <li>选择 “常用卷” &gt; “管理常用卷”。</li>
 <li>此时应会出现 “常用卷管理器” 窗口。在该窗口中，选择您要编辑标签的卷。</li>

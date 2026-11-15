@@ -454,7 +454,7 @@ static bool MountVolume (uint8 drive, uint8 &exitKey, bool skipNormal, bool skip
 				   "If so, use 'Repair Options' > 'Restore key data'.\r\n\r\n");
 #else
 			Print ("If you are sure the password is correct, the key data may be damaged. Boot your\r\n"
-				   "VeraCrypt Rescue Disk and select 'Repair Options' > 'Restore key data'.\r\n\r\n");
+				   "Sealbox Rescue Disk and select 'Repair Options' > 'Restore key data'.\r\n\r\n");
 #endif
 		}
 	}
@@ -1127,7 +1127,7 @@ done:
 		switch (selection)
 		{
 		case RestoreTrueCryptLoader:
-			Print ("VeraCrypt Boot Loader");
+			Print ("Sealbox Boot Loader");
 			break;
 
 		case RestoreVolumeHeader:

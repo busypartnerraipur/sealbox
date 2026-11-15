@@ -3458,10 +3458,10 @@ namespace VeraCrypt
 				return MakeEfiBootLoaderResourceSelection (EfiBootLoaderResources2011, VC_EFI_BOOT_LOADER_RESOURCE_SET_2011, L"Secure Boot is unavailable and firmware db does not contain a supported Microsoft UEFI CA; using 2011 compatibility fallback", ERROR_SUCCESS);
 
 			if (b2023SetRevoked || b2011SetRevoked)
-				ThrowUnsupportedEfiSecureBootDb (L"Secure Boot is enabled, but every VeraCrypt EFI bootloader signing CA set present in firmware db is forbidden by firmware dbx", firmwareDbError, firmwareDbxError);
+				ThrowUnsupportedEfiSecureBootDb (L"Secure Boot is enabled, but every Sealbox EFI bootloader signing CA set present in firmware db is forbidden by firmware dbx", firmwareDbError, firmwareDbxError);
 
 			if (bSecureBootStateKnown)
-				ThrowUnsupportedEfiSecureBootDb (L"Secure Boot is enabled but firmware db does not contain Microsoft Corporation UEFI CA 2011 or the Microsoft 2023 UEFI CA pair required by VeraCrypt", firmwareDbError, firmwareDbxError);
+				ThrowUnsupportedEfiSecureBootDb (L"Secure Boot is enabled but firmware db does not contain Microsoft Corporation UEFI CA 2011 or the Microsoft 2023 UEFI CA pair required by Sealbox", firmwareDbError, firmwareDbxError);
 
 			ThrowUnsupportedEfiSecureBootDb (L"firmware db does not contain a supported Microsoft UEFI CA and Secure Boot state could not be read; refusing to select an unsupported EFI bootloader signing CA", secureBootLastError, firmwareDbxError);
 		}
@@ -6791,7 +6791,7 @@ namespace VeraCrypt
 			throw_sys_if (!service);
 
 			SERVICE_DESCRIPTION description;
-			description.lpDescription = L"Mounts VeraCrypt system favorite volumes.";
+			description.lpDescription = L"Mounts Sealbox system favorite volumes.";
 			ChangeServiceConfig2 (service, SERVICE_CONFIG_DESCRIPTION, &description);
 
 			// start the service immediatly if it already existed before

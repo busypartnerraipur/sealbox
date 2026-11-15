@@ -2,15 +2,15 @@
 <html lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
-<meta name="description" content="VeraCrypt это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, VeraCrypt обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, VeraCrypt шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
+<title>Sealbox - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
+<meta name="description" content="Sealbox это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, Sealbox обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, Sealbox шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
 <meta name="keywords" content="encryption, security, шифрование, безопасность"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,7 +36,7 @@
 <div class="wikidoc">
 <h1>Argon2id</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-Argon2id &mdash; это функция формирования ключа с повышенными требованиями к памяти, разработанная для противодействия как атакам с компромиссом время-память, так и атакам по сторонним каналам. В 2015 году она была выбрана победителем Password Hashing Competition (PHC) и определена в RFC 9106. VeraCrypt поддерживает Argon2id как альтернативу PBKDF2-HMAC для формирования ключа заголовка несистемных томов.
+Argon2id &mdash; это функция формирования ключа с повышенными требованиями к памяти, разработанная для противодействия как атакам с компромиссом время-память, так и атакам по сторонним каналам. В 2015 году она была выбрана победителем Password Hashing Competition (PHC) и определена в RFC 9106. Sealbox поддерживает Argon2id как альтернативу PBKDF2-HMAC для формирования ключа заголовка несистемных томов.
 </div>
 
 <h3>Основные свойства</h3>
@@ -67,13 +67,13 @@ Argon2id &mdash; это функция формирования ключа с п
 <strong>Argon2i:</strong> использует доступ к памяти, не зависящий от данных; устойчив к атакам по сторонним каналам, но менее устойчив к атакам с компромиссом время-память.
 </li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-<strong>Argon2id:</strong> гибридный вариант, объединяющий оба подхода и обеспечивающий устойчивость к обоим типам атак (используется в VeraCrypt).
+<strong>Argon2id:</strong> гибридный вариант, объединяющий оба подхода и обеспечивающий устойчивость к обоим типам атак (используется в Sealbox).
 </li>
 </ul>
 
-<h3>Параметры в VeraCrypt</h3>
+<h3>Параметры в Sealbox</h3>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-VeraCrypt использует Argon2id со следующей конфигурацией параметров:
+Sealbox использует Argon2id со следующей конфигурацией параметров:
 </div>
 
 <h4>Затраты памяти (m_cost)</h4>
@@ -114,7 +114,7 @@ VeraCrypt использует Argon2id со следующей конфигур
 </div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-<strong>Значение:</strong> в VeraCrypt всегда фиксировано на уровне 1 потока.
+<strong>Значение:</strong> в Sealbox всегда фиксировано на уровне 1 потока.
 </li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <strong>Причина:</strong> обеспечивает одинаковое поведение на разных аппаратных конфигурациях.
@@ -139,7 +139,7 @@ VeraCrypt использует Argon2id со следующей конфигур
 
 <h3>Рекомендации по использованию</h3>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-При использовании Argon2id в VeraCrypt:
+При использовании Argon2id в Sealbox:
 </div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
@@ -149,7 +149,7 @@ VeraCrypt использует Argon2id со следующей конфигур
 <strong>Производительность:</strong> более высокие затраты памяти могут увеличить время монтирования, но обеспечивают более высокий уровень защиты.
 </li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-<strong>Совместимость:</strong> доступен в версиях VeraCrypt, поддерживающих несколько функций формирования ключа.
+<strong>Совместимость:</strong> доступен в версиях Sealbox, поддерживающих несколько функций формирования ключа.
 </li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <strong>Без выбора хеш-алгоритма:</strong> в отличие от PBKDF2-HMAC, отдельный хеш-алгоритм выбирать не нужно.
@@ -161,7 +161,7 @@ VeraCrypt использует Argon2id со следующей конфигур
 <strong>Алгоритм:</strong> Argon2id согласно RFC 9106<br/>
 <strong>Внутренняя хеш-функция:</strong> <a href="BLAKE2b-512.html" style="color:#0080c0; text-decoration:none">BLAKE2b-512</a><br/>
 <strong>Размер соли:</strong> 512 бит (как и у PBKDF2-HMAC)<br/>
-<strong>Длина вывода KDF заголовка:</strong> фиксирована и составляет 1536 бит (192 байта) для текущего формата VeraCrypt. Для выбранного алгоритма шифрования используется требуемый префикс этого вывода (например, первые 64 байта для AES (AES-256-XTS)). Сторонние реализации должны запрашивать у Argon2id 192 байта до выбора требуемого префикса; запрос только длины ключевого материала выбранного алгоритма даёт другой вывод Argon2id.<br/>
+<strong>Длина вывода KDF заголовка:</strong> фиксирована и составляет 1536 бит (192 байта) для текущего формата Sealbox. Для выбранного алгоритма шифрования используется требуемый префикс этого вывода (например, первые 64 байта для AES (AES-256-XTS)). Сторонние реализации должны запрашивать у Argon2id 192 байта до выбора требуемого префикса; запрос только длины ключевого материала выбранного алгоритма даёт другой вывод Argon2id.<br/>
 <strong>Версия:</strong> Argon2 версии 0x13 (19 в десятичной системе)
 </div>
 

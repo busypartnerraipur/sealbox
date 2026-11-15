@@ -31,7 +31,7 @@ namespace VeraCrypt
 			return wxString (Map.find (key)->second);
 		// return "VeraCrypt" as it is
 		if (key == "VeraCrypt")
-			return L"VeraCrypt";
+			return L"Sealbox";
 
 		return wxString (L"?") + StringConverter::ToWide (key) + L"?";
 	}

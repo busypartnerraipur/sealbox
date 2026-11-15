@@ -988,7 +988,10 @@ cleanup:
 
 static BOOL VerifyModuleSignatureInternal (const wchar_t* path, BOOL bAllowMicrosoftWHQL)
 {
-#if defined(NDEBUG) && !defined (VC_SKIP_OS_DRIVER_REQ_CHECK)
+	/* Sealbox: the upstream check only accepts binaries signed with the IDRIX/AM Crypto
+	   certificate. Sealbox builds are not signed with that certificate, so the check is
+	   disabled when SEALBOX_NO_SIGNATURE_CHECK is defined (see Sealbox.props). */
+#if defined(NDEBUG) && !defined (VC_SKIP_OS_DRIVER_REQ_CHECK) && !defined (SEALBOX_NO_SIGNATURE_CHECK)
 	BOOL bResult = FALSE;
 	HRESULT hResult;
 	GUID gActionID = WINTRUST_ACTION_GENERIC_VERIFY_V2;
@@ -2265,7 +2268,7 @@ BOOL CALLBACK AboutDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam
 			LocalizeDialog (hwndDlg, "IDD_ABOUT_DLG");
 
 			// Hyperlink
-			SetWindowText (GetDlgItem (hwndDlg, IDC_HOMEPAGE), L"amcrypto.jp");
+			SetWindowText (GetDlgItem (hwndDlg, IDC_HOMEPAGE), L"shubhventures.co.in");
 			ToHyperlink (hwndDlg, IDC_HOMEPAGE);
 
 			// Logo area background (must not keep aspect ratio; must retain Windows-imposed distortion)
@@ -2285,7 +2288,7 @@ BOOL CALLBACK AboutDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam
 
 			// Version
 			SendMessage (GetDlgItem (hwndDlg, IDT_ABOUT_VERSION), WM_SETFONT, (WPARAM) hUserBoldFont, 0);
-			StringCbPrintfW (szTmp, sizeof(szTmp), L"VeraCrypt %s", _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX) L"  (64-bit)");
+			StringCbPrintfW (szTmp, sizeof(szTmp), L"Sealbox %s", _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX) L"  (64-bit)");
 
 #if (defined(_DEBUG) || defined(DEBUG))
 			StringCbCatW (szTmp, sizeof(szTmp), L"  (debug)");
@@ -2301,6 +2304,7 @@ BOOL CALLBACK AboutDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam
 
 	case WM_APP:
 		SetWindowText (GetDlgItem (hwndDlg, IDC_ABOUT_CREDITS),
+			L"Based on VeraCrypt, freely available at https://veracrypt.jp/ .\r\n"
 			L"Based on TrueCrypt 7.1a, freely available at http://www.truecrypt.org/ .\r\n\r\n"
 
 			L"Portions of this software:\r\n"
@@ -2318,9 +2322,9 @@ BOOL CALLBACK AboutDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam
 			L"Copyright \xA9 1999-2023 Igor Pavlov\r\n\r\n"
 
 			L"This software as a whole:\r\n"
-			L"Copyright \xA9 2026 AM Crypto. All rights reserved.\r\n\r\n"
+			L"Copyright \xA9 2026 Shubh Ventures (shubhventures.co.in). All rights reserved.\r\n\r\n"
 
-			L"An AM Crypto Release");
+			L"A Shubh Ventures Release");
 
 		return 1;
 
@@ -3611,7 +3615,7 @@ static BOOL CALLBACK BroadcastSysEncCfgUpdateCommonCallb (HWND hwnd, LPARAM lPar
 	{
 		wchar_t name[1024] = { 0 };
 		GetWindowText (hwnd, name, ARRAYSIZE (name) - 1);
-		if (hwnd != MainDlg && wcsstr (name, L"VeraCrypt"))
+		if (hwnd != MainDlg && wcsstr (name, L"Sealbox"))
 		{
 			PostMessage (hwnd, TC_APPMSG_SYSENC_CONFIG_UPDATE, 0, 0);
 		}
@@ -4125,20 +4129,20 @@ void InitApp (HINSTANCE hInstance, wchar_t *lpszCommandLine)
 	if (!IsWin10BuildAtLeast(WIN_10_1809_BUILD))
 	{
 		// abort using a message that says that VeraCrypt can run only on Windows 10 version 1809 or later
-		AbortProcessDirect(L"VeraCrypt requires at least Windows 10 version 1809 (October 2018 Update) to run.");
+		AbortProcessDirect(L"Sealbox requires at least Windows 10 version 1809 (October 2018 Update) to run.");
 	}
 
 	if (!Is64BitOs())
 	{
 		// abort using a message that says that VeraCrypt can run only on 64-bit Windows
-		AbortProcessDirect(L"VeraCrypt requires a 64-bit version of Windows to run.");
+		AbortProcessDirect(L"Sealbox requires a 64-bit version of Windows to run.");
 	}
 
 	SetDefaultDllDirectoriesFn = (SetDefaultDllDirectoriesPtr) GetProcAddress (GetModuleHandle(L"kernel32.dll"), "SetDefaultDllDirectories");
 	if (!SetDefaultDllDirectoriesFn)
 	{
 		// This can happen only if KB2533623 is missing from Windows 7
-		AbortProcessDirect(L"VeraCrypt requires KB2533623 to be installed on Windows 7 and Windows Server 2008 R2 in order to run.");
+		AbortProcessDirect(L"Sealbox requires KB2533623 to be installed on Windows 7 and Windows Server 2008 R2 in order to run.");
 	}
 #endif
 
@@ -4157,7 +4161,7 @@ void InitApp (HINSTANCE hInstance, wchar_t *lpszCommandLine)
 #if !defined(SETUP) && !defined(VCSDK_DLL)
 	GetModuleFileNameW (NULL, modPath, ARRAYSIZE (modPath));
 	if (!VerifyModuleSignature (modPath))
-		AbortProcessDirect (L"This distribution package is damaged. Please try downloading it again (preferably from the official VeraCrypt website at https://veracrypt.jp).");
+		AbortProcessDirect (L"This distribution package is damaged. Please try downloading it again (preferably from the official Sealbox website at https://shubhventures.co.in).");
 
 	/* enable drag-n-drop when we are running elevated */
 	AllowMessageInUIPI (WM_DROPFILES);
@@ -4260,7 +4264,7 @@ void InitApp (HINSTANCE hInstance, wchar_t *lpszCommandLine)
 #endif
 		)
 	{
-		MessageBoxW (NULL, L"TESTSIGNING version of VeraCrypt targets only Windows Vista, Windows 7 and Windows 8/8.1.\n\nPlease use the standard version of VeraCrypt instead.", lpszTitle, MB_ICONSTOP);
+		MessageBoxW (NULL, L"TESTSIGNING version of Sealbox targets only Windows Vista, Windows 7 and Windows 8/8.1.\n\nPlease use the standard version of Sealbox instead.", lpszTitle, MB_ICONSTOP);
 		exit (1);
 	}
 	else if (  !IsTestSigningModeEnabled()
@@ -4269,7 +4273,7 @@ void InitApp (HINSTANCE hInstance, wchar_t *lpszCommandLine)
 #endif
 		)
 	{
-		MessageBoxW (NULL, L"Test-Signing Mode, which is required to run VeraCrypt TESTSIGNING binaries, is not enabled in Windows.\n\nExecution aborted!", lpszTitle, MB_ICONSTOP);
+		MessageBoxW (NULL, L"Test-Signing Mode, which is required to run Sealbox TESTSIGNING binaries, is not enabled in Windows.\n\nExecution aborted!", lpszTitle, MB_ICONSTOP);
 		exit (1);
 	}
 #endif
@@ -4861,7 +4865,7 @@ BOOL CALLBACK TextInfoDialogBoxDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, L
 				break;
 
 			case TC_TBXID_SYS_ENC_RESCUE_DISK:
-				PrintHardCopyTextUTF16 ((wchar_t *) GetRescueDiskHelpString ().c_str(), L"VeraCrypt Rescue Disk Help", GetRescueDiskHelpString ().length () * 2);
+				PrintHardCopyTextUTF16 ((wchar_t *) GetRescueDiskHelpString ().c_str(), L"Sealbox Rescue Disk Help", GetRescueDiskHelpString ().length () * 2);
 				break;
 
 			case TC_TBXID_DECOY_OS_INSTRUCTIONS:
@@ -6226,7 +6230,7 @@ void LocalizeDialog (HWND hwnd, char *stringId)
 	SendMessageW (hwnd, WM_SETFONT, (WPARAM) hUserFont, 0);
 
 	if (stringId == NULL)
-		SetWindowTextW (hwnd, L"VeraCrypt");
+		SetWindowTextW (hwnd, L"Sealbox");
 	else
 		SetWindowTextW (hwnd, GetString (stringId));
 	
@@ -9444,7 +9448,7 @@ void ShowWaitDialogEx(HWND hwnd, BOOL bUseHwndAsParent, WaitThreadProc callback,
 			    (0, 0) when the creator window is unavailable, hidden or minimized. */
 			GetWindowMonitorWorkAreaCenter (creatorWnd, &parentPos);
 
-			hParent = CreateWindowExW (WS_EX_TOOLWINDOW | WS_EX_LAYERED, className, L"VeraCrypt ShowWaitDialog Parent", 0, parentPos.x, parentPos.y, 1, 1, NULL, NULL, hInst, NULL);
+			hParent = CreateWindowExW (WS_EX_TOOLWINDOW | WS_EX_LAYERED, className, L"Sealbox ShowWaitDialog Parent", 0, parentPos.x, parentPos.y, 1, 1, NULL, NULL, hInst, NULL);
 			if (hParent)
 			{
 				SetLayeredWindowAttributes (hParent, 0, 1, LWA_ALPHA);
@@ -11184,7 +11188,7 @@ void InfoBalloon (char *headingStringId, char *textStringId, HWND hwnd)
 		return;
 
 	TaskBarIconDisplayBalloonTooltip (hwnd,
-		headingStringId == NULL ? L"VeraCrypt" : GetString (headingStringId),
+		headingStringId == NULL ? L"Sealbox" : GetString (headingStringId),
 		textStringId == NULL ? L" " : GetString (textStringId),
 		FALSE);
 }
@@ -11197,7 +11201,7 @@ void InfoBalloonDirect (wchar_t *headingString, wchar_t *textString, HWND hwnd)
 		return;
 
 	TaskBarIconDisplayBalloonTooltip (hwnd,
-		headingString == NULL ? L"VeraCrypt" : headingString,
+		headingString == NULL ? L"Sealbox" : headingString,
 		textString == NULL ? L" " : textString,
 		FALSE);
 }
@@ -11210,7 +11214,7 @@ void WarningBalloon (char *headingStringId, char *textStringId, HWND hwnd)
 		return;
 
 	TaskBarIconDisplayBalloonTooltip (hwnd,
-		headingStringId == NULL ? L"VeraCrypt" : GetString (headingStringId),
+		headingStringId == NULL ? L"Sealbox" : GetString (headingStringId),
 		textStringId == NULL ? L" " : GetString (textStringId),
 		TRUE);
 }
@@ -11223,7 +11227,7 @@ void WarningBalloonDirect (wchar_t *headingString, wchar_t *textString, HWND hwn
 		return;
 
 	TaskBarIconDisplayBalloonTooltip (hwnd,
-		headingString == NULL ? L"VeraCrypt" : headingString,
+		headingString == NULL ? L"Sealbox" : headingString,
 		textString == NULL ? L" " : textString,
 		TRUE);
 }
@@ -12363,7 +12367,7 @@ BOOL CALLBACK CloseTCWindowsEnum (HWND hwnd, LPARAM lParam)
 		wchar_t name[1024] = { 0 };
 		GetWindowText (hwnd, name, ARRAYSIZE (name) - 1);
 		// check if the window is a VeraCrypt window, excluding current process main dialog and VeraCrypt Setup window
-		if (hwnd != MainDlg && wcsstr (name, L"VeraCrypt") && !wcsstr (name, L"VeraCrypt Setup"))
+		if (hwnd != MainDlg && wcsstr (name, L"Sealbox") && !wcsstr (name, L"Sealbox Setup"))
 		{
 			PostMessage (hwnd, TC_APPMSG_CLOSE_BKG_TASK, 0, 0);
 
@@ -12386,7 +12390,7 @@ BOOL CALLBACK FindTCWindowEnum (HWND hwnd, LPARAM lParam)
 	{
 		wchar_t name[32] = { 0 };
 		GetWindowText (hwnd, name, ARRAYSIZE (name) - 1);
-		if (hwnd != MainDlg && wcscmp (name, L"VeraCrypt") == 0)
+		if (hwnd != MainDlg && wcscmp (name, L"Sealbox") == 0)
 		{
 			if (lParam != 0)
 				*((HWND *)lParam) = hwnd;
@@ -14206,7 +14210,7 @@ void EnableElevatedCursorChange (HWND parent)
 		winClass.lpszClassName = className;
 		RegisterClassExW (&winClass);
 
-		hWnd = CreateWindowExW (WS_EX_TOOLWINDOW | WS_EX_LAYERED, className, L"VeraCrypt UAC", 0, 0, 0, GetSystemMetrics (SM_CXSCREEN), GetSystemMetrics (SM_CYSCREEN), parent, NULL, hInst, NULL);
+		hWnd = CreateWindowExW (WS_EX_TOOLWINDOW | WS_EX_LAYERED, className, L"Sealbox UAC", 0, 0, 0, GetSystemMetrics (SM_CXSCREEN), GetSystemMetrics (SM_CYSCREEN), parent, NULL, hInst, NULL);
 		if (hWnd)
 		{
 			SetLayeredWindowAttributes (hWnd, 0, 1, LWA_ALPHA);
@@ -15000,7 +15004,7 @@ static unsigned int __stdcall SecureDesktopThread( LPVOID lpThreadParameter )
 			winClass.lpszClassName = ownerClassName;
 			RegisterClassExW (&winClass);
 
-			hOwner = CreateWindowExW (WS_EX_TOOLWINDOW, ownerClassName, L"VeraCrypt Secure Desktop Owner", WS_POPUP,
+			hOwner = CreateWindowExW (WS_EX_TOOLWINDOW, ownerClassName, L"Sealbox Secure Desktop Owner", WS_POPUP,
 				pParam->ownerPos.x, pParam->ownerPos.y, 1, 1, NULL, NULL, hInst, NULL);
 		}
 

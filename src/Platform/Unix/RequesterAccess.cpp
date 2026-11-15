@@ -511,7 +511,7 @@ namespace VeraCrypt
 		if (reply.Stage == RequesterHelperStartup)
 		{
 			stringstream message;
-			message << "Cannot start VeraCrypt's requester-access process (/proc/self/exe): ";
+			message << "Cannot start Sealbox's requester-access process (/proc/self/exe): ";
 			if (result == EPROTO || result == ECONNRESET)
 				message << "the process did not report readiness";
 			else

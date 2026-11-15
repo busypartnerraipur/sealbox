@@ -2,15 +2,15 @@
 <html lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
-<meta name="description" content="VeraCrypt это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, VeraCrypt обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, VeraCrypt шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
+<title>Sealbox - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
+<meta name="description" content="Sealbox это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, Sealbox обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, Sealbox шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
 <meta name="keywords" content="encryption, security, шифрование, безопасность"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -38,7 +38,7 @@
 <div class="wikidoc">
 <h1>Защита скрытых томов от повреждений</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-Если вы монтируете том VeraCrypt, внутри которого находится
+Если вы монтируете том Sealbox, внутри которого находится
 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
 скрытый том</a>, то можете <i>считывать</i> данные из (внешнего) тома без всякого риска. Однако если вам
 (или операционной системе) потребуется <i>записать</i> данные во внешний том, есть риск повредить
@@ -47,7 +47,7 @@
 При монтировании внешнего тома введите его пароль, но прежде чем нажать <em style="text-align:left">
 OK,</em> нажмите кнопку <em style="text-align:left">Параметры</em>:</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<img src="Protection of Hidden Volumes_Image_027.png" alt="Графический интерфейс VeraCrypt"></div>
+<img src="Protection of Hidden Volumes_Image_027.png" alt="Графический интерфейс Sealbox"></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 &nbsp;</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -62,11 +62,11 @@ OK</em> в окне ввода основного пароля.</div>
 <br style="text-align:left">
 <br style="text-align:left">
 Оба пароля должны быть правильными; в противном случае внешний том не будет смонтирован. Когда включена
-защита скрытого тома, VeraCrypt на самом деле <em style="text-align:left">не</em> монтирует скрытый том.
+защита скрытого тома, Sealbox на самом деле <em style="text-align:left">не</em> монтирует скрытый том.
 Он только расшифровывает его заголовок (в ОЗУ) и получает информацию о размере скрытого тома (из
 расшифрованного заголовка). Затем монтируется внешний том, а любые попытки записи данных в область скрытого
 тома отклоняются (пока внешний том не будет размонтирован).
-<strong style="text-align:left">Обратите внимание, что VeraCrypt <i>никогда</i> и <i>никак</i> не модифицирует
+<strong style="text-align:left">Обратите внимание, что Sealbox <i>никогда</i> и <i>никак</i> не модифицирует
 файловую систему (например, сведения о распределённых кластерах, объём свободного пространства и т. д.) внутри
 внешнего тома. Как только том будет размонтирован, защита отключается. При повторном монтировании тома определить,
 что применялась защита скрытого тома, невозможно. Защиту скрытого тома может включать только пользователь,
@@ -74,16 +74,16 @@ OK</em> в окне ввода основного пароля.</div>
 <br style="text-align:left"></strong><br style="text-align:left">
 Как только операция записи в область скрытого тома отклонена/предотвращена (для защиты скрытого тома), весь
 хост-том (как внешний, так и скрытый том) становится защищённым от записи до тех пор, пока не будет размонтирован
-(при каждой попытке записи в этот том драйвер VeraCrypt передаёт системе ошибку "неверный параметр").
+(при каждой попытке записи в этот том драйвер Sealbox передаёт системе ошибку "неверный параметр").
 Таким образом, сохраняется возможность правдоподобного отрицания наличия шифрования (иначе некоторые
 несоответствия внутри файловой системы могли бы свидетельствовать, что для этого тома применялась защита
 скрытого тома). Когда предотвращается повреждение скрытого тома, об этом выдаётся предупреждающее сообщение
-(при условии, что включена работа VeraCrypt в фоновом режиме, см. главу
+(при условии, что включена работа Sealbox в фоновом режиме, см. главу
 <a href="VeraCrypt%20Background%20Task.html" style="text-align:left; color:#0080c0; text-decoration:none">
-Работа VeraCrypt в фоновом режиме</a>). Кроме того, отображаемый в главном окне тип смонтированного внешнего
+Работа Sealbox в фоновом режиме</a>). Кроме того, отображаемый в главном окне тип смонтированного внешнего
 тома изменяется на "<em style="text-align:left">Внешний(!)</em>":</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<img src="Protection of Hidden Volumes_Image_029.png" alt="Графический интерфейс VeraCrypt"></div>
+<img src="Protection of Hidden Volumes_Image_029.png" alt="Графический интерфейс Sealbox"></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <br style="text-align:left">
 <br style="text-align:left">
@@ -107,12 +107,12 @@ OK</em> в окне ввода основного пароля.</div>
 Скрытый том защищён</em> выводится значение <em style="text-align:left">Да</em>.</li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 Тип смонтированного внешнего тома – <em style="text-align:left">Внешний</em>.</li></ol>
-<p><img src="Protection of Hidden Volumes_Image_030.png" alt="Графический интерфейс VeraCrypt"></p>
+<p><img src="Protection of Hidden Volumes_Image_030.png" alt="Графический интерфейс Sealbox"></p>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <em style="text-align:left"><br style="text-align:left">
 <strong style="text-align:left">ВАЖНО: Когда неприятель вынуждает вас смонтировать внешний том, вы, разумеется,
 <u>НЕ должны</u> монтировать внешний том с включённой защитой скрытого тома. Вы должны монтировать его как обычный том
-(после чего VeraCrypt будет показывать тип тома не "Внешний", а "Обычный"). Обратите внимание, что пока внешний
+(после чего Sealbox будет показывать тип тома не "Внешний", а "Обычный"). Обратите внимание, что пока внешний
 том остаётся смонтированным с включённой защитой скрытого тома, неприятель может обнаружить наличие скрытого тома
 во внешнем томе (его можно будет найти до того момента, пока том не размонтирован, и даже некоторое время
 после выключения компьютера – см. <a href="Unencrypted%20Data%20in%20RAM.html" style="text-align:left; color:#0080c0; text-decoration:none">
@@ -126,7 +126,7 @@ OK</em> в окне ввода основного пароля.</div>
 уже защищённые скрытые тома, разумеется, остаются защищёнными). Поэтому эту опцию нужно включать при <i>каждом</i>
 монтировании внешнего тома (если хотите, чтобы скрытый том был защищён от повреждений):<br style="text-align:left">
 <br style="text-align:left">
-<img src="Protection of Hidden Volumes_Image_031.png" alt="Графический интерфейс VeraCrypt"></div>
+<img src="Protection of Hidden Volumes_Image_031.png" alt="Графический интерфейс Sealbox"></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <br style="text-align:left">
 Если вы хотите смонтировать внешний том и защитить находящийся внутри него скрытый том, используя кэшированные пароли,

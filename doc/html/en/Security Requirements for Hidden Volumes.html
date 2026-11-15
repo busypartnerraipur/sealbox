@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -39,11 +39,11 @@
 <h1>Security Requirements and Precautions Pertaining to Hidden Volumes</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 If you use a <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
-hidden VeraCrypt volume</a>, you must follow the security requirements and precautions listed below in this section. Disclaimer: This section is not guaranteed to contain a list of
-<em style="text-align:left">all</em> security issues and attacks that might adversely affect or limit the ability of VeraCrypt to secure data stored in a hidden VeraCrypt volume and the ability to provide plausible deniability.</div>
+hidden Sealbox volume</a>, you must follow the security requirements and precautions listed below in this section. Disclaimer: This section is not guaranteed to contain a list of
+<em style="text-align:left">all</em> security issues and attacks that might adversely affect or limit the ability of Sealbox to secure data stored in a hidden Sealbox volume and the ability to provide plausible deniability.</div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-If an adversary has access to a (unmounted) VeraCrypt volume at several points over time, he may be able to determine which sectors of the volume are changing. If you change the contents of a
+If an adversary has access to a (unmounted) Sealbox volume at several points over time, he may be able to determine which sectors of the volume are changing. If you change the contents of a
 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
 hidden volume</a> (e.g., create/copy new files to the hidden volume or modify/delete/rename/move files stored on the hidden volume, etc.), the contents of sectors (ciphertext) in the hidden volume area will change. After being given the password to the outer
  volume, the adversary might demand an explanation why these sectors changed. Your failure to provide a plausible explanation might indicate the existence of a hidden volume within the outer volume.<br style="text-align:left">
@@ -51,30 +51,30 @@ hidden volume</a> (e.g., create/copy new files to the hidden volume or modify/de
 Note that issues similar to the one described above may also arise, for example, in the following cases:<br style="text-align:left">
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-The file system in which you store a file-hosted VeraCrypt container has been defragmented and a copy of the VeraCrypt container (or of its fragment) remains in the free space on the host volume (in the defragmented file system). To prevent this, do one of
+The file system in which you store a file-hosted Sealbox container has been defragmented and a copy of the Sealbox container (or of its fragment) remains in the free space on the host volume (in the defragmented file system). To prevent this, do one of
  the following:
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-Use a partition/device-hosted VeraCrypt volume instead of file-hosted. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+Use a partition/device-hosted Sealbox volume instead of file-hosted. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 Securely erase free space on the host volume (in the defragmented file system) after defragmenting. On Windows, this can be done using the Microsoft
 <a href="https://technet.microsoft.com/en-us/sysinternals/bb897443.aspx">free utility SDelete</a>. On Linux, the
 <em>shred</em> utility from GNU coreutils package can be used for this purpose. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-Do not defragment file systems in which you store VeraCrypt volumes. </li></ul>
+Do not defragment file systems in which you store Sealbox volumes. </li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-A file-hosted VeraCrypt container is stored in a journaling file system (such as NTFS). A&nbsp;copy of the VeraCrypt container (or of its fragment) may remain on the host volume. To prevent this, do one the following:
+A file-hosted Sealbox container is stored in a journaling file system (such as NTFS). A&nbsp;copy of the Sealbox container (or of its fragment) may remain on the host volume. To prevent this, do one the following:
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-Use a partition/device-hosted VeraCrypt volume instead of file-hosted. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+Use a partition/device-hosted Sealbox volume instead of file-hosted. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 Store the container in a non-journaling file system (for example, FAT32). </li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-A VeraCrypt volume resides on a device/filesystem that utilizes a wear-leveling mechanism (e.g. a flash-memory SSD or USB flash drive). A copy of (a fragment of) the VeraCrypt volume may remain on the device. Therefore, do not store hidden volumes on such devices/filesystems.
+A Sealbox volume resides on a device/filesystem that utilizes a wear-leveling mechanism (e.g. a flash-memory SSD or USB flash drive). A copy of (a fragment of) the Sealbox volume may remain on the device. Therefore, do not store hidden volumes on such devices/filesystems.
  For more information on wear-leveling, see the section <a href="Wear-Leveling.html" style="text-align:left; color:#0080c0; text-decoration:none">
 Wear-Leveling</a> in the chapter <a href="Security%20Requirements%20and%20Precautions.html" style="text-align:left; color:#0080c0; text-decoration:none">
 Security Requirements and Precautions</a>. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-A VeraCrypt volume resides on a device/filesystem that saves data (or on a device/filesystem that is controlled or monitored by a system/device that saves data) (e.g. the value of a timer or counter) that can be used to determine that a block had been written
+A Sealbox volume resides on a device/filesystem that saves data (or on a device/filesystem that is controlled or monitored by a system/device that saves data) (e.g. the value of a timer or counter) that can be used to determine that a block had been written
  earlier than another block and/or to determine how many times a block has been written/read. Therefore, do not store hidden volumes on such devices/filesystems. To find out whether a device/system saves such data, please refer to documentation supplied with
  the device/system or contact the vendor/manufacturer. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-A VeraCrypt volume resides on a device that is prone to wear (it is possible to determine that a block has been written/read more times than another block). Therefore, do not store hidden volumes on such devices/filesystems. To find out whether a device is
+A Sealbox volume resides on a device that is prone to wear (it is possible to determine that a block has been written/read more times than another block). Therefore, do not store hidden volumes on such devices/filesystems. To find out whether a device is
  prone to such wear, please refer to documentation supplied with the device or contact the vendor/manufacturer.
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 You back up content of a hidden volume by cloning its host volume or create a new hidden volume by cloning its host volume. Therefore, you must not do so. Follow the instructions in the chapter
@@ -88,7 +88,7 @@ Make sure that <em style="text-align:left">Quick Format</em> is disabled when en
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 On Windows, make sure you have not deleted any files within a volume within which you intend to create a hidden volume (the cluster bitmap scanner does not detect deleted files).
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-On Linux or Mac OS X, if you intend to create a hidden volume within a file-hosted VeraCrypt volume, make sure that the volume is not sparse-file-hosted (the Windows version of VeraCrypt verifies this and disallows creation of hidden volumes within sparse files).
+On Linux or Mac OS X, if you intend to create a hidden volume within a file-hosted Sealbox volume, make sure that the volume is not sparse-file-hosted (the Windows version of Sealbox verifies this and disallows creation of hidden volumes within sparse files).
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 When a hidden volume is mounted, the operating system and third-party applications may write to non-hidden volumes (typically, to the unencrypted system volume) unencrypted information about the data stored in the hidden volume (e.g. filenames and locations
  of recently accessed files, databases created by file indexing tools, etc.), the data itself in an unencrypted form (temporary files, etc.), unencrypted information about the filesystem residing in the hidden volume (which might be used e.g. to identify the
@@ -99,18 +99,18 @@ When a hidden volume is mounted, the operating system and third-party applicatio
 <em style="text-align:left">Windows</em>: Create a hidden operating system (for information on how to do so, see the section
 <a href="Hidden%20Operating%20System.html" style="text-align:left; color:#0080c0; text-decoration:none">
 Hidden Operating System</a>) and mount hidden volumes only when the hidden operating system is running.
-<span style="text-align:left; font-size:10px; line-height:12px">Note: When a hidden operating system is running, VeraCrypt ensures that all local unencrypted filesystems and non-hidden VeraCrypt volumes are read-only (i.e. no files can be written to such filesystems
- or VeraCrypt volumes).<a href="#hidden_os_exception">*</a> Data is allowed to be written to filesystems within
+<span style="text-align:left; font-size:10px; line-height:12px">Note: When a hidden operating system is running, Sealbox ensures that all local unencrypted filesystems and non-hidden Sealbox volumes are read-only (i.e. no files can be written to such filesystems
+ or Sealbox volumes).<a href="#hidden_os_exception">*</a> Data is allowed to be written to filesystems within
 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
-hidden VeraCrypt volumes</a>.</span> Alternatively, if a hidden operating system cannot be used, use a &quot;live-CD&quot; Windows PE system (entirely stored on and booted from a CD/DVD) that ensures that any data written to the system volume is written to a RAM disk.
- Mount hidden volumes only when such a &quot;live-CD&quot; system is running (if a hidden operating system cannot be used). In addition, during such a &quot;live-CD&quot; session, only filesystems that reside in hidden VeraCrypt volumes may be mounted in read-write mode (outer
+hidden Sealbox volumes</a>.</span> Alternatively, if a hidden operating system cannot be used, use a &quot;live-CD&quot; Windows PE system (entirely stored on and booted from a CD/DVD) that ensures that any data written to the system volume is written to a RAM disk.
+ Mount hidden volumes only when such a &quot;live-CD&quot; system is running (if a hidden operating system cannot be used). In addition, during such a &quot;live-CD&quot; session, only filesystems that reside in hidden Sealbox volumes may be mounted in read-write mode (outer
  or unencrypted volumes/filesystems must be mounted as read-only or must not be mounted/accessible at all); otherwise, you must ensure that applications and the operating system do not write any sensitive data (see above) to non-hidden volumes/filesystems during
  the &quot;live-CD&quot; session. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <em style="text-align:left">Linux</em>: Download or create a &quot;live-CD&quot; version of your operating system (i.e. a &quot;live&quot; Linux system entirely stored on and booted from a CD/DVD) that ensures that any data written to the system volume is written to a RAM disk.
- Mount hidden volumes only when such a &quot;live-CD&quot; system is running. During the session, only filesystems that reside in hidden VeraCrypt volumes may be mounted in read-write mode (outer or unencrypted volumes/filesystems must be mounted as read-only or must
+ Mount hidden volumes only when such a &quot;live-CD&quot; system is running. During the session, only filesystems that reside in hidden Sealbox volumes may be mounted in read-write mode (outer or unencrypted volumes/filesystems must be mounted as read-only or must
  not be mounted/accessible at all). If you cannot comply with this requirement and you are not able to ensure that applications and the operating system do not write any sensitive data (see above) to non-hidden volumes/filesystems, you must not mount or create
- hidden VeraCrypt volumes under Linux. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">Mac OS X</em>: If you are not able to ensure that applications and the operating system do not write any sensitive data (see above) to non-hidden volumes/filesystems, you must not mount or create hidden VeraCrypt volumes under Mac
+ hidden Sealbox volumes under Linux. </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<em style="text-align:left">Mac OS X</em>: If you are not able to ensure that applications and the operating system do not write any sensitive data (see above) to non-hidden volumes/filesystems, you must not mount or create hidden Sealbox volumes under Mac
  OS X. </li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 When an outer volume is mounted with <a href="Protection%20of%20Hidden%20Volumes.html" style="text-align:left; color:#0080c0; text-decoration:none">

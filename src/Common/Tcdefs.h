@@ -424,12 +424,12 @@ void EraseMemory (void *memory, int size);
 #define TC_RELEASE_DATE_WSTR1(x)		TC_RELEASE_DATE_WSTR2(#x)
 #define TC_RELEASE_DATE_WSTR(x)		TC_RELEASE_DATE_WSTR1(x)
 
-#define TC_STR_RELEASED_BY L"Released by AM Crypto on " TC_RELEASE_DATE_MONTH_NAME(TC_RELEASE_DATE_MONTH) L" " TC_RELEASE_DATE_WSTR(TC_RELEASE_DATE_DAY) L", " TC_RELEASE_DATE_WSTR(TC_RELEASE_DATE_YEAR)
+#define TC_STR_RELEASED_BY L"Released by Shubh Ventures on " TC_RELEASE_DATE_MONTH_NAME(TC_RELEASE_DATE_MONTH) L" " TC_RELEASE_DATE_WSTR(TC_RELEASE_DATE_DAY) L", " TC_RELEASE_DATE_WSTR(TC_RELEASE_DATE_YEAR)
 
 #define MAX_URL_LENGTH	2084 /* Internet Explorer limit. Includes the terminating null character. */
 
-#define TC_HOMEPAGE L"https://amcrypto.jp"
-#define TC_APPLINK L"https://veracrypt.jp"
+#define TC_HOMEPAGE L"https://shubhventures.co.in"
+#define TC_APPLINK L"https://shubhventures.co.in"
 
 enum
 {

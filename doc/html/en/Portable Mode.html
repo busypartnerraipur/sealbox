@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -33,11 +33,11 @@
 
 <div class="wikidoc">
 <h1>Portable Mode</h1>
-<p>VeraCrypt can run in so-called portable mode, which means that it does not have to be installed on the operating system under which it is run. However, there are two things to keep in mind:</p>
+<p>Sealbox can run in so-called portable mode, which means that it does not have to be installed on the operating system under which it is run. However, there are two things to keep in mind:</p>
 <ol>
-<li>You need administrator privileges in order to be able to run VeraCrypt in portable mode (for the reasons, see the chapter
+<li>You need administrator privileges in order to be able to run Sealbox in portable mode (for the reasons, see the chapter
 <a href="Using%20VeraCrypt%20Without%20Administrator%20Privileges.html">
-<em>Using VeraCrypt Without Administrator Privileges</em></a>).
+<em>Using Sealbox Without Administrator Privileges</em></a>).
 <table border="2">
 <tbody>
 <tr>
@@ -47,38 +47,38 @@ Note: No matter what kind of software you use, as regards personal privacy in mo
 </tr>
 </tbody>
 </table>
-</li><li>After examining the registry file, it may be possible to tell that VeraCrypt was run (and that a VeraCrypt volume was mounted) on a Windows system even if it had been run in portable mode.
+</li><li>After examining the registry file, it may be possible to tell that Sealbox was run (and that a Sealbox volume was mounted) on a Windows system even if it had been run in portable mode.
 </li></ol>
 <p><strong>Note</strong>: If that is a problem, see <a href="FAQ.html#notraces" target="_blank.html">
 this question</a> in the FAQ for a possible solution.<br>
 <br>
-There are two ways to run VeraCrypt in portable mode:</p>
+There are two ways to run Sealbox in portable mode:</p>
 <ol>
-<li>After you extract files from the VeraCrypt self-extracting package, you can directly run
+<li>After you extract files from the Sealbox self-extracting package, you can directly run
 <em>VeraCrypt.exe</em>.<br>
 <br>
-Note: To extract files from the VeraCrypt self-extracting package, run it, and then select
-<em>Extract</em> (instead of <em>Install</em>) on the second page of the VeraCrypt Setup wizard.
-</li><li>You can use the <em>Traveler Disk Setup</em> facility to prepare a special traveler disk and launch VeraCrypt from there.
+Note: To extract files from the Sealbox self-extracting package, run it, and then select
+<em>Extract</em> (instead of <em>Install</em>) on the second page of the Sealbox Setup wizard.
+</li><li>You can use the <em>Traveler Disk Setup</em> facility to prepare a special traveler disk and launch Sealbox from there.
 </li></ol>
 <p>The second option has several advantages, which are described in the following sections in this chapter.</p>
-<p>Note: When running in &lsquo;portable&rsquo; mode, the VeraCrypt driver is unloaded when it is no longer needed (e.g., when all instances of the main application and/or of the Volume Creation Wizard are closed and no VeraCrypt volumes are mounted). However,
- if you force unmount on a VeraCrypt volume when VeraCrypt runs in portable mode, or mount a writable NTFS-formatted volume on Windows Vista or later, the VeraCrypt driver may
-<em>not</em> be unloaded when you exit VeraCrypt (it will be unloaded only when you shut down or restart the system). This prevents various problems caused by a bug in Windows (for instance, it would be impossible to start VeraCrypt again as long as there are
+<p>Note: When running in &lsquo;portable&rsquo; mode, the Sealbox driver is unloaded when it is no longer needed (e.g., when all instances of the main application and/or of the Volume Creation Wizard are closed and no Sealbox volumes are mounted). However,
+ if you force unmount on a Sealbox volume when Sealbox runs in portable mode, or mount a writable NTFS-formatted volume on Windows Vista or later, the Sealbox driver may
+<em>not</em> be unloaded when you exit Sealbox (it will be unloaded only when you shut down or restart the system). This prevents various problems caused by a bug in Windows (for instance, it would be impossible to start Sealbox again as long as there are
  applications using the unmounted volume).</p>
 <h3>Tools -&gt; Traveler Disk Setup</h3>
-<p>You can use this facility to prepare a special traveler disk and launch VeraCrypt from there. Note that VeraCrypt &lsquo;traveler disk&rsquo; is
-<em>not</em> a VeraCrypt volume but an <em>unencrypted</em> volume. A &lsquo;traveler disk&rsquo; contains VeraCrypt executable files and optionally the &lsquo;autorun.inf&rsquo; script (see the section
+<p>You can use this facility to prepare a special traveler disk and launch Sealbox from there. Note that Sealbox &lsquo;traveler disk&rsquo; is
+<em>not</em> a Sealbox volume but an <em>unencrypted</em> volume. A &lsquo;traveler disk&rsquo; contains Sealbox executable files and optionally the &lsquo;autorun.inf&rsquo; script (see the section
 <em>AutoRun Configuration</em> below). After you select <em>Tools -&gt; Traveler Disk Setup</em>, the
 <em>Traveler Disk Setup</em> dialog box should appear. Some of the parameters that can be set within the dialog deserve further explanation:</p>
-<h4>Include VeraCrypt Volume Creation Wizard</h4>
-<p>Check this option, if you need to create new VeraCrypt volumes using VeraCrypt run from the traveler disk you will create. Unchecking this option saves space on the traveler disk.</p>
+<h4>Include Sealbox Volume Creation Wizard</h4>
+<p>Check this option, if you need to create new Sealbox volumes using Sealbox run from the traveler disk you will create. Unchecking this option saves space on the traveler disk.</p>
 <h4>AutoRun Configuration (autorun.inf)</h4>
-<p>In this section, you can configure the &lsquo;traveler disk&rsquo; to automatically start VeraCrypt or mount a specified VeraCrypt volume when the &lsquo;traveler disk&rsquo; is inserted. This is accomplished by creating a special script file called &lsquo;<em>autorun.inf</em>&rsquo;
+<p>In this section, you can configure the &lsquo;traveler disk&rsquo; to automatically start Sealbox or mount a specified Sealbox volume when the &lsquo;traveler disk&rsquo; is inserted. This is accomplished by creating a special script file called &lsquo;<em>autorun.inf</em>&rsquo;
  on the traveler disk. This file is automatically executed by the operating system each time the &lsquo;traveler disk&rsquo; is inserted.<br>
 <br>
 Note, however, that this feature only works for removable storage devices such as CD/DVD (Windows XP SP2, Windows Vista, or a later version of Windows is required for this feature to work on USB memory sticks) and only when it is enabled in the operating system.
- Depending on the operating system configuration, these auto-run and auto-mount features may work only when the traveler disk files are created on a non-writable CD/DVD-like medium (which is not a bug in VeraCrypt but a limitation of Windows).<br>
+ Depending on the operating system configuration, these auto-run and auto-mount features may work only when the traveler disk files are created on a non-writable CD/DVD-like medium (which is not a bug in Sealbox but a limitation of Windows).<br>
 <br>
 Also note that the &lsquo;<em>autorun.inf</em>&rsquo; file must be in the root directory (i.e., for example
 <em>G:\</em>, <em>X:\</em>, or <em>Y:\</em> etc.) of an <strong>unencrypted </strong>

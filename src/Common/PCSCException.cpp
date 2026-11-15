@@ -170,7 +170,7 @@ namespace VeraCrypt
 	void CommandAPDUNotValid::Show(HWND parent) const
 	{
 		string msgBody = "Command APDU invalid.\n\n\n(If you report a bug in connection with this, please include the following technical information in the bug report:\n" + SrcPos + "\nLast Error = " + ErrorStr + ")";
-		MessageBoxA (parent, msgBody.c_str(), "VeraCrypt", MB_ICONERROR | MB_SETFOREGROUND);
+		MessageBoxA (parent, msgBody.c_str(), "Sealbox", MB_ICONERROR | MB_SETFOREGROUND);
 	}
 #endif // TC_HEADER_Common_Exception
 

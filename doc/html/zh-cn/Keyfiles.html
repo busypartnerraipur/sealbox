@@ -3,11 +3,11 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>
-      VeraCrypt - 为偏执狂提供强大安全保障的免费开源磁盘加密工具
+      Sealbox - 为偏执狂提供强大安全保障的免费开源磁盘加密工具
     </title>
     <meta
       name="description"
-      content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，VeraCrypt可提供似是而非的否认。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"
+      content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，Sealbox可提供似是而非的否认。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"
     />
     <meta name="keywords" content="加密, 安全" />
     <link href="styles.css" rel="stylesheet" type="text/css" />
@@ -15,7 +15,7 @@
   <body>
     <div>
       <a href="Documentation.html">
-        <img src="VeraCrypt128x128.png" alt="VeraCrypt" />
+        <img src="VeraCrypt128x128.png" alt="Sealbox" />
       </a>
     </div>
 
@@ -58,7 +58,7 @@
         "
       >
         <p>
-          VeraCrypt密钥文件是一种其内容会与密码相结合的文件。用户可以使用任何类型的文件作为VeraCrypt密钥文件。用户还可以使用内置的密钥文件生成器来生成密钥文件，该生成器利用VeraCrypt随机数生成器（RNG）生成具有随机内容的文件（更多信息，请参阅
+          Sealbox密钥文件是一种其内容会与密码相结合的文件。用户可以使用任何类型的文件作为Sealbox密钥文件。用户还可以使用内置的密钥文件生成器来生成密钥文件，该生成器利用Sealbox随机数生成器（RNG）生成具有随机内容的文件（更多信息，请参阅
           <a href="Random%20Number%20Generator.html">
             <em>随机数生成器</em></a
           >部分）。
@@ -67,7 +67,7 @@
           密钥文件的最大大小没有限制；但是，仅处理其前1,048,576字节（1 MiB）（由于处理超大文件会带来性能问题，所有剩余字节将被忽略）。用户可以提供一个或多个密钥文件（密钥文件的数量没有限制）。
         </p>
         <p>
-          密钥文件可以存储在符合PKCS - 11标准[23]的安全令牌和受多个PIN码保护的智能卡上（可以使用硬件PIN键盘或通过VeraCrypt图形用户界面输入这些PIN码）。
+          密钥文件可以存储在符合PKCS - 11标准[23]的安全令牌和受多个PIN码保护的智能卡上（可以使用硬件PIN键盘或通过Sealbox图形用户界面输入这些PIN码）。
         </p>
         <p>
           符合EMV标准的智能卡数据可以用作密钥文件，请参阅
@@ -83,7 +83,7 @@
         </p>
         <ol>
           <li>
-            设<em>P</em>为用户提供的VeraCrypt卷密码（可以为空）
+            设<em>P</em>为用户提供的Sealbox卷密码（可以为空）
           </li>
           <li>设<em>KP</em>为密钥文件池</li>
           <li>

@@ -264,7 +264,7 @@ BOOL CALLBACK PageDialogProc (HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 				SetCheckBox (hwndDlg, IDC_AGREE, bLicenseAccepted);
 
 				SetWindowTextW (GetDlgItem (GetParent (hwndDlg), IDC_BOX_TITLE), L"Please read the license terms");
-				SetWindowTextW (GetDlgItem (GetParent (hwndDlg), IDC_BOX_INFO), L"You must accept these license terms before you can use, extract, or install VeraCrypt.");
+				SetWindowTextW (GetDlgItem (GetParent (hwndDlg), IDC_BOX_INFO), L"You must accept these license terms before you can use, extract, or install Sealbox.");
 				SetWindowTextW (GetDlgItem (hwndDlg, IDC_BOX_HELP), L"IMPORTANT: By checking the checkbox below, you accept these license terms and signify that you understand and agree to them. Please click the 'arrow down' icon to see the rest of the license.");	// Cannot be localized by third parties (for legal reasons).
 				//SendMessage (GetDlgItem (hwndDlg, IDC_BOX_HELP), WM_SETFONT, (WPARAM) hUserBoldFont, (LPARAM) TRUE);
 
@@ -896,9 +896,9 @@ BOOL CALLBACK MainDialogProc (HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 
 			SendMessage (GetDlgItem (hwndDlg, IDC_BOX_TITLE), WM_SETFONT, (WPARAM) hUserBoldFont, (LPARAM) TRUE);
 #ifndef PORTABLE
-			SetWindowText (hwndDlg, L"VeraCrypt Setup " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX));
+			SetWindowText (hwndDlg, L"Sealbox Setup " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX));
 #else
-			SetWindowText (hwndDlg, L"VeraCrypt Portable " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX));
+			SetWindowText (hwndDlg, L"Sealbox Portable " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX));
 #endif
 
 			DonColorSchemeId = GetDonVal (2, 9);

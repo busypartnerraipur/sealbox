@@ -1,0 +1,146 @@
+name: Build Sealbox for Windows
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Windows installer
+    runs-on: windows-2022
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Make sure required Visual Studio components are present
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsPath  = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
+          Write-Host "Visual Studio at: $vsPath"
+          $installer = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vs_installer.exe"
+          $components = @(
+            "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+            "Microsoft.VisualStudio.Component.VC.Tools.ARM64",
+            "Microsoft.VisualStudio.Component.VC.Runtimes.x86.x64.Spectre",
+            "Microsoft.VisualStudio.Component.VC.Runtimes.ARM64.Spectre",
+            "Microsoft.VisualStudio.Component.VC.ATL",
+            "Microsoft.VisualStudio.Component.VC.ATL.ARM64",
+            "Microsoft.VisualStudio.Component.VC.ATL.Spectre",
+            "Microsoft.VisualStudio.Component.VC.ATL.ARM64.Spectre",
+            "Microsoft.VisualStudio.Component.Windows11SDK.22621"
+          )
+          $args = @("modify", "--installPath", $vsPath, "--quiet", "--norestart", "--nocache")
+          foreach ($c in $components) { $args += "--add"; $args += $c }
+          $p = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru
+          Write-Host "vs_installer exit code: $($p.ExitCode)"
+          if ($p.ExitCode -ne 0 -and $p.ExitCode -ne 3010) { exit $p.ExitCode }
+
+      - name: Install YASM
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "C:\Program Files\YASM" | Out-Null
+          Invoke-WebRequest -Uri "https://github.com/yasm/yasm/releases/download/v1.3.0/yasm-1.3.0-win64.exe" -OutFile "C:\Program Files\YASM\yasm.exe"
+          Add-Content -Path $env:GITHUB_PATH -Value "C:\Program Files\YASM"
+
+      - name: Install NASM (if missing)
+        shell: pwsh
+        run: |
+          if (-not (Get-Command nasm -ErrorAction SilentlyContinue)) {
+            choco install nasm -y --no-progress
+            Add-Content -Path $env:GITHUB_PATH -Value "C:\Program Files\NASM"
+          }
+
+      - name: Check tools
+        shell: cmd
+        run: |
+          where nasm && nasm -v
+          where yasm && yasm --version
+          where candle.exe || echo WiX candle not on PATH
+          if defined WIX echo WIX=%WIX%
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release x64
+        shell: cmd
+        run: msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=x64 /v:minimal
+
+      - name: Build Release ARM64
+        shell: cmd
+        run: msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=ARM64 /v:minimal
+
+      - name: Build Release Win32 (Setup, Portable, COMReg, SetupDLL)
+        shell: cmd
+        run: msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=Win32 /v:minimal
+
+      - name: Show build output
+        shell: cmd
+        run: dir "src\Release\Setup Files"
+
+      - name: Package installer (unsigned, uses the Microsoft-signed VeraCrypt driver)
+        shell: cmd
+        run: |
+          cd "src\Release\Setup Files"
+          copy ..\..\LICENSE .
+          copy ..\..\License.txt .
+          copy ..\..\NOTICE .
+          copy ..\..\Resources\Texts\License.rtf .
+          copy ..\..\Common\VeraCrypt.ico .
+          copy ..\..\Setup\VeraCrypt_setup_background.bmp .
+          copy ..\..\Setup\VeraCrypt_setup.bmp .
+          copy ..\..\Setup\Setup.ico .
+          if exist Languages rmdir /S /Q Languages
+          mkdir Languages
+          copy /V /Y "..\..\..\Translations\Language.??.xml" Languages\.
+          copy /V /Y "..\..\..\Translations\Language.??-??.xml" Languages\.
+          if exist Languages.zip del Languages.zip
+          tar -a -cf Languages.zip Languages
+          if exist docs rmdir /S /Q docs
+          mkdir docs\html
+          mkdir docs\EFI-DCS
+          xcopy /E /V /Y /Q ..\..\..\doc\html\* docs\html\.
+          copy "..\..\..\doc\chm\VeraCrypt User Guide*.chm" docs\.
+          copy "..\..\..\doc\EFI-DCS\*.pdf" docs\EFI-DCS\.
+          if exist docs.zip del docs.zip
+          tar -a -cf docs.zip docs
+          "VeraCrypt Setup.exe" /p
+          "VeraCrypt Portable.exe" /p
+          dir
+
+      - name: Build MSI (x64)
+        shell: cmd
+        continue-on-error: true
+        run: |
+          cd "src\Release\Setup Files"
+          call build_msi_x64.bat 1.26.31
+
+      - name: Collect Sealbox files
+        shell: pwsh
+        run: |
+          $src = "src\Release\Setup Files"
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          Get-ChildItem $src -Filter "VeraCrypt Setup 1.*.exe"    | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
+          Get-ChildItem $src -Filter "VeraCrypt Portable 1.*.exe" | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
+          Get-ChildItem $src -Filter "*.msi" -ErrorAction SilentlyContinue | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
+          Get-ChildItem dist
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sealbox-Windows-installer
+          path: dist/*
+          if-no-files-found: error
+
+      - name: Attach to GitHub release (tags only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*

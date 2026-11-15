@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，VeraCrypt可提供似是而非的否认。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，Sealbox可提供似是而非的否认。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,10 +36,10 @@
 <h1>PBKDF2</h1>
 
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
-PBKDF2（Password-Based Key Derivation Function 2）是一种广泛使用的 KDF，会重复应用伪随机函数（HMAC）以减缓密码猜测。在 VeraCrypt 中，PBKDF2 可与多种 HMAC 哈希函数配合使用，并用于派生解密卷头所需的密钥。
+PBKDF2（Password-Based Key Derivation Function 2）是一种广泛使用的 KDF，会重复应用伪随机函数（HMAC）以减缓密码猜测。在 Sealbox 中，PBKDF2 可与多种 HMAC 哈希函数配合使用，并用于派生解密卷头所需的密钥。
 </div>
 
-<h3>VeraCrypt 支持的 PBKDF2-HMAC 变体</h3>
+<h3>Sealbox 支持的 PBKDF2-HMAC 变体</h3>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding:0px">
 <li style="text-align:left; margin:0px 0px 6px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="SHA-512.html" style="color:#0080c0; text-decoration:none">SHA-512</a></strong></li>
 <li style="text-align:left; margin:0px 0px 6px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="SHA-256.html" style="color:#0080c0; text-decoration:none">SHA-256</a></strong></li>
@@ -48,7 +48,7 @@ PBKDF2（Password-Based Key Derivation Function 2）是一种广泛使用的 KDF
 <li style="text-align:left; margin:0px 0px 0px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="Streebog.html" style="color:#0080c0; text-decoration:none">Streebog</a></strong></li>
 </ul>
 
-<h3>VeraCrypt 中的参数</h3>
+<h3>Sealbox 中的参数</h3>
 
 <h4>盐值</h4>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
@@ -62,7 +62,7 @@ PBKDF2 迭代次数取决于所选 HMAC 哈希、使用场景（例如系统加�
 
 <h4>输出长度</h4>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
-派生并使用的卷头密钥材料量取决于所选加密算法或级联。在当前 XTS 卷中，VeraCrypt 同时使用主卷头密钥和辅助卷头密钥；例如，AES-256-XTS 总共使用 512 位（两个 256 位密钥），AES-Twofish-Serpent-XTS 级联总共使用 1536 位（六个 256 位密钥）。
+派生并使用的卷头密钥材料量取决于所选加密算法或级联。在当前 XTS 卷中，Sealbox 同时使用主卷头密钥和辅助卷头密钥；例如，AES-256-XTS 总共使用 512 位（两个 256 位密钥），AES-Twofish-Serpent-XTS 级联总共使用 1536 位（六个 256 位密钥）。
 </div>
 
 <h3>优点和注意事项</h3>

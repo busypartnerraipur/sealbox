@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -35,20 +35,20 @@
 <div>
 <h1>Security Model</h1>
 <div>
-<h4>Note to security researchers: If you intend to report a security issue or publish an attack on VeraCrypt, please make sure it does not disregard the security model of VeraCrypt described below. If it does, the attack (or security issue report) will be considered
+<h4>Note to security researchers: If you intend to report a security issue or publish an attack on Sealbox, please make sure it does not disregard the security model of Sealbox described below. If it does, the attack (or security issue report) will be considered
  invalid/bogus.</h4>
 </div>
-<p>VeraCrypt is a computer software program whose primary purposes are to:</p>
+<p>Sealbox is a computer software program whose primary purposes are to:</p>
 <ul>
 <li>Secure data by encrypting it before it is written to a disk. </li><li>Decrypt encrypted data after it is read from the disk. </li></ul>
-<p>VeraCrypt does <strong>not</strong>:</p>
+<p>Sealbox does <strong>not</strong>:</p>
 <ul>
 <li>Encrypt or secure any portion of RAM (the main memory of a computer). </li><li>Secure any data on a computer* if an attacker has administrator privileges&dagger; under an operating system installed on the computer.
-</li><li>Secure any data on a computer if the computer contains any malware (e.g. a virus, Trojan horse, spyware) or any other piece of software (including VeraCrypt or an operating system component) that has been altered, created, or can be controlled, by an attacker.
-</li><li>Secure any data on a computer if an attacker has physical access to the computer before or while VeraCrypt is running on it.
-</li><li>Secure any data on a computer if an attacker has physical access to the computer between the time when VeraCrypt is shut down and the time when the entire contents of all volatile memory modules connected to the computer (including memory modules in peripheral
- devices) have been permanently and irreversibly erased/lost. </li><li>Secure any data on a computer if an attacker can remotely intercept emanations from the computer hardware (e.g. the monitor or cables) while VeraCrypt is running on it (or otherwise remotely monitor the hardware and its use, directly or indirectly, while
- VeraCrypt is running on it). </li><li>Secure any data stored in a VeraCrypt volume&Dagger; if an attacker without administrator privileges can access the contents of the mounted volume (e.g. if file/folder/volume permissions do not prevent such an attacker from accessing it).
+</li><li>Secure any data on a computer if the computer contains any malware (e.g. a virus, Trojan horse, spyware) or any other piece of software (including Sealbox or an operating system component) that has been altered, created, or can be controlled, by an attacker.
+</li><li>Secure any data on a computer if an attacker has physical access to the computer before or while Sealbox is running on it.
+</li><li>Secure any data on a computer if an attacker has physical access to the computer between the time when Sealbox is shut down and the time when the entire contents of all volatile memory modules connected to the computer (including memory modules in peripheral
+ devices) have been permanently and irreversibly erased/lost. </li><li>Secure any data on a computer if an attacker can remotely intercept emanations from the computer hardware (e.g. the monitor or cables) while Sealbox is running on it (or otherwise remotely monitor the hardware and its use, directly or indirectly, while
+ Sealbox is running on it). </li><li>Secure any data stored in a Sealbox volume&Dagger; if an attacker without administrator privileges can access the contents of the mounted volume (e.g. if file/folder/volume permissions do not prevent such an attacker from accessing it).
 </li><li>Preserve/verify the integrity or authenticity of encrypted or decrypted data.
 </li><li>Prevent traffic analysis when encrypted data is transmitted over a network. </li><li>Prevent an attacker from determining in which sectors of the volume the content changed (and when and how many times) if he or she can observe the volume (unmounted or mounted) before and after data is written to it, or if the storage medium/device allows
  the attacker to determine such information (for example, the volume resides on a device that saves metadata that can be used to determine when data was written to a particular sector).
@@ -58,46 +58,46 @@
 <em>Security Requirements and Precautions</em></a> are not followed. </li><li>Do anything listed in the section <a href="Issues%20and%20Limitations.html#limitations">
 Limitations </a>(chapter <a href="Issues%20and%20Limitations.html">
 Known Issues &amp; Limitations</a>). </li></ul>
-<p>Under <strong>Windows</strong>, a user without administrator privileges can (assuming the default VeraCrypt and operating system configurations):</p>
+<p>Under <strong>Windows</strong>, a user without administrator privileges can (assuming the default Sealbox and operating system configurations):</p>
 <ul>
-<li>Mount any file-hosted VeraCrypt volume provided that the file permissions of the container allow it.
-</li><li>Mount any partition/device-hosted VeraCrypt volume. </li><li>Complete the pre-boot authentication process and, thus, gain access to data on an encrypted system partition/drive (and start the encrypted operating system).
+<li>Mount any file-hosted Sealbox volume provided that the file permissions of the container allow it.
+</li><li>Mount any partition/device-hosted Sealbox volume. </li><li>Complete the pre-boot authentication process and, thus, gain access to data on an encrypted system partition/drive (and start the encrypted operating system).
 </li><li>Skip the pre-boot authentication process (this can be prevented by disabling the option
 <em>Settings</em> &gt; &lsquo;<em>System Encryption</em>&rsquo; &gt; &lsquo;<em>Allow pre-boot authentication to be bypassed by pressing the Esc key</em>&rsquo;; note that this option can be enabled or disabled only by an administrator).
-</li><li>Unmount, using VeraCrypt, (and, in the VeraCrypt application window, see the path to and properties of) any VeraCrypt volume mounted by him or her. However, this does not apply to &lsquo;system favorite volumes&rsquo;, which he or she can unmount (etc.)
+</li><li>Unmount, using Sealbox, (and, in the Sealbox application window, see the path to and properties of) any Sealbox volume mounted by him or her. However, this does not apply to &lsquo;system favorite volumes&rsquo;, which he or she can unmount (etc.)
  regardless of who mounted them (this can be prevented by enabling the option <em>
-Settings</em> &gt; &lsquo;<em>System Favorite Volumes</em>&rsquo; &gt; &lsquo;<em>Allow</em> only administrators to view and unmount system favorite volumes in VeraCrypt&rsquo;; note that this option can be enabled or disabled only by an administrator).
-</li><li>Create a file-hosted VeraCrypt volume containing a FAT or no file system (provided that the relevant folder permissions allow it).
-</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted VeraCrypt volume (provided that the file permissions allow it).
-</li><li>Access the filesystem residing within a VeraCrypt volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
+Settings</em> &gt; &lsquo;<em>System Favorite Volumes</em>&rsquo; &gt; &lsquo;<em>Allow</em> only administrators to view and unmount system favorite volumes in Sealbox&rsquo;; note that this option can be enabled or disabled only by an administrator).
+</li><li>Create a file-hosted Sealbox volume containing a FAT or no file system (provided that the relevant folder permissions allow it).
+</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted Sealbox volume (provided that the file permissions allow it).
+</li><li>Access the filesystem residing within a Sealbox volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
 </li><li>Use passwords (and processed keyfiles) stored in the password cache (note that caching can be disabled; for more information see the section
 <em>Settings -&gt; Preferences</em>, subsection <em>Cache passwords in</em> driver memory).
 </li><li>View the basic properties (e.g. the size of the encrypted area, encryption and hash algorithms used, etc.) of the encrypted system partition/drive when the encrypted system is running.
-</li><li>Run and use the VeraCrypt application (including the VeraCrypt Volume Creation Wizard) provided that the VeraCrypt device driver is running and that the file permissions allow it.
+</li><li>Run and use the Sealbox application (including the Sealbox Volume Creation Wizard) provided that the Sealbox device driver is running and that the file permissions allow it.
 </li></ul>
-<p>Under <strong>Linux</strong>, a user without administrator privileges can (assuming the default VeraCrypt and operating system configurations):</p>
+<p>Under <strong>Linux</strong>, a user without administrator privileges can (assuming the default Sealbox and operating system configurations):</p>
 <ul>
-<li>Create a file-hosted or partition/device-hosted VeraCrypt volume containing a FAT or no file system provided that the relevant folder/device permissions allow it.
-</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted or partition/device-hosted VeraCrypt volume provided that the file/device permissions allow it.
-</li><li>Access the filesystem residing within a VeraCrypt volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
-</li><li>Run and use the VeraCrypt application (including the VeraCrypt Volume Creation Wizard) provided that file permissions allow it.
-</li><li>In the VeraCrypt application window, see the path to and properties of any VeraCrypt volume mounted by him or her.
+<li>Create a file-hosted or partition/device-hosted Sealbox volume containing a FAT or no file system provided that the relevant folder/device permissions allow it.
+</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted or partition/device-hosted Sealbox volume provided that the file/device permissions allow it.
+</li><li>Access the filesystem residing within a Sealbox volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
+</li><li>Run and use the Sealbox application (including the Sealbox Volume Creation Wizard) provided that file permissions allow it.
+</li><li>In the Sealbox application window, see the path to and properties of any Sealbox volume mounted by him or her.
 </li></ul>
-<p>Under <strong>Mac OS X</strong>, a user without administrator privileges can (assuming the default VeraCrypt and operating system configurations):</p>
+<p>Under <strong>Mac OS X</strong>, a user without administrator privileges can (assuming the default Sealbox and operating system configurations):</p>
 <ul>
-<li>Mount any file-hosted or partition/device-hosted VeraCrypt volume provided that the file/device permissions allow it.
-</li><li>Unmount, using VeraCrypt, (and, in the VeraCrypt application window, see the path to and properties of) any VeraCrypt volume mounted by him or her.
-</li><li>Create a file-hosted or partition/device-hosted VeraCrypt volume provided that the relevant folder/device permissions allow it.
-</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted or partition/device-hosted VeraCrypt volume (provided that the file/device permissions allow it).
-</li><li>Access the filesystem residing within a VeraCrypt volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
-</li><li>Run and use the VeraCrypt application (including the VeraCrypt Volume Creation Wizard) provided that the file permissions allow it.
+<li>Mount any file-hosted or partition/device-hosted Sealbox volume provided that the file/device permissions allow it.
+</li><li>Unmount, using Sealbox, (and, in the Sealbox application window, see the path to and properties of) any Sealbox volume mounted by him or her.
+</li><li>Create a file-hosted or partition/device-hosted Sealbox volume provided that the relevant folder/device permissions allow it.
+</li><li>Change the password, keyfiles, and header key derivation algorithm for, and restore or back up the header of, a file-hosted or partition/device-hosted Sealbox volume (provided that the file/device permissions allow it).
+</li><li>Access the filesystem residing within a Sealbox volume mounted by another user on the system (however, file/folder/volume permissions can be set to prevent this).
+</li><li>Run and use the Sealbox application (including the Sealbox Volume Creation Wizard) provided that the file permissions allow it.
 </li></ul>
-<p id="sudo-and-doas"><strong>Administrator privileges on Linux, macOS and BSD:</strong> Granting a user permission to run VeraCrypt or its core service as root through <code>sudo</code> or <code>doas</code> must be treated as granting full root authority.
+<p id="sudo-and-doas"><strong>Administrator privileges on Linux, macOS and BSD:</strong> Granting a user permission to run Sealbox or its core service as root through <code>sudo</code> or <code>doas</code> must be treated as granting full root authority.
 This permission should only be given to users trusted with full administrative control.</p>
-<p>VeraCrypt does not provide a restricted mode that confines these users to mounting their own volumes. This also applies when the rule permits only the core service (<code>--core-service</code> or <code>--core-service-no-fork</code>) or requires the user's password.
+<p>Sealbox does not provide a restricted mode that confines these users to mounting their own volumes. This also applies when the rule permits only the core service (<code>--core-service</code> or <code>--core-service-no-fork</code>) or requires the user's password.
 If an account must remain restricted, remove the corresponding grants.</p>
-<p>Other programs running under the same user account may be able to use an active elevated VeraCrypt service until VeraCrypt exits.</p>
-<p>VeraCrypt does not support the set-euid root mode of execution.<br>
+<p>Other programs running under the same user account may be able to use an active elevated Sealbox service until Sealbox exits.</p>
+<p>Sealbox does not support the set-euid root mode of execution.<br>
 <br>
 Additional information and details regarding the security model are contained in the chapter
 <a href="Security%20Requirements%20and%20Precautions.html">
@@ -106,7 +106,7 @@ Additional information and details regarding the security model are contained in
 <p>&dagger; In this section (<em>Security Model</em>), the phrase &ldquo;administrator privileges&rdquo; does not necessarily refer to a valid administrator account. It may also refer to an attacker who does not have a valid administrator account but who is
  able (for example, due to improper configuration of the system or by exploiting a vulnerability in the operating system or a third-party application) to perform any action that only a user with a valid administrator account is normally allowed to perform (for
  example, to read or modify an arbitrary part of a drive or the RAM, etc.)</p>
-<p>&Dagger; &ldquo;VeraCrypt volume&rdquo; also means a VeraCrypt-encrypted system partition/drive (see the chapter
+<p>&Dagger; &ldquo;Sealbox volume&rdquo; also means a Sealbox-encrypted system partition/drive (see the chapter
 <a href="System%20Encryption.html"><em>System Encryption</em></a>).</p>
 </div>
 </div>

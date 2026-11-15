@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。在攻击者强迫您透露密码的情况下，VeraCrypt提供了似是而非的否认性。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，占用内存极少，并且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。在攻击者强迫您透露密码的情况下，Sealbox提供了似是而非的否认性。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，占用内存极少，并且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -34,7 +34,7 @@
 <div class="wikidoc">
 <h1>故障排除</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-本节介绍了在使用VeraCrypt时可能遇到的常见问题的解决方案。
+本节介绍了在使用Sealbox时可能遇到的常见问题的解决方案。
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 注意：如果您的问题未在此列出，可能会在以下部分列出：
@@ -51,7 +51,7 @@
 <tbody style="text-align:left">
 <tr style="text-align:left">
 <td style="color:#000000; text-align:left; font-size:11px; line-height:13px; font-family:Verdana,Arial,Helvetica,sans-serif; padding:15px; border:1px solid #000000">
-确保您使用的是VeraCrypt的最新稳定版本。如果问题是由旧版本的VeraCrypt中的漏洞引起的，那么该问题可能已经得到修复。注意：选择 <em style="text-align:left"><strong style="text-align:left">帮助</strong></em> > <em style="text-align:left"><strong style="text-align:left">关于</strong></em> 以查看您使用的版本。
+确保您使用的是Sealbox的最新稳定版本。如果问题是由旧版本的Sealbox中的漏洞引起的，那么该问题可能已经得到修复。注意：选择 <em style="text-align:left"><strong style="text-align:left">帮助</strong></em> > <em style="text-align:left"><strong style="text-align:left">关于</strong></em> 以查看您使用的版本。
 </td>
 </tr>
 </tbody>
@@ -74,7 +74,7 @@
 <strong style="text-align:left">可能的解决方案：</strong>
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-首先，确保您的VeraCrypt容器没有保留给可执行文件的文件扩展名（例如.exe、.sys或.dll）。如果有，Windows和防病毒软件可能会干扰容器并对卷的性能产生不利影响。
+首先，确保您的Sealbox容器没有保留给可执行文件的文件扩展名（例如.exe、.sys或.dll）。如果有，Windows和防病毒软件可能会干扰容器并对卷的性能产生不利影响。
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 其次，禁用或卸载任何可能造成干扰的应用程序，通常是防病毒软件或自动磁盘碎片整理工具等。对于防病毒软件，通常在其偏好设置中关闭实时（访问时）扫描会有所帮助。如果不起作用，请尝试暂时禁用病毒防护软件。如果还是不行，请尝试完全卸载它，然后重新启动计算机。
@@ -84,7 +84,7 @@
 <strong style="text-align:left">问题：</strong>
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">VeraCrypt 卷无法挂载；VeraCrypt 报告 “</em>密码错误或不是 VeraCrypt 卷<em style="text-align:left">”。</em></div>
+<em style="text-align:left">Sealbox 卷无法挂载；Sealbox 报告 “</em>密码错误或不是 Sealbox 卷<em style="text-align:left">”。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -96,7 +96,7 @@
 您可以尝试通过以下步骤从嵌入在卷中的备份恢复卷头：
 <ol style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-运行 VeraCrypt。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+运行 Sealbox。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 点击 <em style="text-align:left">选择设备</em> 或 <em style="text-align:left">
 选择文件</em> 以选择您的卷。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 选择 <em style="text-align:left"><a href="Program%20Menu.html#tools-restore-volume-header" style="text-align:left; color:#0080c0; text-decoration:none">工具 > 恢复卷头</a></em>。
@@ -110,11 +110,11 @@
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-VeraCrypt 卷上的文件系统可能已损坏（或者该卷未格式化）。</div>
+Sealbox 卷上的文件系统可能已损坏（或者该卷未格式化）。</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的解决方案：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-您可以使用操作系统提供的文件系统修复工具尝试修复 VeraCrypt 卷上的文件系统。在 Windows 中，是 '<em style="text-align:left">chkdsk</em>' 工具。VeraCrypt 提供了一种在 VeraCrypt 卷上使用此工具的简便方法：首先，制作 VeraCrypt 卷的备份副本（因为 '<em style="text-align:left">chkdsk</em>' 工具可能会进一步损坏文件系统），然后挂载该卷。在 VeraCrypt 主窗口（在驱动器列表中）中右键单击已挂载的卷，然后从上下文菜单中选择 '<em style="text-align:left">修复文件系统</em>'。</div>
+您可以使用操作系统提供的文件系统修复工具尝试修复 Sealbox 卷上的文件系统。在 Windows 中，是 '<em style="text-align:left">chkdsk</em>' 工具。Sealbox 提供了一种在 Sealbox 卷上使用此工具的简便方法：首先，制作 Sealbox 卷的备份副本（因为 '<em style="text-align:left">chkdsk</em>' 工具可能会进一步损坏文件系统），然后挂载该卷。在 Sealbox 主窗口（在驱动器列表中）中右键单击已挂载的卷，然后从上下文菜单中选择 '<em style="text-align:left">修复文件系统</em>'。</div>
 <hr style="text-align:left">
 <div id="hidden_volume_small_max_size" style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
@@ -172,14 +172,14 @@ VeraCrypt 卷上的文件系统可能已损坏（或者该卷未格式化）。<
 出现以下问题之一：</div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-VeraCrypt 卷无法挂载。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-无法创建 NTFS VeraCrypt 卷。</li></ul>
+Sealbox 卷无法挂载。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+无法创建 NTFS Sealbox 卷。</li></ul>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 此外，可能会报告以下错误：“<em style="text-align:left">该进程无法访问此文件，因为它正被另一个进程使用。</em>”</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-这可能是由干扰应用程序引起的。请注意，这不是 VeraCrypt 的 bug。操作系统向 VeraCrypt 报告该设备已被某个应用程序独占锁定（因此 VeraCrypt 不被允许访问它）。</div>
+这可能是由干扰应用程序引起的。请注意，这不是 Sealbox 的 bug。操作系统向 Sealbox 报告该设备已被某个应用程序独占锁定（因此 Sealbox 不被允许访问它）。</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的解决方案：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -188,7 +188,7 @@ VeraCrypt 卷无法挂载。</li><li style="text-align:left; margin-top:0px; mar
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">在 VeraCrypt 引导加载程序屏幕中，我试图输入密码和/或按下其他键，但 VeraCrypt 引导加载程序没有响应。</em></div>
+<em style="text-align:left">在 Sealbox 引导加载程序屏幕中，我试图输入密码和/或按下其他键，但 Sealbox 引导加载程序没有响应。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -268,7 +268,7 @@ https://www.sevenforums.com/tutorials/71363-system-reserved-partition-delete.htm
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">尝试加密系统分区/驱动器时，在预测试期间，VeraCrypt引导加载程序始终报告我输入的预启动身份验证密码不正确（即使我确定密码是正确的）。</em></div>
+<em style="text-align:left">尝试加密系统分区/驱动器时，在预测试期间，Sealbox引导加载程序始终报告我输入的预启动身份验证密码不正确（即使我确定密码是正确的）。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能原因：</strong></div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -281,7 +281,7 @@ https://www.sevenforums.com/tutorials/71363-system-reserved-partition-delete.htm
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 当你<em style="text-align:left">设置</em>预启动身份验证密码时，记住“Num Lock”和“Caps Lock”键是开启还是关闭（根据制造商的不同，这些键可能有不同的标签，如<em style="text-align:left">Num LK</em>）。注意：你可以在设置密码之前根据需要更改每个键的状态，但你需要记住这些状态。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-当你在VeraCrypt引导加载程序屏幕中输入密码时，确保每个键的状态与你设置密码时的状态相同。
+当你在Sealbox引导加载程序屏幕中输入密码时，确保每个键的状态与你设置密码时的状态相同。
 </li></ol>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 注意：有关此问题的其他可能解决方案，请参阅本章的其他部分。</div>
@@ -306,18 +306,18 @@ CPU和/或主板问题。</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">挂载或卸载VeraCrypt卷时，系统崩溃（出现“蓝屏”错误屏幕或计算机突然重启）。</em></div>
+<em style="text-align:left">挂载或卸载Sealbox卷时，系统崩溃（出现“蓝屏”错误屏幕或计算机突然重启）。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 或</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">自从我安装了VeraCrypt，操作系统频繁崩溃。</em></div>
+<em style="text-align:left">自从我安装了Sealbox，操作系统频繁崩溃。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的原因：</strong></div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 第三方应用程序中的错误（例如，防病毒软件、系统“优化工具”、驱动程序等）
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-VeraCrypt中的错误</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+Sealbox中的错误</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 Windows中的错误或硬件组件故障</li></ul>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的解决方案：</strong></div>
@@ -326,13 +326,13 @@ Windows中的错误或硬件组件故障</li></ul>
 尝试禁用任何防病毒工具、系统“优化工具”以及任何其他类似的应用程序。如果问题仍然存在，尝试卸载它们并重启Windows。
 <br style="text-align:left">
 <br style="text-align:left">
-如果问题仍然存在，请在系统崩溃或重启后不久运行VeraCrypt并选择<em style="text-align:left">帮助</em> > '<em style="text-align:left">分析系统崩溃</em>'。VeraCrypt将分析Windows在崩溃时自动创建的崩溃转储文件（如果有）。如果VeraCrypt确定第三方驱动程序中的错误可能导致了崩溃，它将显示驱动程序的名称和供应商（请注意，更新或卸载驱动程序可能会解决问题）。无论结果如何，你都可以选择向我们发送有关系统崩溃的重要信息，以帮助我们确定是否是VeraCrypt中的错误导致的。
+如果问题仍然存在，请在系统崩溃或重启后不久运行Sealbox并选择<em style="text-align:left">帮助</em> > '<em style="text-align:left">分析系统崩溃</em>'。Sealbox将分析Windows在崩溃时自动创建的崩溃转储文件（如果有）。如果Sealbox确定第三方驱动程序中的错误可能导致了崩溃，它将显示驱动程序的名称和供应商（请注意，更新或卸载驱动程序可能会解决问题）。无论结果如何，你都可以选择向我们发送有关系统崩溃的重要信息，以帮助我们确定是否是Sealbox中的错误导致的。
 </li></ul>
 <hr style="text-align:left">
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">在Windows 7/Vista（可能包括更高版本）上，Microsoft Windows备份工具无法用于将数据备份到非系统VeraCrypt卷。</em></div>
+<em style="text-align:left">在Windows 7/Vista（可能包括更高版本）上，Microsoft Windows备份工具无法用于将数据备份到非系统Sealbox卷。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -341,7 +341,7 @@ Windows备份工具中的错误。</div>
 <strong style="text-align:left">可能的解决方案：</strong></div>
 <ol style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-挂载你要备份数据的VeraCrypt卷。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+挂载你要备份数据的Sealbox卷。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 右键单击位于该卷上的文件夹（或在“<em style="text-align:left">计算机</em>”列表中右键单击其驱动器号），并从“<em style="text-align:left">共享</em>”子菜单中选择一个选项（在Windows Vista上，选择“<em style="text-align:left">共享</em>”）。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 按照说明将文件夹共享给你的用户账户。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
@@ -354,7 +354,7 @@ Windows备份工具中的错误。</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">在Windows Vista或更高版本的Windows的“计算机”窗口中，无法更改VeraCrypt卷中文件系统的标签。</em></div>
+<em style="text-align:left">在Windows Vista或更高版本的Windows的“计算机”窗口中，无法更改Sealbox卷中文件系统的标签。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -369,7 +369,7 @@ Windows的一个问题导致标签仅被写入Windows注册表文件，而不是
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">我无法加密分区/设备，因为VeraCrypt卷创建向导提示它正在使用中。</em></div>
+<em style="text-align:left">我无法加密分区/设备，因为Sealbox卷创建向导提示它正在使用中。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的解决方案：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
@@ -410,21 +410,21 @@ https://support.microsoft.com/kb/177078/</a></div>
 <div id="linux_user_fuse_mounts" style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">问题：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">在Linux上，无法挂载存储在文件管理器中打开的网络共享上，或存储在用户帐户通过FUSE挂载的其他文件系统（例如sshfs或rclone）上的卷：VeraCrypt报告“</em>Permission denied（权限被拒绝）<em style="text-align:left">”。或者，VeraCrypt警告它使用了您的用户帐户访问权限打开卷文件。</em></div>
+<em style="text-align:left">在Linux上，无法挂载存储在文件管理器中打开的网络共享上，或存储在用户帐户通过FUSE挂载的其他文件系统（例如sshfs或rclone）上的卷：Sealbox报告“</em>Permission denied（权限被拒绝）<em style="text-align:left">”。或者，Sealbox警告它使用了您的用户帐户访问权限打开卷文件。</em></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的原因：</strong></div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-此类文件系统由您的用户帐户挂载，且未使用<code>allow_other</code>选项。因此，即使您的帐户可以打开这些文件，Linux也会拒绝其他所有用户（包括管理员root）的访问。VeraCrypt使用管理员权限挂载卷，因此VeraCrypt 1.26.29及更早版本无法打开此类卷文件。</div>
+此类文件系统由您的用户帐户挂载，且未使用<code>allow_other</code>选项。因此，即使您的帐户可以打开这些文件，Linux也会拒绝其他所有用户（包括管理员root）的访问。Sealbox使用管理员权限挂载卷，因此Sealbox 1.26.29及更早版本无法打开此类卷文件。</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <strong style="text-align:left">可能的解决方法：</strong></div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-较新版本的VeraCrypt在管理员访问被拒绝时，会使用您的用户帐户访问权限打开卷文件，前提是VeraCrypt通过sudo或doas获取管理员权限（在VeraCrypt中输入密码时就是如此）。此时卷通过VeraCrypt的FUSE层提供服务，速度比由内核直接挂载更慢，VeraCrypt会显示警告。卸载卷之前，请保持共享处于挂载状态，且用户会话保持活动：在卷仍挂载时弹出共享或注销可能导致数据丢失。如果仍报告“Permission denied”，则可能是您的帐户本身无法打开该文件，或VeraCrypt未通过sudo而直接以root身份启动（例如从root shell启动），因而无法确定您的用户帐户。后一种情况下，请以您的用户身份启动VeraCrypt。存储在此类文件系统上的密钥文件仅在VeraCrypt本身以您的用户身份运行时可用，通过sudo启动时不可用。
+较新版本的Sealbox在管理员访问被拒绝时，会使用您的用户帐户访问权限打开卷文件，前提是Sealbox通过sudo或doas获取管理员权限（在Sealbox中输入密码时就是如此）。此时卷通过Sealbox的FUSE层提供服务，速度比由内核直接挂载更慢，Sealbox会显示警告。卸载卷之前，请保持共享处于挂载状态，且用户会话保持活动：在卷仍挂载时弹出共享或注销可能导致数据丢失。如果仍报告“Permission denied”，则可能是您的帐户本身无法打开该文件，或Sealbox未通过sudo而直接以root身份启动（例如从root shell启动），因而无法确定您的用户帐户。后一种情况下，请以您的用户身份启动Sealbox。存储在此类文件系统上的密钥文件仅在Sealbox本身以您的用户身份运行时可用，通过sudo启动时不可用。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 如果经常使用SMB共享，请改用内核CIFS客户端（<em style="text-align:left">cifs-utils</em>软件包）挂载，并将所有者设为您的用户帐户。例如：
 <code>sudo mount -t cifs //server/share /mnt/share -o username=NAME,uid=$(id -u),gid=$(id -g)</code>。存储在此类挂载点上的卷由内核直接挂载，不依赖您的会话。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-对于sshfs、rclone及其他支持此功能的FUSE文件系统，请在<em style="text-align:left">/etc/fuse.conf</em>中启用<code>user_allow_other</code>，并使用<code>-o allow_root</code>选项挂载该文件系统。这样，管理员权限即可访问它，VeraCrypt也能正常打开卷文件。该卷仍依赖此文件系统：请保持文件系统处于挂载状态，直到卸载卷。
+对于sshfs、rclone及其他支持此功能的FUSE文件系统，请在<em style="text-align:left">/etc/fuse.conf</em>中启用<code>user_allow_other</code>，并使用<code>-o allow_root</code>选项挂载该文件系统。这样，管理员权限即可访问它，Sealbox也能正常打开卷文件。该卷仍依赖此文件系统：请保持文件系统处于挂载状态，直到卸载卷。
 </li></ul>
 <hr style="text-align:left">
 <p><br style="text-align:left">

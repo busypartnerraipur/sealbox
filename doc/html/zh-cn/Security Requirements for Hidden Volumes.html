@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，VeraCrypt可提供合理否认性。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，Sealbox可提供合理否认性。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -39,35 +39,35 @@
 <h1>与隐藏卷相关的安全要求和预防措施</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 如果您使用 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
-VeraCrypt 隐藏卷</a>，则必须遵循本节列出的安全要求和预防措施。免责声明：本节不保证包含可能对 VeraCrypt 保护隐藏 VeraCrypt 卷中存储的数据的能力以及提供合理否认性的能力产生不利影响或限制的 <em style="text-align:left">所有</em> 安全问题和攻击列表。</div>
+Sealbox 隐藏卷</a>，则必须遵循本节列出的安全要求和预防措施。免责声明：本节不保证包含可能对 Sealbox 保护隐藏 Sealbox 卷中存储的数据的能力以及提供合理否认性的能力产生不利影响或限制的 <em style="text-align:left">所有</em> 安全问题和攻击列表。</div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-如果对手在不同时间点多次访问（未挂载的）VeraCrypt 卷，他可能能够确定该卷中哪些扇区正在发生变化。如果您更改 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
+如果对手在不同时间点多次访问（未挂载的）Sealbox 卷，他可能能够确定该卷中哪些扇区正在发生变化。如果您更改 <a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
 隐藏卷</a> 的内容（例如，创建/复制新文件到隐藏卷，或修改/删除/重命名/移动隐藏卷上存储的文件等），隐藏卷区域中扇区（密文）的内容将会改变。在获得外部卷的密码后，对手可能会要求解释这些扇区为何发生变化。如果您无法提供合理的解释，可能会表明外部卷中存在隐藏卷。<br style="text-align:left">
 <br style="text-align:left">
 请注意，类似上述描述的问题也可能在以下情况下出现：<br style="text-align:left">
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-存储文件型 VeraCrypt 容器的文件系统已进行碎片整理，并且 VeraCrypt 容器（或其片段）的副本仍保留在宿主卷的空闲空间中（在已碎片整理的文件系统中）。为防止这种情况发生，请执行以下操作之一：
+存储文件型 Sealbox 容器的文件系统已进行碎片整理，并且 Sealbox 容器（或其片段）的副本仍保留在宿主卷的空闲空间中（在已碎片整理的文件系统中）。为防止这种情况发生，请执行以下操作之一：
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-使用分区/设备型 VeraCrypt 卷代替文件型。 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+使用分区/设备型 Sealbox 卷代替文件型。 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 在碎片整理后，安全擦除宿主卷（在已碎片整理的文件系统中）的空闲空间。在 Windows 系统上，可以使用 Microsoft
 <a href="https://technet.microsoft.com/en-us/sysinternals/bb897443.aspx">免费实用工具SDelete</a>。在Linux系统中，可以使用GNU coreutils软件包中的<em>shred</em>实用工具来达到此目的。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-不要对存储VeraCrypt卷的文件系统进行碎片整理。</li></ul>
+不要对存储Sealbox卷的文件系统进行碎片整理。</li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-文件托管的VeraCrypt容器存储在日志文件系统（如NTFS）中。VeraCrypt容器的副本（或其片段）可能会保留在主机卷上。为防止这种情况发生，请采取以下操作之一：
+文件托管的Sealbox容器存储在日志文件系统（如NTFS）中。Sealbox容器的副本（或其片段）可能会保留在主机卷上。为防止这种情况发生，请采取以下操作之一：
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-使用分区/设备托管的VeraCrypt卷，而不是文件托管的。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+使用分区/设备托管的Sealbox卷，而不是文件托管的。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 将容器存储在非日志文件系统（例如，FAT32）中。</li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-VeraCrypt卷位于使用损耗均衡机制的设备/文件系统（例如，闪存SSD或USB闪存驱动器）上。VeraCrypt卷的副本（或片段）可能会保留在设备上。因此，请勿将隐藏卷存储在此类设备/文件系统上。
+Sealbox卷位于使用损耗均衡机制的设备/文件系统（例如，闪存SSD或USB闪存驱动器）上。Sealbox卷的副本（或片段）可能会保留在设备上。因此，请勿将隐藏卷存储在此类设备/文件系统上。
 有关损耗均衡的更多信息，请参阅<a href="Wear-Leveling.html" style="text-align:left; color:#0080c0; text-decoration:none">
 损耗均衡</a>章节，该章节位于<a href="Security%20Requirements%20and%20Precautions.html" style="text-align:left; color:#0080c0; text-decoration:none">
 安全要求和预防措施</a>部分。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-VeraCrypt卷位于保存数据的设备/文件系统上（或位于由保存数据的系统/设备控制或监控的设备/文件系统上）（例如，计时器或计数器的值），这些数据可用于确定一个块的写入时间早于另一个块，和/或确定一个块被写入/读取的次数。因此，请勿将隐藏卷存储在此类设备/文件系统上。要了解设备/系统是否保存此类数据，请参阅设备/系统附带的文档或联系供应商/制造商。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-VeraCrypt卷位于容易损耗的设备上（可以确定一个块的写入/读取次数比另一个块多）。因此，请勿将隐藏卷存储在此类设备/文件系统上。要了解设备是否容易出现此类损耗，请参阅设备附带的文档或联系供应商/制造商。
+Sealbox卷位于保存数据的设备/文件系统上（或位于由保存数据的系统/设备控制或监控的设备/文件系统上）（例如，计时器或计数器的值），这些数据可用于确定一个块的写入时间早于另一个块，和/或确定一个块被写入/读取的次数。因此，请勿将隐藏卷存储在此类设备/文件系统上。要了解设备/系统是否保存此类数据，请参阅设备/系统附带的文档或联系供应商/制造商。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+Sealbox卷位于容易损耗的设备上（可以确定一个块的写入/读取次数比另一个块多）。因此，请勿将隐藏卷存储在此类设备/文件系统上。要了解设备是否容易出现此类损耗，请参阅设备附带的文档或联系供应商/制造商。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 您通过克隆隐藏卷的主机卷来备份隐藏卷的内容，或者通过克隆其主机卷来创建新的隐藏卷。因此，您绝对不能这样做。请遵循<a href="How%20to%20Back%20Up%20Securely.html" style="text-align:left; color:#0080c0; text-decoration:none">
 如何安全备份</a>章节和<a href="Volume%20Clones.html" style="text-align:left; color:#0080c0; text-decoration:none">
@@ -79,7 +79,7 @@ VeraCrypt卷位于容易损耗的设备上（可以确定一个块的写入/读�
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 在Windows系统中，确保您没有删除打算创建隐藏卷的卷内的任何文件（簇位图扫描器无法检测到已删除的文件）。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-在Linux或Mac OS X系统中，如果您打算在文件托管的VeraCrypt卷内创建隐藏卷，请确保该卷不是稀疏文件托管的（Windows版本的VeraCrypt会验证这一点，并禁止在稀疏文件内创建隐藏卷）。
+在Linux或Mac OS X系统中，如果您打算在文件托管的Sealbox卷内创建隐藏卷，请确保该卷不是稀疏文件托管的（Windows版本的Sealbox会验证这一点，并禁止在稀疏文件内创建隐藏卷）。
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 当隐藏卷挂载时，操作系统和第三方应用程序可能会将有关隐藏卷中存储的数据的未加密信息（例如，最近访问文件的文件名和位置、文件索引工具创建的数据库等）、未加密形式的数据本身（临时文件等）、有关隐藏卷中文件系统的未加密信息（例如，可用于识别文件系统并确定它是否是外部卷中的文件系统）、隐藏卷的密码/密钥或其他类型的敏感数据写入非隐藏卷（通常是未加密的系统卷）。因此，必须遵循以下安全要求和预防措施：
 <br style="text-align:left">
@@ -87,12 +87,12 @@ VeraCrypt卷位于容易损耗的设备上（可以确定一个块的写入/读�
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <em style="text-align:left">Windows</em>：创建一个隐藏操作系统（有关如何操作的信息，请参阅<a href="Hidden%20Operating%20System.html" style="text-align:left; color:#0080c0; text-decoration:none">
 隐藏操作系统</a>部分），并仅在隐藏操作系统运行时挂载隐藏卷。
-<span style="text-align:left; font-size:10px; line-height:12px">注意：当隐藏操作系统运行时，VeraCrypt会确保所有本地未加密文件系统和非隐藏VeraCrypt卷为只读（即无法向此类文件系统或VeraCrypt卷写入文件）。<a href="#hidden_os_exception">*</a> 允许将数据写入<a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
-隐藏VeraCrypt卷</a>内的文件系统。</span> 或者，如果无法使用隐藏操作系统，请使用“实时CD” Windows PE系统（完全存储在CD/DVD上并从其启动），该系统可确保写入系统卷的任何数据都写入RAM磁盘。
-仅在运行此类“实时CD”系统时挂载隐藏卷（如果无法使用隐藏操作系统）。此外，在这样的“实时CD”会话期间，只有隐藏VeraCrypt卷中的文件系统可以以读写模式挂载（外部或未加密的卷/文件系统必须以只读模式挂载，或者根本不挂载/不可访问）；否则，您必须确保应用程序和操作系统在“实时CD”会话期间不会将任何敏感数据（见上文）写入非隐藏卷/文件系统。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="text-align:left; font-size:10px; line-height:12px">注意：当隐藏操作系统运行时，Sealbox会确保所有本地未加密文件系统和非隐藏Sealbox卷为只读（即无法向此类文件系统或Sealbox卷写入文件）。<a href="#hidden_os_exception">*</a> 允许将数据写入<a href="Hidden%20Volume.html" style="text-align:left; color:#0080c0; text-decoration:none">
+隐藏Sealbox卷</a>内的文件系统。</span> 或者，如果无法使用隐藏操作系统，请使用“实时CD” Windows PE系统（完全存储在CD/DVD上并从其启动），该系统可确保写入系统卷的任何数据都写入RAM磁盘。
+仅在运行此类“实时CD”系统时挂载隐藏卷（如果无法使用隐藏操作系统）。此外，在这样的“实时CD”会话期间，只有隐藏Sealbox卷中的文件系统可以以读写模式挂载（外部或未加密的卷/文件系统必须以只读模式挂载，或者根本不挂载/不可访问）；否则，您必须确保应用程序和操作系统在“实时CD”会话期间不会将任何敏感数据（见上文）写入非隐藏卷/文件系统。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <em style="text-align:left">Linux</em>：下载或创建您的操作系统的“实时CD”版本（即完全存储在CD/DVD上并从其启动的“实时” Linux系统），该系统可确保写入系统卷的任何数据都写入RAM磁盘。
-仅在运行此类“实时CD”系统时挂载隐藏卷。在会话期间，只有隐藏VeraCrypt卷中的文件系统可以以读写模式挂载（外部或未加密的卷/文件系统必须以只读模式挂载，或者根本不挂载/不可访问）。如果您无法满足此要求，并且无法确保应用程序和操作系统不会将任何敏感数据（见上文）写入非隐藏卷/文件系统，则不得在Linux系统下挂载或创建隐藏VeraCrypt卷。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
-<em style="text-align:left">Mac OS X</em>：如果您无法确保应用程序和操作系统不会将任何敏感数据（见上文）写入非隐藏卷/文件系统，则不得在Mac OS X系统下挂载或创建隐藏VeraCrypt卷。</li></ul>
+仅在运行此类“实时CD”系统时挂载隐藏卷。在会话期间，只有隐藏Sealbox卷中的文件系统可以以读写模式挂载（外部或未加密的卷/文件系统必须以只读模式挂载，或者根本不挂载/不可访问）。如果您无法满足此要求，并且无法确保应用程序和操作系统不会将任何敏感数据（见上文）写入非隐藏卷/文件系统，则不得在Linux系统下挂载或创建隐藏Sealbox卷。</li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<em style="text-align:left">Mac OS X</em>：如果您无法确保应用程序和操作系统不会将任何敏感数据（见上文）写入非隐藏卷/文件系统，则不得在Mac OS X系统下挂载或创建隐藏Sealbox卷。</li></ul>
 </li><li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 当外部卷以启用<a href="Protection%20of%20Hidden%20Volumes.html" style="text-align:left; color:#0080c0; text-decoration:none">
 隐藏卷保护</a>的方式挂载时（请参阅<a href="Protection%20of%20Hidden%20Volumes.html">

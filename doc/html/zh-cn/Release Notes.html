@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，VeraCrypt可提供似是而非的否认能力。与文件加密不同，VeraCrypt进行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，Sealbox可提供似是而非的否认能力。与文件加密不同，Sealbox进行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -43,7 +43,7 @@
 </li>
 <li><strong>Windows:</strong>
 	<ul>
-	<li>修复从 VeraCrypt 1.26.30 升级时因替换系统服务可执行文件而失败的问题。现在会等待服务进程退出，并重新尝试替换被占用的文件；必要时会在 Windows 重新启动时完成替换。</li>
+	<li>修复从 Sealbox 1.26.30 升级时因替换系统服务可执行文件而失败的问题。现在会等待服务进程退出，并重新尝试替换被占用的文件；必要时会在 Windows 重新启动时完成替换。</li>
 	<li>修复使用 MSI 安装程序升级已加密系统时的问题，包括原始引导加载程序备份迁移、引导加载程序更新和 Secure Boot 兼容性检查。</li>
 	<li>改进 Windows 功能更新支持配置、恢复备份迁移和系统服务更新失败时的处理。现在会发出警告并指明相关文件或注册表值，使安装、卸载和系统加密操作能够完成。系统服务启动时会重新尝试配置 Windows 功能更新支持。</li>
 	<li>创建救援盘时，如果在迁移到 Windows UEFI CA 2023 的过程中仍会使用由 Microsoft Windows Production PCA 2011 签名的已存储 Windows 启动管理器备份，则发出警告。重新创建救援盘不会更新该备份。</li>
@@ -53,10 +53,10 @@
 </li>
 <li><strong>Linux、macOS 和 BSD:</strong>
 	<ul>
-	<li>安全：防止 VeraCrypt 启动的程序继承其界面与核心服务之间的管道。这些管道可能使程序使用仍然有效的管理员会话。此更改扩展了 1.26.30 版本中添加的保护。由 <a href="https://github.com/aorakko" target="_blank">aorakko</a> 报告。</li>
-	<li>安全：防止 VeraCrypt 启动的程序继承其打开的文件、设备和内部管道的文件描述符。</li>
-	<li>修复 VeraCrypt 等待系统工具完成挂载卷或在文件管理器中打开卷等操作时可能无响应的问题。改进这些工具的超时处理。</li>
-	<li>在文档中明确说明，允许通过 <code>sudo</code> 或 <code>doas</code> 以 root 用户身份运行 VeraCrypt 或其核心服务，即意味着授予完整的 root 权限。请参阅<a href="Security%20Model.html#sudo-and-doas">安全模型</a>。</li>
+	<li>安全：防止 Sealbox 启动的程序继承其界面与核心服务之间的管道。这些管道可能使程序使用仍然有效的管理员会话。此更改扩展了 1.26.30 版本中添加的保护。由 <a href="https://github.com/aorakko" target="_blank">aorakko</a> 报告。</li>
+	<li>安全：防止 Sealbox 启动的程序继承其打开的文件、设备和内部管道的文件描述符。</li>
+	<li>修复 Sealbox 等待系统工具完成挂载卷或在文件管理器中打开卷等操作时可能无响应的问题。改进这些工具的超时处理。</li>
+	<li>在文档中明确说明，允许通过 <code>sudo</code> 或 <code>doas</code> 以 root 用户身份运行 Sealbox 或其核心服务，即意味着授予完整的 root 权限。请参阅<a href="Security%20Model.html#sudo-and-doas">安全模型</a>。</li>
 	<li>修复对尚不存在的目录进行挂载点验证的问题，包括含有 <code>..</code> 或符号链接的路径（GH #1973）。由 <a href="https://github.com/aorakko" target="_blank">aorakko</a> 报告。</li>
 	<li>修复使用 GCC 4.4 构建 Unix 图形用户界面版本和控制台版本时的兼容性问题。</li>
 	<li>改进卷路径较长时的密码对话框标题，尽可能保留卷文件名，并随窗口大小变化调整标题。</li>
@@ -91,7 +91,7 @@
 	<ul>
 	<li>安全：修复系统加密支持文件保护不足的问题；该问题可能导致在符合特定条件的 Windows 功能更新期间发生本地提权，或在恢复过程中篡改 BIOS 引导加载程序（<a href="https://github.com/veracrypt/VeraCrypt/security/advisories/GHSA-w98h-pqh6-wfjj" target="_blank">GHSA-w98h-pqh6-wfjj</a>）。保护安装脚本、驱动程序包和恢复备份，并拒绝不可信的旧备份和驱动程序来源。</li>
 	<li>安全：修复少量磁盘元数据的本地泄露问题（<a href="https://github.com/veracrypt/VeraCrypt/security/advisories/GHSA-9mgv-w2fw-3m78" target="_blank">CVE-2026-77572</a>）。</li>
-	<li>修复 VeraCrypt 1.26.29 中报告的驱动程序稳定性回归问题，并改进挂载和卸载期间的清理。恢复之前的 I/O 完成行为，并默认禁用有序刷新屏障。</li>
+	<li>修复 Sealbox 1.26.29 中报告的驱动程序稳定性回归问题，并改进挂载和卸载期间的清理。恢复之前的 I/O 完成行为，并默认禁用有序刷新屏障。</li>
 	<li>安全处理密钥推导期间处理器状态保存失败的情况，并修复 KDF 任务完成处理及工作线程启动失败时的资源清理。</li>
 	<li>改进系统加密设置和升级失败时的处理。卸载程序时保留恢复备份，在加密系统的原始引导加载程序备份不可用时发出警告，并将 Windows 安装程序配置失败的处理与引导加载程序修复分开。</li>
 	<li>防止在启用安全启动时安装不兼容的 EFI 引导加载程序。使用兼容的 Windows 文件更新 Windows 启动管理器副本。</li>
@@ -107,7 +107,7 @@
 	<li>将捆绑的 zlib 更新至 1.3.2，LZMA SDK 更新至 26.02。</li>
 	</ul>
 <p><strong>降级时的收藏卷卷标：</strong> 降级前，请备份普通收藏卷和系统收藏卷的配置文件。旧版本可能会在卷标中显示 XML 转义文本，并在保存时保留这些文本，即使再次升级后也会保留。返回此版本后，请恢复备份或修正卷标。</p>
-<p><strong>系统加密升级注意事项：</strong> 准备 Windows 功能更新前，请安装更新后的 VeraCrypt，并解决所有关于 Windows 更新支持或原始引导加载程序备份的警告。如果 Windows 安装程序已经暂存了支持文件，请重新开始功能更新准备流程，以便暂存更新后的文件；安装 VeraCrypt 不会替换之前已暂存的脚本。请保留现有的恢复备份和已确认可信的 VeraCrypt 应急盘。更改旧备份的所有者或权限并不能证明其内容安全。</p>
+<p><strong>系统加密升级注意事项：</strong> 准备 Windows 功能更新前，请安装更新后的 Sealbox，并解决所有关于 Windows 更新支持或原始引导加载程序备份的警告。如果 Windows 安装程序已经暂存了支持文件，请重新开始功能更新准备流程，以便暂存更新后的文件；安装 Sealbox 不会替换之前已暂存的脚本。请保留现有的恢复备份和已确认可信的 Sealbox 应急盘。更改旧备份的所有者或权限并不能证明其内容安全。</p>
 </li>
 <li><strong>Linux、macOS 和 BSD:</strong>
 	<ul>
@@ -152,9 +152,9 @@
 	<li>修复使用 macFUSE 5.3.3 及更高版本时挂载和卸载崩溃的问题（GH #1887）。</li>
 	<li>修复“检查文件系统”和“修复文件系统”功能，使其作用于所选卷并在终端中显示结果（GH #1791）。</li>
 	<li>新增用于禁用屏幕保护功能的首选项，该保护仍默认启用。</li>
-	<li>改进磁盘映像发现，避免在 VeraCrypt 之外弹出设备后，因设备编号被复用而断开无关磁盘。避免卷状态更新阻塞界面。</li>
+	<li>改进磁盘映像发现，避免在 Sealbox 之外弹出设备后，因设备编号被复用而断开无关磁盘。避免卷状态更新阻塞界面。</li>
 	</ul>
-<p><strong>FUSE-T 用户升级注意事项：</strong> 从 VeraCrypt 1.26.29 升级时，请先卸载卷并重新启动 macOS，然后再使用更新后的构建。替换应用程序不会终止已经运行的服务。</p>
+<p><strong>FUSE-T 用户升级注意事项：</strong> 从 Sealbox 1.26.29 升级时，请先卸载卷并重新启动 macOS，然后再使用更新后的构建。替换应用程序不会终止已经运行的服务。</p>
 </li>
 <li><strong>FreeBSD:</strong>
 	<ul>
@@ -179,13 +179,13 @@
 </ul>
 
 <p>
-<strong>给使用VeraCrypt 1.17版本或更早版本创建卷的用户的注意事项： </strong><br/>
-<span style="color:#ff0000;">为避免暴露您的卷是否包含隐藏卷，或者如果您在使用隐藏卷/操作系统时依赖似是而非的否认能力，那么您必须重新创建外部和隐藏卷，包括系统加密和隐藏操作系统，并丢弃VeraCrypt 1.18a版本之前创建的现有卷。</span></li>
+<strong>给使用Sealbox 1.17版本或更早版本创建卷的用户的注意事项： </strong><br/>
+<span style="color:#ff0000;">为避免暴露您的卷是否包含隐藏卷，或者如果您在使用隐藏卷/操作系统时依赖似是而非的否认能力，那么您必须重新创建外部和隐藏卷，包括系统加密和隐藏操作系统，并丢弃Sealbox 1.18a版本之前创建的现有卷。</span></li>
 </p>
 
 <p>
-<strong style="color:#ff0000;">给使用 VeraCrypt 1.26.6 至 1.26.28 在文件容器内创建隐藏卷的用户的警告： </strong><br/>
-<span style="color:#ff0000;">VeraCrypt 1.26.29 修复的一个安全问题可能会影响这些隐藏卷的似是而非的否认性。如果您依赖似是而非的否认性，应使用 VeraCrypt 1.26.29 或更高版本重新创建受影响的外部文件容器及其中的隐藏卷，然后安全擦除旧容器。</span>
+<strong style="color:#ff0000;">给使用 Sealbox 1.26.6 至 1.26.28 在文件容器内创建隐藏卷的用户的警告： </strong><br/>
+<span style="color:#ff0000;">Sealbox 1.26.29 修复的一个安全问题可能会影响这些隐藏卷的似是而非的否认性。如果您依赖似是而非的否认性，应使用 Sealbox 1.26.29 或更高版本重新创建受影响的外部文件容器及其中的隐藏卷，然后安全擦除旧容器。</span>
 </p>
 
 <p><strong style="text-align:left">1.26.29</strong> (2026年6月9日):</p>
@@ -196,7 +196,7 @@
 	<li>用户界面和文档中改用“KDF”术语，替代“PKCS-5 PRF”。</li>
 	<li>更新 Logo 图标，采用不带额外文字标签的简化图标。</li>
 	<li>增强 XML 和 TLV 解析器对格式错误输入的防护。</li>
-	<li>安全：修复 <a href="https://github.com/veracrypt/VeraCrypt/security/advisories/GHSA-94c6-mgmv-mqc5" target="_blank">GHSA-94c6-mgmv-mqc5</a>：使用 <code>WOLFCRYPT=1</code> 的构建现在以 PBKDF2 而非 HKDF 推导 SHA-256 和 SHA-512 卷头密钥，并遵循配置的迭代次数和 PIM。官方 VeraCrypt 二进制文件和标准构建不受影响。
+	<li>安全：修复 <a href="https://github.com/veracrypt/VeraCrypt/security/advisories/GHSA-94c6-mgmv-mqc5" target="_blank">GHSA-94c6-mgmv-mqc5</a>：使用 <code>WOLFCRYPT=1</code> 的构建现在以 PBKDF2 而非 HKDF 推导 SHA-256 和 SHA-512 卷头密钥，并遵循配置的迭代次数和 PIM。官方 Sealbox 二进制文件和标准构建不受影响。
 		<ul>
 			<li>由 https://github.com/vastblast 报告 </li>
 			<li>CVE-2026-53762</li>
@@ -210,7 +210,7 @@
 </li>
 <li><strong>Windows:</strong>
 <ul>
-<li>修复影响 VeraCrypt 驱动程序的罕见蓝屏（BSOD）问题。</li>
+<li>修复影响 Sealbox 驱动程序的罕见蓝屏（BSOD）问题。</li>
 <li>修复全新安装 Windows 11 25H2 后休眠时崩溃的问题。</li>
 <li>安全：修复 <a href="https://github.com/veracrypt/VeraCrypt/security/advisories/GHSA-jjcr-75w7-58jp" target="_blank">GHSA-jjcr-75w7-58jp</a>：隐藏卷快速格式化不再使用文件容器快速分配方法；该方法曾每隔 128 MiB 写入明文零扇区。此修复保持似是而非的否认性。
 	<ul>
@@ -237,8 +237,8 @@
 <li>新增命令行参数 <code>/protectScreen</code>，可在便携模式下禁用屏幕保护功能（详见文档）。</li>
 <li>为命令行参数 <code>/protectMemory</code> 新增选项，可在便携模式下禁用内存保护功能（详见文档）。</li>
 <li>新增设置项及命令行参数 <code>/enableIME</code>，可在安全桌面下启用输入法（IME）功能。</li>
-<li>VeraCrypt 首选项改用选项卡控件，以减少对话框杂乱并缩小尺寸。</li>
-<li>提供 VeraCrypt C/C++ SDK，用于创建加密卷（<a href="https://github.com/veracrypt/VeraCrypt-SDK" target="_blank">https://github.com/veracrypt/VeraCrypt-SDK</a>）。</li>
+<li>Sealbox 首选项改用选项卡控件，以减少对话框杂乱并缩小尺寸。</li>
+<li>提供 Sealbox C/C++ SDK，用于创建加密卷（<a href="https://github.com/veracrypt/VeraCrypt-SDK" target="_blank">https://github.com/veracrypt/VeraCrypt-SDK</a>）。</li>
 <li>将 LZMA SDK 更新至 26.01 版本。</li>
 </ul>
 </li>
@@ -336,7 +336,7 @@
 <li><strong>macOS:</strong>
     <ul>
     <li>修复检查sudo会话状态时未使用“true”命令绝对路径的问题。</li>
-    <li>在 /usr/local/bin 目录下创建 VeraCrypt 的符号链接，以便可通过命令行使用。</li>
+    <li>在 /usr/local/bin 目录下创建 Sealbox 的符号链接，以便可通过命令行使用。</li>
     <li>修复无法使用匈牙利语翻译的问题。</li>
     </ul>
 </li>
@@ -390,7 +390,7 @@
     <li>将Windows 10 2018年10月更新（版本1809）设置为最低支持版本。</li>
     <li>减少在低内存场景下由于重入式IRP完成导致的驱动程序死锁情况。</li>
     <li>修复某些PC上EFI检测失败的问题，这些PC中BootOrder变量未定义（由@kriegste提出，GH #360）。</li>
-    <li>修复在Windows升级后使用EXE安装程序更新VeraCrypt时出现的“访问被拒绝”错误。</li>
+    <li>修复在Windows升级后使用EXE安装程序更新Sealbox时出现的“访问被拒绝”错误。</li>
     <li>修复影响EFI系统加密配置编辑器的各种问题。</li>
     <li>修复移动磁盘创建中的回归问题（GH #886）</li>
     <li>用BCryptGenRandom替换已弃用的CryptGenRandom来生成安全随机字节。</li>
@@ -456,9 +456,9 @@
             <li>现在在安全桌面中禁用了输入法编辑器（IME），因为已知它会导致问题</li>
         </ul>
     </li>
-    <li>VeraCrypt扩展器：修复在扇区大小不同于512的磁盘上扩展卷的问题（由skl0n6修复）</li>
+    <li>Sealbox扩展器：修复在扇区大小不同于512的磁盘上扩展卷的问题（由skl0n6修复）</li>
     <li>修复将错误的EFI系统加密高级选项写入注册表的问题</li>
-    <li>通过系统托盘退出菜单退出VeraCrypt进程时，不关闭安装程序</li>
+    <li>通过系统托盘退出菜单退出Sealbox进程时，不关闭安装程序</li>
     <li>修复由于虚拟分区偏移未按4K对齐导致某些磁盘（如VHDX）格式化失败的问题</li>
     <li>如果相对定位访问磁盘失败，则回退到绝对定位</li>
     <li>将zlib更新到1.3.1版本</li>
@@ -503,7 +503,7 @@
     </ul>
 </li>
 <li>移除TrueCrypt模式支持。可以使用1.25.9版本挂载或转换TrueCrypt卷。</li>
-<li>完全移除RIPEMD160和GOST89算法。使用这些算法的旧版卷不再能被VeraCrypt挂载。</li>
+<li>完全移除RIPEMD160和GOST89算法。使用这些算法的旧版卷不再能被Sealbox挂载。</li>
 <li>为系统加密和标准卷添加对BLAKE2s作为新的伪随机函数（PRF）算法的支持。</li>
 <li>引入对EMV银行智能卡作为非系统卷密钥文件的支持。
     <ul>
@@ -523,7 +523,7 @@
 </li>
 <li><strong>Windows:</strong>
 <ul>
-<li>正式地，最低支持版本现在为<strong>Windows 10</strong>。VeraCrypt可能仍可在Windows 7和Windows 8/8.1上运行，但不会在这些平台上进行主动测试。</li>
+<li>正式地，最低支持版本现在为<strong>Windows 10</strong>。Sealbox可能仍可在Windows 7和Windows 8/8.1上运行，但不会在这些平台上进行主动测试。</li>
 <li>EFI引导加载程序：
 <ul>
 <li>修复了密码超时值处理中的一个漏洞，该漏洞导致其被限制为 255 秒。</li>
@@ -533,12 +533,12 @@
 </li>
 <li>默认启用内存保护。在“性能/驱动程序配置”下添加选项，以便在需要时禁用它。
 <ul>
-    <li>内存保护会阻止非管理员进程读取 VeraCrypt 的内存。</li>
-    <li>它可能会阻止屏幕阅读器（辅助功能支持）读取 VeraCrypt 的用户界面，在这种情况下可以禁用它。</li>
+    <li>内存保护会阻止非管理员进程读取 Sealbox 的内存。</li>
+    <li>它可能会阻止屏幕阅读器（辅助功能支持）读取 Sealbox 的用户界面，在这种情况下可以禁用它。</li>
     <li>可以通过在“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\veracrypt”下将注册表值“VeraCryptEnableMemoryProtection”设置为 0 来禁用它。</li>
 </ul>
 </li>
-<li>添加进程缓解策略，以防止 VeraCrypt 被其他进程注入。</li>
+<li>添加进程缓解策略，以防止 Sealbox 被其他进程注入。</li>
 <li>对 RAM 加密实现进行了小幅度增强。</li>
 <li>修复了 Windows 11 22H2 下安全桌面的问题。</li>
 <li>实现对挂载部分加密的系统分区的支持。</li>
@@ -588,7 +588,7 @@
 </li>
 <li><strong>macOS：</strong>
     <ul>
-    <li>修复在涉及多显示器和分辨率变化的使用场景中，VeraCrypt 窗口变得无法使用的问题。</li>
+    <li>修复在涉及多显示器和分辨率变化的使用场景中，Sealbox 窗口变得无法使用的问题。</li>
     </ul>
 </li>
 </ul>
@@ -604,10 +604,10 @@
 <ul>
 <li>使 MSI 安装程序与系统加密兼容。</li>
 <li>将 MSI 安装的最低支持系统设置为 Windows 7。</li>
-<li>修复使用 MSI 安装 VeraCrypt 时创建旅行者磁盘失败的问题。</li>
+<li>修复使用 MSI 安装 Sealbox 时创建旅行者磁盘失败的问题。</li>
 <li>当使用隐藏卷保护挂载时，如果指定了错误的隐藏卷密码，则不缓存外部卷密码。</li> 
 <li>通过使用 LZMA 压缩而不是 DEFLATE 压缩，将 EXE 安装程序的大小减少近 50%。</li>
-<li>修复在某些特殊 Windows 配置下，在 VeraCrypt 用户界面中双击已挂载驱动器不起作用的问题。</li>
+<li>修复在某些特殊 Windows 配置下，在 Sealbox 用户界面中双击已挂载驱动器不起作用的问题。</li>
 <li>添加注册表项，以修复某些机器在使用系统加密时关机/重启期间出现蓝屏死机（BSOD）的问题。
 <ul>
 <li>在“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\veracrypt”下，创建一个名为“VeraCryptEraseKeysShutdown”的 REG_DWORD 值。</li>
@@ -662,7 +662,7 @@
 </ul>
 <li><strong>MacOSX：</strong>
 <ul>
-<li>修复VeraCrypt应用程序包内的资源文件（如HTML文档、语言XML文件）可被所有用户写入的问题。（由Niall O'Reilly报告）</li>
+<li>修复Sealbox应用程序包内的资源文件（如HTML文档、语言XML文件）可被所有用户写入的问题。（由Niall O'Reilly报告）</li>
 </ul>
 </li>
 </ul>
@@ -679,7 +679,7 @@
 <li>增加对ARM64架构的Windows系统（如Microsoft Surface Pro X）的支持，但尚不支持系统加密。</li>
 <li>添加用于静默模式部署的MSI安装程序（在msiexec命令行中必须设置ACCEPTLICENSE=YES）。
 <ul>
-<li>目前，如果系统分区已使用VeraCrypt加密，则不能使用MSI安装程序。</li>
+<li>目前，如果系统分区已使用Sealbox加密，则不能使用MSI安装程序。</li>
 <li>MSI安装程序需要Windows 10或更高版本。</li>
 </ul>
 </li>
@@ -762,19 +762,19 @@
 <li>修复在MBR启动模式下，系统加密中阻止TRIM的用户界面（UI）无法正常工作的问题。</li>
 <li>支持从外部应用程序（如KeePass）将密码拖放到密码UI字段，这比使用剪贴板更安全。</li>
 <li>实现与Windows 10现代待机和Windows 8.1连接待机电源模式的兼容性，使进入节能模式的检测更加可靠。</li>
-<li>在使用“/create”开关创建文件容器且文件系统不是FAT时，如果指定了“/silent”参数，避免在“VeraCrypt格式化”过程中显示等待对话框。</li>
+<li>在使用“/create”开关创建文件容器且文件系统不是FAT时，如果指定了“/silent”参数，避免在“Sealbox格式化”过程中显示等待对话框。</li>
 <li>使用原生Windows格式化程序对卷进行格式化，因为它更可靠，只有在出现问题时才回退到fmifs.dll中的FormatEx函数。</li>
 <li>如果系统中只有1个CPU组，则不使用处理器组支持的API，这可以解决某些配备AMD CPU的PC上出现的速度慢问题。</li>
 <li>如果系统驱动器已经被BitLocker加密，则不允许对其进行加密。</li>
 <li>实现对休眠和快速启动的检测，如果启用了内存加密，则禁用它们。</li>
-<li>在VeraCrypt安装/升级、启动系统加密或创建卷时，如果启用了快速启动，则发出警告，并建议禁用它。</li>
+<li>在Sealbox安装/升级、启动系统加密或创建卷时，如果启用了快速启动，则发出警告，并建议禁用它。</li>
 <li>添加UI选项，以控制使用系统加密时自动修复引导加载程序的行为。</li>
 <li>在格式化向导中，不允许输入目录路径来创建文件容器。</li>
 <li>如果Windows Shell已被修改或未运行，则不尝试修复CVE-2019-19501漏洞，因为在这种非标准配置下没有可靠的修复方法。</li>
 <li>MBR引导加载程序：修复引导扇区中传递给解压缩器的压缩数据大小不正确的问题。</li>
 <li>在系统加密向导中，当输入的密码达到最大长度时，添加警告消息。</li>
 <li>修复输入密码的UTF - 8编码超过最大支持长度时错误消息显示错误的问题。</li>
-<li>修复在64位机器上使用便携式32位“VeraCrypt Format.exe”创建隐藏卷时，且VeraCrypt已经安装的情况下的崩溃问题。</li>
+<li>修复在64位机器上使用便携式32位“VeraCrypt Format.exe”创建隐藏卷时，且Sealbox已经安装的情况下的崩溃问题。</li>
 <li>将libzip更新到最新版本1.7.3。</li>
 <li>更新翻译。</li>
 </ul>
@@ -805,9 +805,9 @@
 <li><strong>Windows:</strong>
 <ul>
 <li>为具有超过64个逻辑处理器的CPU优化性能（由AMD的Sachin Keswani贡献）。</li>
-<li>支持在使用命令行创建文件容器时指定密钥文件（包括令牌和文件系统中的密钥文件）（VeraCrypt格式化支持“/keyfile”、“/tokenlib”和“/tokenpin”开关）。</li>
-<li>修复VeraCrypt进程退出后密钥文件路径和名称泄漏的问题。</li>
-<li>在VeraCrypt格式化中添加CLI开关“/secureDesktop”。</li>
+<li>支持在使用命令行创建文件容器时指定密钥文件（包括令牌和文件系统中的密钥文件）（Sealbox格式化支持“/keyfile”、“/tokenlib”和“/tokenpin”开关）。</li>
+<li>修复Sealbox进程退出后密钥文件路径和名称泄漏的问题。</li>
+<li>在Sealbox格式化中添加CLI开关“/secureDesktop”。</li>
 <li>将libzip更新到1.6.1版本。</li>
 <li>进行小规模的UI修复。</li>
 </ul>
@@ -821,7 +821,7 @@
 <li>修复启用内存加密时，Expander和格式化过程中出现的卷头损坏的回归问题。</li>
 <li>默认禁用新引入的内存保护功能，并添加一个CLI开关（“/protectMemory”），以便在需要时启用，从而修复屏幕阅读器（辅助功能支持）无法读取UI的问题。</li>
 <li>修复与CVE-2019-19501漏洞修复相关的副作用，该副作用导致UI中的链接无法打开。</li>
-<li>添加开关“/signalExit”，以支持在命令行界面（CLI）中指定“/q”参数时，VeraCrypt.exe退出时通知<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/waitfor" target="_blank">WAITFOR</a> Windows命令（有关用法请参阅文档）。</li>
+<li>添加开关“/signalExit”，以支持在命令行界面（CLI）中指定“/q”参数时，Sealbox.exe退出时通知<a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/waitfor" target="_blank">WAITFOR</a> Windows命令（有关用法请参阅文档）。</li>
 <li>在格式化和扩展器的命令行帮助对话框中不显示挂载/卸载示例。</li>
 <li>更新文档和翻译。</li>
 </ul>
@@ -851,7 +851,7 @@
 <ul>
 <li><strong>所有操作系统:</strong>
 <ul>
-<li>在使用非优化实现时，从栈内存中清除AES密钥。不适用于VeraCrypt官方版本（由Hanno Böck报告并修复）。</li>
+<li>在使用非优化实现时，从栈内存中清除AES密钥。不适用于Sealbox官方版本（由Hanno Böck报告并修复）。</li>
 <li>将Jitterentropy随机数生成器库更新到2.2.0版本。</li>
 <li>开始遵循IEEE 1541商定的字节命名规范（KiB、MiB、GiB、TiB、PiB）。
 <li>各类文档改进。</li>
@@ -859,11 +859,11 @@
 </li>
 <li><strong>Windows:</strong>
 <ul>
-<li>修复VeraCrypt扩展程序执行期间可能存在的本地权限提升漏洞（CVE-2019-19501）</li>
+<li>修复Sealbox扩展程序执行期间可能存在的本地权限提升漏洞（CVE-2019-19501）</li>
 <li>MBR引导加载程序：
 <ul>
 <li>针对在BIOS模式下不允许使用小于4096字节缓冲区进行写操作的SSD磁盘的解决方法。</li>
-<li>如果MBR来自非我们的加载程序或非微软的加载程序，则不将MBR恢复为VeraCrypt的值。</li>
+<li>如果MBR来自非我们的加载程序或非微软的加载程序，则不将MBR恢复为Sealbox的值。</li>
 </ul>
 </li>
 <li>EFI引导加载程序：
@@ -872,7 +872,7 @@
 <li>修复F5在认证失败后显示上一个密码的问题。确保即使是错误的密码值也会从内存中清除。</li>
 </ul>
 </li>
-<li>仅当当前系统的第一个引导加载程序是Windows的引导加载程序时，才将VeraCrypt设置为系统的第一个引导加载程序，以修复多操作系统引导兼容性问题。</li>
+<li>仅当当前系统的第一个引导加载程序是Windows的引导加载程序时，才将Sealbox设置为系统的第一个引导加载程序，以修复多操作系统引导兼容性问题。</li>
 <li>为SystemFavoritesService添加新的注册表标志，以控制在关机时更新EFI BIOS引导菜单。</li>
 <li>允许在WindowsPE中挂载系统加密驱动器，即使更改键盘布局失败（由Sven Strickroth报告并修复）</li>
 <li>改进保留文件时间戳的机制，特别是针对密钥文件。</li>
@@ -880,8 +880,8 @@
 <li>检测RDRAND存在缺陷的情况（例如AMD Ryzen），以避免在用户启用时使用它。</li>
 <li>通过UI修改DcsProp文件时，不在文件末尾写入额外的0x00字节</li>
 <li>减少Windows磁盘验证中使用的IOCTL_DISK_VERIFY处理程序的内存使用。</li>
-<li>为VeraCrypt Format.exe添加开关/FastCreateFile，以在选择快速格式化时加速大文件容器的创建。</li>
-<li>修复跳过救援磁盘验证的复选框未反映VeraCrypt Format命令行中指定的/noisocheck开关值的问题。</li>
+<li>为Sealbox Format.exe添加开关/FastCreateFile，以在选择快速格式化时加速大文件容器的创建。</li>
+<li>修复跳过救援磁盘验证的复选框未反映Sealbox Format命令行中指定的/noisocheck开关值的问题。</li>
 <li>在挂载扩展名为.tc的文件容器时，在密码对话框中勾选“TrueCrypt模式”</li>
 <li>更新XML语言文件。</li>
 </ul>
@@ -892,7 +892,7 @@
 <li>修复Process::Execute函数中的越界缓冲区溢出问题（由Hanno Böck报告并修复）</li>
 <li>确保在挂载卷时发生内部错误的情况下删除密码（由Hanno Böck报告并修复）</li>
 <li>修复文本模式下不识别使用Unicode字符的密码的问题。</li>
-<li>修复在无头机器上无法运行为控制台模式构建的VeraCrypt二进制文件的问题。</li>
+<li>修复在无头机器上无法运行为控制台模式构建的Sealbox二进制文件的问题。</li>
 <li>添加开关以强制使用旧版最大密码长度（64个UTF8字节）</li>
 <li>添加CLI开关（--use-dummy-sudo-password）以强制使用发送虚拟密码的旧版sudo行为</li>
 <li>在卸载期间，将错误消息输出到STDERR而不是STDOUT，以提高与包管理器的兼容性。</li>
@@ -917,17 +917,17 @@
 <ul>
 <li><strong>Windows:</strong>
 <ul>
-<li>修复1.24版本中导致VeraCrypt新安装时系统收藏夹在启动时无法挂载的回归问题。</li>
+<li>修复1.24版本中导致Sealbox新安装时系统收藏夹在启动时无法挂载的回归问题。</li>
 <li>修复当前Windows用户名包含Unicode非ASCII字符时无法加密系统的问题。</li>
-<li>使VeraCrypt扩展程序能够恢复之前扩展未完成的卷的扩展操作。</li>
-<li>为VeraCrypt扩展程序添加“快速扩展”选项，以加速大文件容器的扩展。</li>
+<li>使Sealbox扩展程序能够恢复之前扩展未完成的卷的扩展操作。</li>
+<li>为Sealbox扩展程序添加“快速扩展”选项，以加速大文件容器的扩展。</li>
 <li>在系统加密时添加多项健壮性检查和验证，以更好地处理一些特殊情况。</li>
 <li>轻微的用户界面和文档更改。</li>
 </ul>
 </li>
 <li><strong>Linux:</strong>
 <ul>
-<li>解决CentOS 6下gcc 4.4.7的错误，该错误导致在CentOS 6下构建的VeraCrypt在使用Whirlpool哈希时崩溃。</li>
+<li>解决CentOS 6下gcc 4.4.7的错误，该错误导致在CentOS 6下构建的Sealbox在使用Whirlpool哈希时崩溃。</li>
 <li>修复挂载卷时在/var/log/auth.log中写入“错误密码尝试”的问题。</li>
 <li>修复在用户界面中拖放文件时不显示其正确路径的问题，特别是在GTK - 3下。</li>
 <li>添加缺失的JitterEntropy实现。</li>
@@ -965,9 +965,9 @@
 <li>仅在64位机器上可用。</li>
 <li>默认禁用。可以通过用户界面中的选项启用。</li>
 <li>现代CPU上的性能开销低于10%。</li>
-<li>副作用：如果同时使用VeraCrypt系统加密，将无法使用Windows休眠功能。</li>
+<li>副作用：如果同时使用Sealbox系统加密，将无法使用Windows休眠功能。</li>
 </ul>
-<li>使非管理员用户无法访问VeraCrypt应用程序的内存，以缓解某些内存攻击（基于KeePassXC的实现）。</li>
+<li>使非管理员用户无法访问Sealbox应用程序的内存，以缓解某些内存攻击（基于KeePassXC的实现）。</li>
 <li>新增安全功能：</li>
 <ul>
 <li>在关机/重启时从内存中擦除系统加密密钥，以帮助缓解某些冷启动攻击。</li>
@@ -976,24 +976,24 @@
 </ul>
 <li>MBR引导加载程序：动态确定引导加载程序的内存段，而不使用硬编码值（由neos6464提出）。</li>
 <li>MBR引导加载程序：解决影响在某些SSD驱动器上创建隐藏操作系统的问题。</li>
-<li>修复Windows更新破坏VeraCrypt UEFI引导加载程序的问题。</li>
+<li>修复Windows更新破坏Sealbox UEFI引导加载程序的问题。</li>
 <li>对EFI引导加载程序进行多项增强和修复：</li>
 <ul>
 <li>实现密码输入超时机制。默认超时时间设为3分钟，默认超时操作设为“shutdown”（关机）。</li>
 <li>为EFI DcsProp配置文件新增“shutdown”（关机）和“reboot”（重启）操作。</li>
-<li>增强救援盘恢复VeraCrypt引导加载程序的实现。</li>
+<li>增强救援盘恢复Sealbox引导加载程序的实现。</li>
 <li>修复在预测试的密码提示中按ESC无法启动Windows的问题。</li>
 <li>在救援盘中新增可启动原始Windows引导加载程序的菜单项。</li>
 <li>修复在预启动认证时无法手动选择Streebog哈希算法的问题。</li>
-<li>如果救援盘中缺少“VeraCrypt”文件夹，将直接使用硬盘上存储的引导加载程序启动计算机。</li>
+<li>如果救援盘中缺少“Sealbox”文件夹，将直接使用硬盘上存储的引导加载程序启动计算机。</li>
 <ul>
-<li>这样，只需删除或重命名救援盘中的“VeraCrypt”文件夹，即可轻松从救援盘制作VeraCrypt启动盘。</li>
+<li>这样，只需删除或重命名救援盘中的“Sealbox”文件夹，即可轻松从救援盘制作Sealbox启动盘。</li>
 </ul>
 </ul>
 <li>新增选项（默认禁用），可在CPU支持时使用RDRAND或RDSEED作为随机数生成器的附加熵源。</li>
 <li>新增挂载选项（适用于用户界面和命令行），允许挂载卷而不将其附加到指定的驱动器号。</li>
 <li>将libzip更新到1.5.2版本。</li>
-<li>安装VeraCrypt时不在开始菜单中创建卸载快捷方式（由Sven Strickroth贡献）。</li>
+<li>安装Sealbox时不在开始菜单中创建卸载快捷方式（由Sven Strickroth贡献）。</li>
 <li>允许在创建文件容器时选择快速格式化。在向导界面中将快速格式化和动态卷选项分开。</li>
 <li>修复EFI系统加密配置文件编辑器无法使用ENTER键添加新行的问题。</li>
 <li>避免同时调用多次常用卷挂载操作，例如多次按下相应热键时。</li>
@@ -1040,12 +1040,12 @@
 <ul>
 <li><strong>Windows:</strong>
 <ul>
-<li>VeraCrypt系统加密现在兼容默认的EFI安全启动配置。</li>
+<li>Sealbox系统加密现在兼容默认的EFI安全启动配置。</li>
 <li>修复某些计算机（例如HP、Acer）上的EFI系统加密问题。</li>
 <li>支持Windows LTSB上的EFI系统加密。</li>
 <li>通过ReflectDrivers机制使系统加密兼容Windows 10升级。</li>
 <li>在Windows修复程序覆盖分区的第一个扇区后，EFI救援盘现在可以正确解密分区。</li>
-<li>在用户界面中新增驱动程序选项，可明确允许Windows 8.1和Windows 10磁盘碎片整理程序识别VeraCrypt加密的磁盘。</li>
+<li>在用户界面中新增驱动程序选项，可明确允许Windows 8.1和Windows 10磁盘碎片整理程序识别Sealbox加密的磁盘。</li>
 <li>新增对二进制文件内嵌签名的内部验证，以防止某些类型的篡改攻击。</li>
 <li>修复某些情况下，Windows 10上设置为在登录时挂载的常用卷无法使用安全桌面的问题。</li>
 <li>启用安全桌面后，如果挂载选项对话框在密码对话框之前显示，也为其使用安全桌面。</li>
@@ -1095,7 +1095,7 @@
       <li>驱动程序：移除对`wcsstr`的不必要依赖，该依赖可能会在某些机器上导致问题。</li>
       <li>驱动程序：修复部分机器挂载卷时出现的“参数错误”问题。</li>
       <li>修复部分机器在启动时无法挂载系统收藏夹的问题。</li>
-      <li>修复使用`/quit /silent`开关在命令行中运行VeraCrypt时当前应用程序失去焦点的问题。</li>
+      <li>修复使用`/quit /silent`开关在命令行中运行Sealbox时当前应用程序失去焦点的问题。</li>
       <li>修复部分外部应用程序在挂载/卸载期间冻结的问题。</li>
       <li>修复罕见的密码对话框安全桌面不可见导致UI阻塞的问题。</li>
       <li>将`libzip`更新到1.5.0版本，该版本包含一些安全问题的修复。</li>
@@ -1200,9 +1200,9 @@
 </li>
 <li><strong>MacOSX:</strong>
 <ul>
-<li>运行 VeraCrypt 需要 OSX 10.7 或更高版本。</li>
-<li>使 VeraCrypt 成为 .hc 和 .tc 文件的默认处理程序。</li>
-<li>在 Finder 中为 .hc 和 .tc 文件添加自定义 VeraCrypt 图标。</li>
+<li>运行 Sealbox 需要 OSX 10.7 或更高版本。</li>
+<li>使 Sealbox 成为 .hc 和 .tc 文件的默认处理程序。</li>
+<li>在 Finder 中为 .hc 和 .tc 文件添加自定义 Sealbox 图标。</li>
 <li>在打开具有 .tc 扩展名的容器文件时，在密码对话框中检查 TrueCrypt 模式。</li>
 </ul>
 </li>
@@ -1228,7 +1228,7 @@
 <ul>
 <li>修复 EFI 引导加载程序中的键盘问题。</li><li>修复在 32 位机器上创建使用 Streebog 作为 PRF 的卷时的崩溃问题。
 </li><li>修复在某些情况下（例如隐藏操作系统创建）对 Evil-Maid 攻击的误报检测问题。
-</li><li>修复在 Windows 10 下无法访问 VeraCrypt 卷上 EFS 数据的问题。</li><li>修复复制隐藏操作系统过程中的错误密码错误。</li><li>修复 Quarkslab 审计提出的问题：
+</li><li>修复在 Windows 10 下无法访问 Sealbox 卷上 EFS 数据的问题。</li><li>修复复制隐藏操作系统过程中的错误密码错误。</li><li>修复 Quarkslab 审计提出的问题：
 <ul>
 <li>修复从 TrueCrypt 继承的 MBR 引导加载程序中密码长度泄露的问题。</li><li>EFI 引导加载程序：修复各种泄露问题，并在输入密码后清除键盘缓冲区。
 </li><li>使用 libzip 库处理 zip 救援磁盘文件，而不是易受攻击的 XUnzip 库。
@@ -1261,8 +1261,8 @@
 </li><li>添加新的卷 ID 机制，用于识别磁盘/分区，而不是使用其设备名称。
 </li><li>添加选项，通过在 MBR 中未加密存储 PIM 值，避免在预引导身份验证中提示输入 PIM。
 </li><li>添加选项和命令行开关，在执行操作时隐藏等待对话框。
-</li><li>在 “VeraCrypt 格式化” 向导 GUI 中添加复选框，以在系统加密过程中跳过救援磁盘验证。
-</li><li>当 VeraCrypt 以提升的权限运行时，允许文件拖放操作。</li><li>小的 GUI 和翻译修复。</li></ul>
+</li><li>在 “Sealbox 格式化” 向导 GUI 中添加复选框，以在系统加密过程中跳过救援磁盘验证。
+</li><li>当 Sealbox 以提升的权限运行时，允许文件拖放操作。</li><li>小的 GUI 和翻译修复。</li></ul>
 </li><li><strong>Linux:</strong>
 <ul>
 <li>修复 Fedora 23 上的挂载问题。</li><li>修复使用 gcc 5.x 编译源代码时的挂载失败问题。</li><li>遵循 XDG 桌面规范，使用 XDG_CONFIG_HOME 来确定配置文件的位置。
@@ -1286,12 +1286,12 @@
 <ul>
 <li>修复影响安装程序的 DLL 劫持问题，该问题允许以提升的权限执行代码（CVE-2016-1281）。由 Stefan Kanthak 报告 (<a href="http://home.arcor.de/skanthak/" target="_blank">http://home.arcor.de/skanthak/</a>)
 </li><li>使用 SHA-1 和 SHA-256 对二进制文件进行签名，以遵循微软的新建议。
-</li><li>解决在 Comodo/Kaspersky 下从 VeraCrypt 卷运行应用程序时的问题（由 Robert Geisler 报告并修复）。
+</li><li>解决在 Comodo/Kaspersky 下从 Sealbox 卷运行应用程序时的问题（由 Robert Geisler 报告并修复）。
 </li><li>引导加载程序：在按下 ENTER 键后，通过用 '*' 填充字段至最大长度来保护密码/PIM 长度。
 </li><li>解决系统收藏项无法挂载到驱动器 A: 的问题。</li><li>解决显示等待对话框后焦点丢失的问题。</li><li>解决在 “选择设备” 对话框中某些分区与错误磁盘关联的罕见问题。
 </li><li>实现 PIM 缓存，适用于系统加密和普通卷。添加激活该功能的选项。
 </li><li>如果在命令行中指定了密码和/或密钥文件，则不尝试使用缓存的密码进行挂载。
-</li><li>进行内部重写，使 VeraCrypt 成为原生 UNICODE 应用程序。</li><li>采取变通方法，避免某些防病毒软件的误报检测。</li><li>在可用驱动器列表中隐藏断开连接的网络驱动器。添加选项使其可用于挂载。
+</li><li>进行内部重写，使 Sealbox 成为原生 UNICODE 应用程序。</li><li>采取变通方法，避免某些防病毒软件的误报检测。</li><li>在可用驱动器列表中隐藏断开连接的网络驱动器。添加选项使其可用于挂载。
 </li><li>解决了在某些情况下，即使不需要也会更新配置和历史 XML 文件的问题。
 </li><li>修复了所选密钥文件路径在内存中泄露的问题。 </li><li>修复了 VeraCryptExpander 中无法取消选择 TB 单位的问题。 </li><li>在图形用户界面（GUI）中为“使用 PIM”复选框添加了 Alt + i 键盘快捷键。 </li><li>进行了一些小的图形用户界面和翻译修复。 </li></ul>
 </li><li><strong>Linux/MacOSX:</strong>
@@ -1360,7 +1360,7 @@
 <ul>
 <li><strong>Windows:</strong>
 <ul>
-<li>解决了从 VeraCrypt 卷运行 TOR 时崩溃的问题。 </li></ul>
+<li>解决了从 Sealbox 卷运行 TOR 时崩溃的问题。 </li></ul>
 </li></ul>
 <p><strong style="text-align:left">1.12 </strong>（2015 年 8 月 5 日）:</p>
 <ul>
@@ -1375,8 +1375,8 @@
 <li>检测系统加密的引导加载程序篡改（“邪恶女仆”攻击）并提供恢复选项。
 </li><li>修复了解析语言 XML 文件时的缓冲区溢出问题和其他内存相关的错误。
 </li><li>修复了由于 IOCTL_DISK_VERIFY 处理中的错误导致 chkdsk 错误报告坏扇区的问题。
-</li><li>修复了每次使用 VeraCrypt 时配置和历史文件都会更新而导致的隐私问题（由 Liran Elharar 报告）
-</li><li>修复了冷启动后系统常用卷并非总是挂载的问题。 </li><li>解决了在 Windows 10 上更新 VeraCrypt 时安装程序出错的问题。 </li><li>实现了对非系统分区/驱动器的解密。 </li><li>在安装程序中包含 64 位可执行文件，并将其部署到 64 位机器上以提高性能。
+</li><li>修复了每次使用 Sealbox 时配置和历史文件都会更新而导致的隐私问题（由 Liran Elharar 报告）
+</li><li>修复了冷启动后系统常用卷并非总是挂载的问题。 </li><li>解决了在 Windows 10 上更新 Sealbox 时安装程序出错的问题。 </li><li>实现了对非系统分区/驱动器的解密。 </li><li>在安装程序中包含 64 位可执行文件，并将其部署到 64 位机器上以提高性能。
 </li><li>允许使用驱动器盘符 A: 和 B: 挂载卷 </li><li>使命令行参数解析更加严格和健壮（例如，/lz 被拒绝，必须是 /l z）
 </li><li>增加了在 Windows 图形用户界面和引导加载程序中显示系统加密密码的功能
 </li><li>解决了部分用户遇到的“类已存在”错误。 </li><li>解决了一些菜单项和图形用户界面字段无法翻译的问题 </li><li>使卷正确向 Windows 报告物理扇区大小。 </li><li>正确检测用户切换/RDP 断开连接操作，以便在会话锁定时自动卸载。
@@ -1411,11 +1411,11 @@
 <li>支持挂载TrueCrypt系统分区（尚未支持转换） </li><li>支持将TrueCrypt卷作为系统收藏项。 </li><li>当使用SHA - 256时，纠正卷属性中错误显示的TrueCrypt模式。
 </li></ul>
 </li><li>解决特殊情况下智能卡PIN被锁定的问题。 </li><li>挂载容器时正确处理文件访问错误。 </li><li>解决静态代码分析工具Coverity报告的几个问题。 </li><li>引导加载程序: 添加“正在验证密码...”消息。 </li><li>当UAC提示失败（例如超时）时，提示用户重试操作。
-</li><li>卸载链接现在打开标准的“添加/删除程序”窗口。 </li><li>卸载时，从注册表和磁盘中删除所有VeraCrypt引用。 </li><li>安装程序中包含VeraCryptExpander。 </li><li>添加在挂载多个收藏项时临时缓存密码的选项。 </li><li>小修复和增强（更多信息请查看git历史记录） </li></ul>
+</li><li>卸载链接现在打开标准的“添加/删除程序”窗口。 </li><li>卸载时，从注册表和磁盘中删除所有Sealbox引用。 </li><li>安装程序中包含VeraCryptExpander。 </li><li>添加在挂载多个收藏项时临时缓存密码的选项。 </li><li>小修复和增强（更多信息请查看git历史记录） </li></ul>
 </li><li><strong>MacOSX:</strong>
 <ul>
-<li>解决退出VeraCrypt时卷未自动卸载的问题。
-</li><li>解决点击停靠图标时VeraCrypt窗口无法重新打开的问题。 </li></ul>
+<li>解决退出Sealbox时卷未自动卸载的问题。
+</li><li>解决点击停靠图标时Sealbox窗口无法重新打开的问题。 </li></ul>
 </li><li><strong>Linux/MacOSX:</strong>
 <ul>
 <li>解决点击偏好设置对话框上的“X”图标时对话框不关闭的问题。 </li><li>解决某些情况下挂载非FAT卷时的只读问题。 </li><li>支持在除Gnome/KDE之外的桌面环境中打开/浏览已挂载的卷。 </li><li>解决在不太常见的配置下运行安装程序时出现的各种问题 </li><li>小修复（更多信息请查看git历史记录） </li></ul>
@@ -1439,7 +1439,7 @@
 <li>添加对挂载TrueCrypt卷的支持。 </li><li>添加对转换TrueCrypt容器和非系统分区的支持。 </li><li>添加对SHA - 256卷加密的支持。 </li><li>将SHA - 512设为默认密钥推导算法，并更改推导算法的优先级顺序: SHA - 512 -> Whirlpool -> SHA - 256 -> RIPEMD160
 </li><li>弃用非系统加密中的RIPEMD160。 </li><li>通过启用正确哈希算法的选择来加速挂载操作。 </li><li>在长时间操作期间显示等待对话框，以避免GUI冻结。 </li><li>实现一次性创建多个密钥文件，支持预定义或随机大小。
 </li><li>在执行敏感操作之前始终显示随机数收集对话框。
-</li><li>应用程序中的链接现在指向Codeplex上的在线资源 </li><li>首个版本的正式VeraCrypt用户指南 </li></ul>
+</li><li>应用程序中的链接现在指向Codeplex上的在线资源 </li><li>首个版本的正式Sealbox用户指南 </li></ul>
 </li><li><strong>MacOSX:</strong>
 <ul>
 <li>实现对大扇区大小（> 512）硬盘的支持。 </li><li>链接到新的wxWidgets版本3.0.2。 </li><li>解决某些向导窗口中文本截断的问题。 </li></ul>

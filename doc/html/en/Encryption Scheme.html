@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -35,19 +35,19 @@
 
 <div class="wikidoc">
 <h1>Encryption Scheme</h1>
-<p>When mounting a VeraCrypt volume (assume there are no cached passwords/keyfiles) or when performing pre-boot authentication, the following steps are performed:</p>
+<p>When mounting a Sealbox volume (assume there are no cached passwords/keyfiles) or when performing pre-boot authentication, the following steps are performed:</p>
 <ol>
 <li>The first 512 bytes of the volume (i.e., the standard volume header) are read into RAM, out of which the first 64 bytes are the salt (see
 <a href="VeraCrypt%20Volume%20Format%20Specification.html">
-<em>VeraCrypt Volume Format Specification</em></a>). For system encryption (see the chapter
-<a href="System%20Encryption.html"><em>System Encryption</em></a>), the last 512 bytes of the first logical drive track are read into RAM (the VeraCrypt Boot Loader is stored in the first track of the system drive and/or
- on the VeraCrypt Rescue Disk). </li><li>Bytes 65536&ndash;66047 of the volume are read into RAM (see the section <a href="VeraCrypt%20Volume%20Format%20Specification.html">
-<em>VeraCrypt Volume Format Specification</em></a>). For system encryption, bytes 65536&ndash;66047 of the first partition located behind the active partition* are read (see the section
+<em>Sealbox Volume Format Specification</em></a>). For system encryption (see the chapter
+<a href="System%20Encryption.html"><em>System Encryption</em></a>), the last 512 bytes of the first logical drive track are read into RAM (the Sealbox Boot Loader is stored in the first track of the system drive and/or
+ on the Sealbox Rescue Disk). </li><li>Bytes 65536&ndash;66047 of the volume are read into RAM (see the section <a href="VeraCrypt%20Volume%20Format%20Specification.html">
+<em>Sealbox Volume Format Specification</em></a>). For system encryption, bytes 65536&ndash;66047 of the first partition located behind the active partition* are read (see the section
 <a href="Hidden%20Operating%20System.html">
 Hidden Operating System</a>). If there is a hidden volume within this volume (or within the partition behind the boot partition), we have read its header at this point; otherwise, we have just read random data (whether or not there is a hidden volume within
  it has to be determined by attempting to decrypt this data; for more information see the section
 <a href="Hidden%20Volume.html"><em>Hidden Volume</em></a>).
-</li><li>Now VeraCrypt attempts to decrypt the standard volume header read in (1). All data used and generated in the course of the process of decryption are kept in RAM (VeraCrypt never saves them to disk). The following parameters are unknown&dagger; and have
+</li><li>Now Sealbox attempts to decrypt the standard volume header read in (1). All data used and generated in the course of the process of decryption are kept in RAM (Sealbox never saves them to disk). The following parameters are unknown&dagger; and have
  to be determined through the process of trial and error (i.e., by testing all possible combinations of the following):
 <ol type="a">
 <li>Key Derivation Function (KDF) and associated parameters:
@@ -69,14 +69,14 @@ HMAC-SHA-512, HMAC-SHA-256, HMAC-BLAKE2S-256, HMAC-Whirlpool, HMAC-Streebog.</li
 </li><li>Decryption is considered successful if the first 4 bytes of the decrypted data contain the ASCII string &ldquo;VERA&rdquo;, and if the CRC-32 checksum of the last 256 bytes of the decrypted data (volume header) matches the value located at byte #8 of the
  decrypted data (this value is unknown to an adversary because it is encrypted &ndash; see the section
 <a href="VeraCrypt%20Volume%20Format%20Specification.html">
-<em>VeraCrypt Volume Format Specification</em></a>). If these conditions are not met, the process continues from (3) again, but this time, instead of the data read in (1), the data read in (2) are used (i.e., possible hidden volume header). If the conditions
- are not met again, mounting is terminated (wrong password, corrupted volume, or not a VeraCrypt volume).
+<em>Sealbox Volume Format Specification</em></a>). If these conditions are not met, the process continues from (3) again, but this time, instead of the data read in (1), the data read in (2) are used (i.e., possible hidden volume header). If the conditions
+ are not met again, mounting is terminated (wrong password, corrupted volume, or not a Sealbox volume).
 </li><li>Now we know (or assume with very high probability) that we have the correct password, the correct encryption algorithm, mode, key size, and the correct header key derivation algorithm. If we successfully decrypted the data read in (2), we also know that
  we are mounting a hidden volume and its size is retrieved from data read in (2) decrypted in (3).
 </li><li>The encryption routine is reinitialized with the primary master key** and the secondary master key (XTS mode &ndash; see the section
 <a href="Modes%20of%20Operation.html"><em>Modes of Operation</em></a>), which are retrieved from the decrypted volume header (see the section
 <a href="VeraCrypt%20Volume%20Format%20Specification.html">
-<em>VeraCrypt Volume Format Specification</em></a>). These keys can be used to decrypt any sector of the volume, except the volume header area (or the key data area, for system encryption), which has been encrypted using the header keys. The volume is mounted.
+<em>Sealbox Volume Format Specification</em></a>). These keys can be used to decrypt any sector of the volume, except the volume header area (or the key data area, for system encryption), which has been encrypted using the header keys. The volume is mounted.
 </li></ol>
 <p>See also section <a href="Modes%20of%20Operation.html">
 <em>Modes of Operation</em></a> and section <a href="Header%20Key%20Derivation.html">
@@ -84,9 +84,9 @@ HMAC-SHA-512, HMAC-SHA-256, HMAC-BLAKE2S-256, HMAC-Whirlpool, HMAC-Streebog.</li
 <a href="Security%20Model.html"><em>Security Model</em></a>.</p>
 <p>* If the size of the active partition is less than 256 MB, then the data is read from the
 <em>second</em> partition behind the active one (Windows 7 and later, by default, do not boot from the partition on which they are installed).</p>
-<p>&dagger; These parameters are kept secret <em>not</em> in order to increase the complexity of an attack, but primarily to make VeraCrypt volumes unidentifiable (indistinguishable from random data), which would be difficult to achieve if these parameters
+<p>&dagger; These parameters are kept secret <em>not</em> in order to increase the complexity of an attack, but primarily to make Sealbox volumes unidentifiable (indistinguishable from random data), which would be difficult to achieve if these parameters
  were stored unencrypted within the volume header. Also note that in the case of legacy MBR boot mode, if a non-cascaded encryption algorithm is used for system encryption, the algorithm
-<em>is</em> known (it can be determined by analyzing the contents of the unencrypted VeraCrypt Boot Loader stored in the first logical drive track or on the VeraCrypt Rescue Disk).</p>
+<em>is</em> known (it can be determined by analyzing the contents of the unencrypted Sealbox Boot Loader stored in the first logical drive track or on the Sealbox Rescue Disk).</p>
 <p>** The master keys were generated during the volume creation and cannot be changed later. Volume password change is accomplished by re-encrypting the volume header using a new header key (derived from a new password).</p>
 <p>&nbsp;</p>
 <p><a href="Modes%20of%20Operation.html" style="text-align:left; color:#0080c0; text-decoration:none; font-weight:bold">Next Section &gt;&gt;</a></p>

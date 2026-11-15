@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -32,7 +32,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -52,20 +52,20 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">Technical Details</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">Building VeraCrypt From Source</a>
+<a href="CompilingGuidelines.html">Building Sealbox From Source</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineLinux.html">Linux Build Guide</a>
 </p></div>
 
 <div class="wikidoc">
-This guide describes how to set up a Linux System to build VeraCrypt from source and how to perform compilation. <br>
+This guide describes how to set up a Linux System to build Sealbox from source and how to perform compilation. <br>
 The procedure for a Ubuntu 22.04 LTS system is described here as an example, the procedure for other Linux systems is analogous.
 </div>
 
 <div class="wikidoc">
 <br>
 <br>
-The following components are required for compiling VeraCrypt:
+The following components are required for compiling Sealbox:
 <ol>
 	<li>GNU Make</li>
 	<li>GNU C/C++ Compiler</li>
@@ -87,8 +87,8 @@ The following components are required for compiling VeraCrypt:
 <li><strong><a href="#InstallationOfwxWidgets">Installation of wxWidgets 3.2</a></strong></li>
 <li><strong><a href="#InstallationOfFuse">Installation of libfuse</a></strong></li>
 <li><strong><a href="#InstallationOfPCSCLite">Installation of libpcsclite</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">Download VeraCrypt</a></strong></li>
-<li><strong><a href="#CompileVeraCrypt">Compile VeraCrypt</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">Download Sealbox</a></strong></li>
+<li><strong><a href="#CompileVeraCrypt">Compile Sealbox</a></strong></li>
 </ul>
 </p>
 <p>They can also be performed by running the below list of commands in a terminal or by copying them to a script:<br>
@@ -245,7 +245,7 @@ make
 </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">Download VeraCrypt</a>
+  <a href="#DownloadVeraCrypt">Download Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -266,7 +266,7 @@ make
  </div>
  
  <div class="textbox" id="CompileVeraCrypt">
-  <a href="#CompileVeraCrypt">Compile VeraCrypt</a>
+  <a href="#CompileVeraCrypt">Compile Sealbox</a>
   <div class="texttohide">
     <p> Remarks: <br>
 	<ul>
@@ -280,7 +280,7 @@ make
 			</code>
 		</li>
 		<li>
-			If you are not using the system wxWidgets library, you will have to download and use wxWidgets sources like the remark above but this time the following commands should be run to build GUI version of VeraCrypt (NOGUI is not specified): <br>
+			If you are not using the system wxWidgets library, you will have to download and use wxWidgets sources like the remark above but this time the following commands should be run to build GUI version of Sealbox (NOGUI is not specified): <br>
 			<code>
 			make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources wxbuild <br>
 			make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources
@@ -300,7 +300,7 @@ make
 				</code>
 			</li>
 			<li>
-				If successful, the VeraCrypt executable should be located in the directory 'Main'.
+				If successful, the Sealbox executable should be located in the directory 'Main'.
 			</li>
 		</ol>
 	</p>

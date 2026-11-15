@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
-<meta name="description" content="VeraCrypt это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, VeraCrypt обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, VeraCrypt шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
+<title>Sealbox - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
+<meta name="description" content="Sealbox это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, Sealbox обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, Sealbox шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
 <meta name="keywords" content="encryption, security, шифрование, безопасность"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -33,7 +33,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -53,18 +53,18 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">Технические подробности</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">Сборка VeraCrypt из исходного кода</a>
+<a href="CompilingGuidelines.html">Сборка Sealbox из исходного кода</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineWin.html">Руководство по сборке в Windows</a>
 </p></div>
 
 <div class="wikidoc">
-В этом руководстве описано, как настроить систему Windows для компилирования VeraCrypt и как cкомпилировать программу.<br>
+В этом руководстве описано, как настроить систему Windows для компилирования Sealbox и как cкомпилировать программу.<br>
 Здесь как пример приведена процедура для Windows 10/11, процедуры для других версий Windows аналогичны.
 </div>
 
 <div class="wikidoc">
-Для компиляции текущих двоичных файлов VeraCrypt для Windows и драйверов необходимы следующие компоненты; необязательные альтернативы или инструменты, нужные только для выпуска, отмечены отдельно:
+Для компиляции текущих двоичных файлов Sealbox для Windows и драйверов необходимы следующие компоненты; необязательные альтернативы или инструменты, нужные только для выпуска, отмечены отдельно:
 
 <ol>
 	<li>Microsoft Visual Studio 2022 или Build Tools for Visual Studio 2022 как альтернатива для командной строки</li>
@@ -90,9 +90,9 @@
 <li><strong><a href="#InstallationOfVS2022">Установка Microsoft Visual Studio 2022</a></strong></li>
 <li><strong><a href="#InstallationOfWDK10">Установка Windows Driver Kit</a></strong></li>
 <li><strong><a href="#InstallationOfVisualBuildTools">Установка Build Tools for Visual Studio 2022</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">Загрузка исходных файлов VeraCrypt</a></strong></li>
-<li><strong><a href="#CompileWin32X64">Компиляция x64-, ARM64- и драйверных сборок VeraCrypt</a></strong></li>
-<li><strong><a href="#BuildVeraCryptExecutables">Сборка исполняемых файлов VeraCrypt</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">Загрузка исходных файлов Sealbox</a></strong></li>
+<li><strong><a href="#CompileWin32X64">Компиляция x64-, ARM64- и драйверных сборок Sealbox</a></strong></li>
+<li><strong><a href="#BuildVeraCryptExecutables">Сборка исполняемых файлов Sealbox</a></strong></li>
 <li><strong><a href="#ImportCertificates">Импорт сертификатов</a></strong></li>
 <li><strong><a href="#KnownIssues">Известные проблемы</a></strong></li>
 </ul>
@@ -219,7 +219,7 @@
   <a href="#InstallationOfLegacyBootTools">Установка инструментов устаревшего загрузчика BIOS (необязательно)</a>
   <div class="texttohide">
     <p>
-		Эти инструменты не требуются для компиляции стандартных двоичных файлов приложения VeraCrypt или драйвера Windows с помощью Visual Studio 2022 и текущего WDK. Устанавливайте их только если нужно пересобрать устаревший загрузчик BIOS в "src\Boot\Windows" или собрать конфигурации решения, включающие проект Boot, например "ReleaseCustomEFI".
+		Эти инструменты не требуются для компиляции стандартных двоичных файлов приложения Sealbox или драйвера Windows с помощью Visual Studio 2022 и текущего WDK. Устанавливайте их только если нужно пересобрать устаревший загрузчик BIOS в "src\Boot\Windows" или собрать конфигурации решения, включающие проект Boot, например "ReleaseCustomEFI".
 		<ol>
 			<li>
 				Установите Microsoft Visual C++ 1.52. Он доступен по платной подписке Microsoft MSDN. Если у вас нет подписки, образ ISO также доступен в интернет-архиве: <br>
@@ -359,12 +359,12 @@
  </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">Загрузка исходных файлов VeraCrypt</a>
+  <a href="#DownloadVeraCrypt">Загрузка исходных файлов Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
 			<li>
-				Посетите репозитарий VeraCrypt на Github: <br>
+				Посетите репозитарий Sealbox на Github: <br>
 				<a href="https://github.com/veracrypt/VeraCrypt" target="_blank">https://github.com/veracrypt/VeraCrypt</a>
 			</li>
 			<li>
@@ -377,7 +377,7 @@
  </div>
  
  <div class="textbox" id="CompileWin32X64">
-  <a href="#CompileWin32X64">Компиляция x64-, ARM64- и драйверных сборок VeraCrypt</a>
+  <a href="#CompileWin32X64">Компиляция x64-, ARM64- и драйверных сборок Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -406,13 +406,13 @@
 				Выберите "Release|Win32" как активную конфигурацию и соберите решение, чтобы скомпилировать проекты Setup, Portable, COMReg и SetupDLL, используемые скриптами упаковки релиза. Стандартные сборки решения "Release|x64" и "Release|ARM64" пропускают эти Win32-проекты, поэтому при подготовке пакетов релиза необходима эта дополнительная сборка.
 			</li>
 			<li>
-				Чтобы собрать драйверы VeraCrypt, выберите проект "Driver" и соберите его для "Release|x64" и "Release|ARM64".
+				Чтобы собрать драйверы Sealbox, выберите проект "Driver" и соберите его для "Release|x64" и "Release|ARM64".
 			</li>
 			<li>
 				Собирайте "ReleaseCustomEFI|x64" или "ReleaseCustomEFI|ARM64" только если нужны конфигурации выпуска с пользовательским EFI/загрузчиком. Эти конфигурации включают проект Boot и требуют необязательные инструменты устаревшего загрузчика BIOS, перечисленные выше. Они также собирают проекты Setup, Portable, COMReg и SetupDLL в конфигурациях Win32.
 			</li>
 			<li>
-				Если вы используете Build Tools for Visual Studio 2022 вместо IDE Visual Studio, откройте "Developer Command Prompt for VS 2022" или "Developer PowerShell for VS 2022", перейдите в корневой каталог исходного кода VeraCrypt и выполните эквивалентные команды MSBuild (для компиляции права администратора не требуются):
+				Если вы используете Build Tools for Visual Studio 2022 вместо IDE Visual Studio, откройте "Developer Command Prompt for VS 2022" или "Developer PowerShell for VS 2022", перейдите в корневой каталог исходного кода Sealbox и выполните эквивалентные команды MSBuild (для компиляции права администратора не требуются):
 				<br>
 				<code>
 					msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=x64 <br>
@@ -438,7 +438,7 @@
  </div>
  
  <div class="textbox" id="BuildVeraCryptExecutables">
-  <a href="#BuildVeraCryptExecutables">Сборка исполняемых файлов VeraCrypt</a>
+  <a href="#BuildVeraCryptExecutables">Сборка исполняемых файлов Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -462,8 +462,8 @@
  <div class="textbox" id="ImportCertificates">
   <a href="#ImportCertificates">Импорт сертификатов</a>
   <div class="texttohide">
-    <p> С помощью скрипта sign_test.bat вы только что подписали исполняемые файлы VeraCrypt. Это необходимо, поскольку Windows принимает только те драйверы, которым доверяет подписанный центр сертификации. <br>
-	Поскольку вы использовали не официальный сертификат подписи VeraCrypt для подписи своего кода, а общедоступную версию для разработки, вы должны импортировать и, следовательно, доверять используемым сертификатам.
+    <p> С помощью скрипта sign_test.bat вы только что подписали исполняемые файлы Sealbox. Это необходимо, поскольку Windows принимает только те драйверы, которым доверяет подписанный центр сертификации. <br>
+	Поскольку вы использовали не официальный сертификат подписи Sealbox для подписи своего кода, а общедоступную версию для разработки, вы должны импортировать и, следовательно, доверять используемым сертификатам.
 		<ol>
 			<li>
 				Откройте папку "src/Signing".
@@ -512,7 +512,7 @@
 				</ul>
 				См. подробности тут: <a href="https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12" target="_blank">https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12</a>.<br>
 				<br>
-				Другой подход – отключить проверку подписи в коде VeraCrypt. Это следует делать только в целях тестирования, но не для нормального использования:
+				Другой подход – отключить проверку подписи в коде Sealbox. Это следует делать только в целях тестирования, но не для нормального использования:
 				<ol>
 					<li>
 						Откройте файл "src/Common/Dlgcode.c".
@@ -533,7 +533,7 @@
 						</p>
 					</li>
 					<li>
-						Снова скомпилируйте код VeraCrypt.
+						Снова скомпилируйте код Sealbox.
 					</li>
 				</ol>
 			</li>
@@ -544,7 +544,7 @@
 				Из соображений безопасности Windows позволяет загружать только драйверы, подписанные Microsoft.<br>
 				Поэтому при использовании пользовательской сборки:<br>
 				<ul>
-					<li>Если вы не изменяли исходный код драйвера VeraCrypt, то можете использовать подписанные Microsoft драйверы, включённые в исходный код VeraCrypt (в "src\Release\Setup Files").</li>
+					<li>Если вы не изменяли исходный код драйвера Sealbox, то можете использовать подписанные Microsoft драйверы, включённые в исходный код Sealbox (в "src\Release\Setup Files").</li>
 					<li>Если вы внесли изменения, то <strong>нужно будет загрузить Windows в "тестовом режиме" ("Test Mode")</strong>. Этот режим позволяет Windows загружать драйверы, не подписанные Microsoft. Однако даже в "тестовом режиме" существуют определённые требования к подписям, и сбои всё равно могут возникать по описанным ниже причинам.</li>
 				</ul>
 				Возможные причины сбоя установки в "тестовом режиме" ("Test Mode"):
@@ -554,7 +554,7 @@
 						Чтобы проверить, относится ли это к вам, проверьте свойства исполняемого файла:
 						<ol>
 							<li>
-								Щёлкните правой кнопкой мыши по исполняемому файлу VeraCrypt Setup: "src/Release/Setup Files/VeraCrypt Setup 1.XX.exe".
+								Щёлкните правой кнопкой мыши по исполняемому файлу Sealbox Setup: "src/Release/Setup Files/VeraCrypt Setup 1.XX.exe".
 							</li>
 							<li>
 								Выберите <em>Свойства</em>.

@@ -2,15 +2,15 @@
 <html lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
-<meta name="description" content="VeraCrypt это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, VeraCrypt обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, VeraCrypt шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
+<title>Sealbox - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
+<meta name="description" content="Sealbox это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, Sealbox обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, Sealbox шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
 <meta name="keywords" content="encryption, security, шифрование, безопасность"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,10 +36,10 @@
 <h1>PBKDF2</h1>
 
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
-PBKDF2 (Password-Based Key Derivation Function 2) — широко применяемая KDF, которая многократно применяет псевдослучайную функцию HMAC, чтобы замедлить подбор пароля. В VeraCrypt PBKDF2 доступна с несколькими HMAC-хеш-функциями и используется для формирования ключей, расшифровывающих заголовок тома.
+PBKDF2 (Password-Based Key Derivation Function 2) — широко применяемая KDF, которая многократно применяет псевдослучайную функцию HMAC, чтобы замедлить подбор пароля. В Sealbox PBKDF2 доступна с несколькими HMAC-хеш-функциями и используется для формирования ключей, расшифровывающих заголовок тома.
 </div>
 
-<h3>Варианты PBKDF2-HMAC, поддерживаемые в VeraCrypt</h3>
+<h3>Варианты PBKDF2-HMAC, поддерживаемые в Sealbox</h3>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding:0px">
 <li style="text-align:left; margin:0px 0px 6px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="SHA-512.html" style="color:#0080c0; text-decoration:none">SHA-512</a></strong></li>
 <li style="text-align:left; margin:0px 0px 6px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="SHA-256.html" style="color:#0080c0; text-decoration:none">SHA-256</a></strong></li>
@@ -48,7 +48,7 @@ PBKDF2 (Password-Based Key Derivation Function 2) — широко примен�
 <li style="text-align:left; margin:0px 0px 0px 0px; padding:0px"><strong>PBKDF2-HMAC-<a href="Streebog.html" style="color:#0080c0; text-decoration:none">Streebog</a></strong></li>
 </ul>
 
-<h3>Параметры в VeraCrypt</h3>
+<h3>Параметры в Sealbox</h3>
 
 <h4>Соль</h4>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
@@ -62,7 +62,7 @@ PBKDF2 (Password-Based Key Derivation Function 2) — широко примен�
 
 <h4>Длина вывода</h4>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding:0px">
-Объём сформированного ключевого материала заголовка зависит от выбранного алгоритма или каскада шифрования. В текущих томах XTS VeraCrypt использует как первичные, так и вторичные ключи заголовка; например, для AES-256-XTS требуется всего 512 бит (два 256-битовых ключа), а для каскада AES-Twofish-Serpent-XTS — 1536 бит (шесть 256-битовых ключей).
+Объём сформированного ключевого материала заголовка зависит от выбранного алгоритма или каскада шифрования. В текущих томах XTS Sealbox использует как первичные, так и вторичные ключи заголовка; например, для AES-256-XTS требуется всего 512 бит (два 256-битовых ключа), а для каскада AES-Twofish-Serpent-XTS — 1536 бит (шесть 256-битовых ключей).
 </div>
 
 <h3>Преимущества и особенности</h3>

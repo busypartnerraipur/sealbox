@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,16 +36,16 @@
 <div class="wikidoc">
 <div>
 <h1>Command Line Usage for Linux and macOS</h1>
-<p>This section applies to VeraCrypt on Unix-like systems, including Linux and macOS. The Windows command-line syntax is documented separately in <a href="Command%20Line%20Usage%20for%20Windows.html">Command Line Usage for Windows</a>.</p>
-<p>To display the command-line help for the installed VeraCrypt build in a terminal, run:</p>
+<p>This section applies to Sealbox on Unix-like systems, including Linux and macOS. The Windows command-line syntax is documented separately in <a href="Command%20Line%20Usage%20for%20Windows.html">Command Line Usage for Windows</a>.</p>
+<p>To display the command-line help for the installed Sealbox build in a terminal, run:</p>
 <p><code>veracrypt -t --help</code></p>
 <p>The <code>-t</code> or <code>--text</code> option selects the text user interface and must be specified as the first argument. Without <code>-t</code>, <code>veracrypt --help</code> may show the graphical help window when the graphical user interface is available.</p>
 
 <h4>Syntax</h4>
 <p><code>veracrypt [OPTIONS] COMMAND</code></p>
 <p><code>veracrypt [OPTIONS] VOLUME_PATH [MOUNT_DIRECTORY]</code></p>
-<p>If no explicit command is specified and a volume path is given, VeraCrypt mounts the volume. When <code>MOUNT_DIRECTORY</code> is omitted, VeraCrypt uses the default mount directory.</p>
-<p>On Linux and BSD, VeraCrypt automatically creates and manages only default mount directories, such as <code>/media/veracrypt2</code>: the mount prefix followed by a slot number from 1 to 64, without leading zeros. Custom mount directories must already exist with suitable permissions. For example, <code>/media/veracrypt-backup</code> and <code>/media/veracrypt1/photos</code> are custom directories, even though their names start with the default prefix; VeraCrypt does not automatically create them, change their ownership or remove them after dismounting.</p>
+<p>If no explicit command is specified and a volume path is given, Sealbox mounts the volume. When <code>MOUNT_DIRECTORY</code> is omitted, Sealbox uses the default mount directory.</p>
+<p>On Linux and BSD, Sealbox automatically creates and manages only default mount directories, such as <code>/media/veracrypt2</code>: the mount prefix followed by a slot number from 1 to 64, without leading zeros. Custom mount directories must already exist with suitable permissions. For example, <code>/media/veracrypt-backup</code> and <code>/media/veracrypt1/photos</code> are custom directories, even though their names start with the default prefix; Sealbox does not automatically create them, change their ownership or remove them after dismounting.</p>
 
 <h4>Commands</h4>
 <table border="1" cellspacing="0" cellpadding="1">
@@ -72,7 +72,7 @@
 </tr>
 <tr>
 <td><em>-u</em> or <em>--unmount [MOUNTED_VOLUME]</em><br><em>-d</em> or <em>--dismount [MOUNTED_VOLUME]</em></td>
-<td>Unmount a mounted volume. If no mounted volume is specified, all mounted VeraCrypt volumes are unmounted. <em>--dismount</em> is deprecated; use <em>--unmount</em>.</td>
+<td>Unmount a mounted volume. If no mounted volume is specified, all mounted Sealbox volumes are unmounted. <em>--dismount</em> is deprecated; use <em>--unmount</em>.</td>
 </tr>
 <tr>
 <td><em>--delete-token-keyfiles</em></td>
@@ -120,7 +120,7 @@
 </tr>
 <tr>
 <td><em>--version</em></td>
-<td>Display VeraCrypt version information.</td>
+<td>Display Sealbox version information.</td>
 </tr>
 <tr>
 <td><em>--volume-properties [MOUNTED_VOLUME]</em></td>
@@ -132,7 +132,7 @@
 <h4>MOUNTED_VOLUME</h4>
 <p>A mounted volume can be specified in any of the following forms:</p>
 <ul>
-<li>Path to the encrypted VeraCrypt volume.</li>
+<li>Path to the encrypted Sealbox volume.</li>
 <li>Mount directory of the volume's filesystem, if mounted.</li>
 <li>Slot number of the mounted volume, when used with <em>--slot</em>.</li>
 </ul>
@@ -146,11 +146,11 @@
 </tr>
 <tr>
 <td><em>--allow-screencapture</em></td>
-<td>Allow VeraCrypt windows to be included in screenshots and screen recordings. This option applies to macOS builds.</td>
+<td>Allow Sealbox windows to be included in screenshots and screen recordings. This option applies to macOS builds.</td>
 </tr>
 <tr>
 <td><em>--background-task</em></td>
-<td>Start the VeraCrypt background task.</td>
+<td>Start the Sealbox background task.</td>
 </tr>
 <tr>
 <td><em>--display-password</em></td>
@@ -158,7 +158,7 @@
 </tr>
 <tr>
 <td><em>--encryption=ENCRYPTION_ALGORITHM</em></td>
-<td>Use the specified encryption algorithm when creating a new volume. For cascades, use the algorithm name shown by VeraCrypt, for example <code>AES-Twofish</code>.</td>
+<td>Use the specified encryption algorithm when creating a new volume. For cascades, use the algorithm name shown by Sealbox, for example <code>AES-Twofish</code>.</td>
 </tr>
 <tr>
 <td><em>--explore</em></td>
@@ -198,7 +198,7 @@
 </tr>
 <tr>
 <td><em>-m OPTION1[,OPTION2,...]</em> or <em>--mount-options=OPTION1[,OPTION2,...]</em></td>
-<td>Set VeraCrypt volume mount options. Supported options are <em>headerbak</em>, <em>nokernelcrypto</em>, <em>readonly</em> or <em>ro</em>, <em>system</em>, and <em>timestamp</em> or <em>ts</em>. On Linux, <em>kernelntfs</em> enables in-kernel NTFS driver selection for the current mount when NTFS is detected and no filesystem type was supplied. Read-only protection applies to the decrypted device as well as the filesystem. A filesystem that needs journal recovery writes may refuse a read-only mount.</td>
+<td>Set Sealbox volume mount options. Supported options are <em>headerbak</em>, <em>nokernelcrypto</em>, <em>readonly</em> or <em>ro</em>, <em>system</em>, and <em>timestamp</em> or <em>ts</em>. On Linux, <em>kernelntfs</em> enables in-kernel NTFS driver selection for the current mount when NTFS is detected and no filesystem type was supplied. Read-only protection applies to the decrypted device as well as the filesystem. A filesystem that needs journal recovery writes may refuse a read-only mount.</td>
 </tr>
 <tr>
 <td><em>--new-hash=HASH</em></td>
@@ -234,7 +234,7 @@
 </tr>
 <tr>
 <td><em>--protect-hidden=yes|no</em></td>
-<td>Write-protect a hidden volume when mounting an outer volume. If enabled, VeraCrypt uses the hidden volume credentials to determine the hidden area and protects it against writes.</td>
+<td>Write-protect a hidden volume when mounting an outer volume. If enabled, Sealbox uses the hidden volume credentials to determine the hidden area and protects it against writes.</td>
 </tr>
 <tr>
 <td><em>--protection-hash=HASH</em></td>
@@ -254,7 +254,7 @@
 </tr>
 <tr>
 <td><em>--quick</em></td>
-<td>Enable quick formatting when creating a normal file-hosted or device-hosted volume. Do not use this option when creating an outer volume. In text mode, VeraCrypt cannot infer that a normal volume is intended to become an outer volume. For file containers, Quick Format may create sparse or unwritten host regions. Allocation behavior depends on host filesystem sparse-file support, and later writes can fail if the host filesystem runs out of space.</td>
+<td>Enable quick formatting when creating a normal file-hosted or device-hosted volume. Do not use this option when creating an outer volume. In text mode, Sealbox cannot infer that a normal volume is intended to become an outer volume. For file containers, Quick Format may create sparse or unwritten host regions. Allocation behavior depends on host filesystem sparse-file support, and later writes can fail if the host filesystem runs out of space.</td>
 </tr>
 <tr>
 <td><em>--random-source=FILE</em></td>
@@ -300,7 +300,7 @@
 </table>
 
 <h4>Security Notes</h4>
-<p>Passing a password, PIM, token PIN, or hidden-volume protection password on the command line can be insecure because command-line arguments may be visible in process listings, shell history, or system logs. When possible, let VeraCrypt prompt for sensitive values interactively, or use <em>--stdin</em> with <em>--non-interactive</em> where appropriate. Users must also follow the security requirements and precautions listed in <a href="Security%20Requirements%20and%20Precautions.html">Security Requirements and Precautions</a>.</p>
+<p>Passing a password, PIM, token PIN, or hidden-volume protection password on the command line can be insecure because command-line arguments may be visible in process listings, shell history, or system logs. When possible, let Sealbox prompt for sensitive values interactively, or use <em>--stdin</em> with <em>--non-interactive</em> where appropriate. Users must also follow the security requirements and precautions listed in <a href="Security%20Requirements%20and%20Precautions.html">Security Requirements and Precautions</a>.</p>
 
 <h4>Examples</h4>
 <p>Create a new volume using the text user interface:</p>
@@ -321,7 +321,7 @@
 <p><code>veracrypt -t -v --list</code></p>
 <p>Unmount a volume:</p>
 <p><code>veracrypt -u volume.hc</code></p>
-<p>Unmount all mounted VeraCrypt volumes:</p>
+<p>Unmount all mounted Sealbox volumes:</p>
 <p><code>veracrypt -u</code></p>
 
 <h4>Hidden Volume Creation in Text Mode</h4>

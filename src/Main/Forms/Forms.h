@@ -151,7 +151,7 @@ namespace VeraCrypt
 
 		public:
 
-			MainFrameBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("VeraCrypt"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
+			MainFrameBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Sealbox"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
 
 			~MainFrameBase();
 
@@ -1135,7 +1135,7 @@ namespace VeraCrypt
 
 		public:
 
-			WaitDialogBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("VeraCrypt"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION );
+			WaitDialogBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Sealbox"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxCAPTION );
 
 			~WaitDialogBase();
 

@@ -1,5 +1,8 @@
-This archive contains the source code of VeraCrypt.
-It is based on the original TrueCrypt 7.1a with security enhancements and modifications.
+This archive contains the source code of Sealbox, a product of Shubh Ventures
+(https://shubhventures.co.in). Copyright (c) 2026 Shubh Ventures.
+
+Sealbox is based on VeraCrypt (https://veracrypt.jp), which is itself based on
+the original TrueCrypt 7.1a with security enhancements and modifications.
 
 # Important
 
@@ -68,7 +71,7 @@ folder and modify sign.bat accordingly.
 
 To generate MSI packages, WiX Toolset v3.11 must be installed.
 
-## VeraCrypt EFI Boot Loader:
+## Sealbox (based on VeraCrypt) EFI Boot Loader:
 
 VeraCrypt source code contains pre-built EFI binaries under src\Boot\EFI.
 The source code of VeraCrypt EFI Boot Loader is licensed under LGPL and

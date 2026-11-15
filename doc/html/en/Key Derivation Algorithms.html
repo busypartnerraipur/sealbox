@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 <div id="menu">
     <ul>
@@ -32,16 +32,16 @@
 <h1>Key Derivation Algorithms</h1>
 
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-A key derivation function (KDF) transforms your password (and optional keyfiles) into cryptographic keys used to decrypt a VeraCrypt volume header. KDFs slow down brute-force attacks and protect against precomputation by incorporating a large random salt and a tunable work factor (e.g., iterations, memory).
+A key derivation function (KDF) transforms your password (and optional keyfiles) into cryptographic keys used to decrypt a Sealbox volume header. KDFs slow down brute-force attacks and protect against precomputation by incorporating a large random salt and a tunable work factor (e.g., iterations, memory).
 </div>
 
-<h3>Available Algorithms in VeraCrypt</h3>
+<h3>Available Algorithms in Sealbox</h3>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:8px; padding:0px">
 <strong><a href="Argon2id.html" style="color:#0080c0; text-decoration:none">Argon2id</a>:</strong> A modern, memory-hard KDF (based on <a href="BLAKE2b-512.html" style="color:#0080c0; text-decoration:none">BLAKE2b-512</a> internally). Recommended for new non-system volumes. No separate hash selection is required.
 </li>
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding:0px">
-<strong><a href="pbkdf2.html" style="color:#0080c0; text-decoration:none">PBKDF2-HMAC</a>:</strong> A widely deployed KDF that uses HMAC with a selectable hash function. Supported HMAC hashes in VeraCrypt:
+<strong><a href="pbkdf2.html" style="color:#0080c0; text-decoration:none">PBKDF2-HMAC</a>:</strong> A widely deployed KDF that uses HMAC with a selectable hash function. Supported HMAC hashes in Sealbox:
 <a href="SHA-512.html" style="color:#0080c0; text-decoration:none">SHA-512</a>, <a href="SHA-256.html" style="color:#0080c0; text-decoration:none">SHA-256</a>, <a href="Whirlpool.html" style="color:#0080c0; text-decoration:none">Whirlpool</a>, <a href="BLAKE2s-256.html" style="color:#0080c0; text-decoration:none">BLAKE2s-256</a>, and <a href="Streebog.html" style="color:#0080c0; text-decoration:none">Streebog</a>.
 </li>
 </ul>

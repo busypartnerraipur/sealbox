@@ -395,7 +395,7 @@ namespace VeraCrypt
 			// The device is left alone, and the dismount fails, until the volume is found where it was mounted from
 			errno = EPERM;
 			throw SystemException (SRC_POS, "/dev/mapper/" + name + ": could not verify that this device belongs to the volume. "
-				"Devices created by earlier versions of VeraCrypt are verified through the path of their volume: if the volume "
+				"Devices created by earlier versions of Sealbox are verified through the path of their volume: if the volume "
 				"has been moved, renamed or replaced, restore it to " + volumePath + " and try again.");
 		}
 

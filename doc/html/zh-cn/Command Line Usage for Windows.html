@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密软件</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，VeraCrypt可提供合理的否认性。与文件加密不同，VeraCrypt进行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密软件</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，Sealbox可提供合理的否认性。与文件加密不同，Sealbox进行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,7 +36,7 @@
 <div class="wikidoc">
 <div>
 <h1>命令行使用（Windows）</h1>
-<p>本节适用于Windows版本的VeraCrypt。Linux和macOS语法另见<a href="Command%20Line%20Usage%20for%20Unix.html">Linux和macOS命令行使用</a>。</p>
+<p>本节适用于Windows版本的Sealbox。Linux和macOS语法另见<a href="Command%20Line%20Usage%20for%20Unix.html">Linux和macOS命令行使用</a>。</p>
 <table border="1" cellspacing="0" cellpadding="1">
 <tbody>
 <tr>
@@ -49,15 +49,15 @@
 </tr>
 <tr>
 <td><em>/hash</em></td>
-<td>必须后跟一个参数，指示挂载卷时要使用的 PRF 哈希算法或 KDF。可能的 /hash 参数值为：sha256, sha-256, sha512, sha-512, whirlpool, blake2s, blake2s-256, streebog, blake2b-512, argon2 和 argon2id。blake2b-512、argon2 和 argon2id 均选择 Argon2id 卷。当省略 /hash 时，VeraCrypt 将尝试所有可能的 PRF/KDF 算法，从而延长挂载操作时间。</td>
+<td>必须后跟一个参数，指示挂载卷时要使用的 PRF 哈希算法或 KDF。可能的 /hash 参数值为：sha256, sha-256, sha512, sha-512, whirlpool, blake2s, blake2s-256, streebog, blake2b-512, argon2 和 argon2id。blake2b-512、argon2 和 argon2id 均选择 Argon2id 卷。当省略 /hash 时，Sealbox 将尝试所有可能的 PRF/KDF 算法，从而延长挂载操作时间。</td>
 </tr>
 <tr>
 <td id="volume"><em>/volume</em> 或 <em>/v</em></td>
 <td>
-<p>必须后跟一个参数，指示要挂载的 VeraCrypt 卷的文件和路径名（卸载时不要使用）或要挂载的磁盘/分区的卷 ID。<br>
+<p>必须后跟一个参数，指示要挂载的 Sealbox 卷的文件和路径名（卸载时不要使用）或要挂载的磁盘/分区的卷 ID。<br>
 卷 ID 的语法为 <strong>ID:XXXXXX...XX</strong>，其中 XX 部分是一个 64 个十六进制字符的字符串，表示要挂载的卷的 32 字节 ID。<br>
 <br>
-要挂载分区/设备托管的卷，请使用例如 /v \Device\Harddisk1\Partition3（要确定分区/设备的路径，请运行 VeraCrypt 并单击
+要挂载分区/设备托管的卷，请使用例如 /v \Device\Harddisk1\Partition3（要确定分区/设备的路径，请运行 Sealbox 并单击
 <em>选择设备</em>）。您还可以使用卷名挂载分区或动态卷（例如，/v \\?\Volume{5cceb196-48bf-46ab-ad00-70965512253a}\)。要确定卷名，请使用例如 mountvol.exe。另请注意，设备路径区分大小写。<br>
 <br>
 您还可以指定要挂载的分区/设备托管卷的卷 ID，例如：/v ID:53B9A8D59CC84264004DA8728FC8F3E2EE6C130145ABD3835695C29FD601EDCA。卷 ID 值可以使用卷属性对话框检索。</p>
@@ -77,11 +77,11 @@
 </tr>
 <tr>
 <td><em>/auto</em> 或 <em>/a</em></td>
-<td>如果未指定参数，则自动挂载卷。如果将 devices 指定为参数（例如，/a devices），则自动挂载当前可访问的所有设备/分区托管的 VeraCrypt 卷。如果将 favorites 指定为参数，则自动挂载收藏的卷。请注意，如果指定了 /quit 和 /volume，则 /auto 是隐式的。如果需要防止应用程序窗口出现，请使用 /quit。</td>
+<td>如果未指定参数，则自动挂载卷。如果将 devices 指定为参数（例如，/a devices），则自动挂载当前可访问的所有设备/分区托管的 Sealbox 卷。如果将 favorites 指定为参数，则自动挂载收藏的卷。请注意，如果指定了 /quit 和 /volume，则 /auto 是隐式的。如果需要防止应用程序窗口出现，请使用 /quit。</td>
 </tr>
 <tr>
 <td><em>/unmount</em> 或 <em>/u</em></td>
-<td>卸载由驱动器号指定的卷（例如，/u x）。当未指定驱动器号时，卸载所有当前挂载的 VeraCrypt 卷。</td>
+<td>卸载由驱动器号指定的卷（例如，/u x）。当未指定驱动器号时，卸载所有当前挂载的 Sealbox 卷。</td>
 </tr>
 <tr>
 <td><em>/dismount</em> 或 <em>/d</em></td>
@@ -153,7 +153,7 @@
 </tr>
 <tr>
 <td><em>/quit</em> 或 <em>/q</em></td>
-<td>自动执行请求的操作并退出（不会显示主 VeraCrypt 窗口）。如果将 preferences 指定为参数（例如，/q preferences），则加载/保存程序设置，并且它们会覆盖命令行中指定的设置。 /q background 启动 VeraCrypt 后台任务（托盘图标），除非在首选项中禁用了它。</td>
+<td>自动执行请求的操作并退出（不会显示主 Sealbox 窗口）。如果将 preferences 指定为参数（例如，/q preferences），则加载/保存程序设置，并且它们会覆盖命令行中指定的设置。 /q background 启动 Sealbox 后台任务（托盘图标），除非在首选项中禁用了它。</td>
 </tr>
 <tr>
 <td><em>/silent</em> 或 <em>/s</em></td>
@@ -169,7 +169,7 @@
 <em>作为可移动介质挂载的卷</em></a>）。</p>
 <p><strong>ts</strong> 或 <strong>timestamp</strong>：不保留容器修改时间戳。</p>
 <p><strong>sm</strong> 或 <strong>system</strong>：无需预启动验证，挂载位于系统加密密钥范围内的分区（例如，位于未运行的其他操作系统的加密系统驱动器上的分区）。 例如，用于备份或修复操作。注意：如果您将密码作为 /p 的参数提供，请确保使用标准美式键盘布局键入密码（相比之下，GUI 会自动确保这一点）。这是必需的，因为密码需要在预启动环境（Windows 启动之前）中键入，而在该环境中非美式 Windows 键盘布局不可用。</p>
-<p><strong>bk</strong> 或 <strong>headerbak</strong>：使用嵌入式备份头挂载卷。注意：VeraCrypt 创建的所有卷都包含一个嵌入式备份头（位于卷的末尾）。</p>
+<p><strong>bk</strong> 或 <strong>headerbak</strong>：使用嵌入式备份头挂载卷。注意：Sealbox 创建的所有卷都包含一个嵌入式备份头（位于卷的末尾）。</p>
 <p><strong>recovery</strong>：不验证存储在卷头中的任何校验和。仅当卷头损坏且即使使用挂载选项 headerbak 也无法挂载卷时，才应使用此选项。示例：/m ro</p>
 <p><strong>label=LabelValue</strong>：使用给定的字符串值 <strong>LabelValue</strong> 作为 Windows 资源管理器中挂载卷的标签。对于 NTFS 卷，
 <strong>LabelValue&nbsp;</strong> 的最大长度为 32 个字符，对于 FAT 卷，最大长度为 11 个字符。例如，
@@ -184,23 +184,23 @@
 </tr>
 <tr>
 <td><em>/protectMemory</em>&nbsp;</td>
-<td>如果后跟<strong>y</strong>或<strong>yes</strong>，或未指定参数：激活一种机制，保护VeraCrypt进程内存不被其他非管理员进程访问。<br>
+<td>如果后跟<strong>y</strong>或<strong>yes</strong>，或未指定参数：激活一种机制，保护Sealbox进程内存不被其他非管理员进程访问。<br>
 如果后跟<strong>n</strong>或<strong>no</strong>（仅允许在便携模式下使用）：禁用内存保护机制（例如<code>/protectMemory n</code>）。<br></td>
 </tr>
 <tr>
 <td><em>/protectScreen</em></td>
-<td>如果后跟<strong>y</strong>或<strong>yes</strong>，或未指定参数：激活一种机制，保护VeraCrypt不被屏幕截图和屏幕录制捕获。<br>
+<td>如果后跟<strong>y</strong>或<strong>yes</strong>，或未指定参数：激活一种机制，保护Sealbox不被屏幕截图和屏幕录制捕获。<br>
 如果后跟<strong>n</strong>或<strong>no</strong>（仅允许在便携模式下使用）：禁用屏幕保护机制（例如<code>/protectScreen n</code>）。<br></td>
 </tr>
 <tr>
 <td><em>/signalExit</em>&nbsp;</td>
-<td>必须后跟一个参数，指定当 VeraCrypt 退出时发送给阻塞的 <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/waitfor" target="_blank">WAITFOR.EXE</a> 命令的信号名称。<br>
+<td>必须后跟一个参数，指定当 Sealbox 退出时发送给阻塞的 <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/waitfor" target="_blank">WAITFOR.EXE</a> 命令的信号名称。<br>
 信号名称必须与指定给 WAITFOR.EXE 命令的名称相同（例如"veracrypt.exe /q /v test.hc /l Z /signal SigName" 后跟 "waitfor.exe SigName"<br>
 如果未指定 /q，则忽略此开关</td>
 </tr>
 </tbody>
 </table>
-<h4>VeraCrypt Format.exe（VeraCrypt 卷创建向导）：</h4>
+<h4>VeraCrypt Format.exe（Sealbox 卷创建向导）：</h4>
 <table border="1" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
@@ -285,7 +285,7 @@
 </tr>
 <tr>
 <td><em>/noisocheck</em> 或 <em>/n</em></td>
-<td>不验证 VeraCrypt 救援盘是否正确刻录。<strong>警告</strong>：切勿尝试使用此选项来促进重复使用先前创建的 VeraCrypt 救援盘。请注意，每次加密系统分区/驱动器时，即使使用相同的密码，也必须创建新的 VeraCrypt 救援盘。先前创建的 VeraCrypt 救援盘无法重复使用，因为它是为不同的主密钥创建的。</td>
+<td>不验证 Sealbox 救援盘是否正确刻录。<strong>警告</strong>：切勿尝试使用此选项来促进重复使用先前创建的 Sealbox 救援盘。请注意，每次加密系统分区/驱动器时，即使使用相同的密码，也必须创建新的 Sealbox 救援盘。先前创建的 Sealbox 救援盘无法重复使用，因为它是为不同的主密钥创建的。</td>
 </tr>
 <tr>
 <td>/nosizecheck</td>
@@ -301,7 +301,7 @@
 </tr>
 <tr>
 <td><em>/protectMemory</em>&nbsp;</td>
-<td>激活一种机制，保护 VeraCrypt Format 进程内存不被其他非管理员进程访问。</td>
+<td>激活一种机制，保护 Sealbox Format 进程内存不被其他非管理员进程访问。</td>
 </tr>
 <tr>
 <td><em>/secureDesktop</em></td>
@@ -322,7 +322,7 @@
 <p>卸载挂载为驱动器号 <em>X</em> 的卷（不会显示主程序窗口）：</p>
 <p>veracrypt /q /d x</p>
 <p>使用密码 <em>MyPassword</em> 挂载名为 <em>myvolume.tc</em> 的卷，挂载为驱动器号
-<em>X</em>。VeraCrypt 将打开资源管理器窗口并发出蜂鸣声；挂载将自动进行：</p>
+<em>X</em>。Sealbox 将打开资源管理器窗口并发出蜂鸣声；挂载将自动进行：</p>
 <p>veracrypt /v myvolume.tc /l x /a /p MyPassword /e /b</p>
 <p>使用密码 <em>test</em> 创建一个 10 MB 的文件容器，并使用 FAT 格式化：</p>
 <p><code>&quot;C:\Program Files\VeraCrypt\VeraCrypt Format.exe&quot; /create c:\Data\test.hc /password test /hash sha512 /encryption serpent /filesystem FAT /size 10M /force</code></p>

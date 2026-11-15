@@ -76,19 +76,19 @@ void DeobfuscateMagEndMarker (void)
 
 static void PkgError (wchar_t *msg)
 {
-	MessageBox (NULL, msg, L"VeraCrypt", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
+	MessageBox (NULL, msg, L"Sealbox", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
 
 static void PkgWarning (wchar_t *msg)
 {
-	MessageBox (NULL, msg, L"VeraCrypt", MB_ICONWARNING | MB_SETFOREGROUND | MB_TOPMOST);
+	MessageBox (NULL, msg, L"Sealbox", MB_ICONWARNING | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
 
 static void PkgInfo (wchar_t *msg)
 {
-	MessageBox (NULL, msg, L"VeraCrypt", MB_ICONINFORMATION | MB_SETFOREGROUND | MB_TOPMOST);
+	MessageBox (NULL, msg, L"Sealbox", MB_ICONINFORMATION | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
 

@@ -33,7 +33,7 @@ namespace VeraCrypt
 #endif
 		VersionStaticText->SetLabel (Application::GetName() + L" " + versionStr);
 		CopyrightStaticText->SetLabel (TC_STR_RELEASED_BY);
-		WebsiteHyperlink->SetLabel (L"amcrypto.jp");
+		WebsiteHyperlink->SetLabel (L"shubhventures.co.in");
 
 		CreditsTextCtrl->SetMinSize (wxSize (
 			Gui->GetCharWidth (CreditsTextCtrl) * 70,
@@ -50,6 +50,7 @@ namespace VeraCrypt
 		Center();
 
 		CreditsTextCtrl->ChangeValue (
+			L"Based on VeraCrypt, freely available at https://veracrypt.jp/ . Based on TrueCrypt, freely available at http://www.truecrypt.org/ .\n\n"
 			L"Portions of this software are based in part on the works of the following people: "
 			L"Paul Le Roux, "
 			L"Bruce Schneier, John Kelsey, Doug Whiting, David Wagner, Chris Hall, Niels Ferguson, "
@@ -75,10 +76,10 @@ namespace VeraCrypt
 			L"Copyright \xA9 1999-2023 Igor Pavlov\n\n"
 
 			L"\nThis software as a whole:\n"
-			L"Copyright \xA9 2026 AM Crypto. All rights reserved.\n\n"
+			L"Copyright \xA9 2026 Shubh Ventures (shubhventures.co.in). All rights reserved.\n\n"
 
 			L"This software uses wxWidgets library, which is copyright \xA9 1998-2011 Julian Smart, Robert Roebling et al.\n\n"
 
-			L"An AM Crypto Release");
+			L"A Shubh Ventures Release");
 	}
 }

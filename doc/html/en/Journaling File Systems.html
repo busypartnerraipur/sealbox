@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -35,11 +35,11 @@
 
 <div class="wikidoc">
 <h1>Journaling File Systems</h1>
-<p>When a file-hosted VeraCrypt container is stored in a journaling file system (such as NTFS or Ext3), a copy of the VeraCrypt container (or of its fragment) may remain in the free space on the host volume. This may have various security implications. For
- example, if you change the volume password/keyfile(s) and an adversary finds the old copy or fragment (the old header) of the VeraCrypt volume, he might use it to mount the volume using an old compromised password (and/or using compromised keyfiles using an
+<p>When a file-hosted Sealbox container is stored in a journaling file system (such as NTFS or Ext3), a copy of the Sealbox container (or of its fragment) may remain in the free space on the host volume. This may have various security implications. For
+ example, if you change the volume password/keyfile(s) and an adversary finds the old copy or fragment (the old header) of the Sealbox volume, he might use it to mount the volume using an old compromised password (and/or using compromised keyfiles using an
  old compromised password (and/or using compromised keyfiles that were necessary to mount the volume before the volume header was re- encrypted). Some journaling file systems also internally record file access times and other potentially sensitive information.
  If you need plausible deniability (see section <a href="Plausible%20Deniability.html">
-<em>Plausible Deniability</em></a>), you must not store file-hosted VeraCrypt containers in journaling file systems. To prevent possible security issues related to journaling file systems, do one the following:</p>
+<em>Plausible Deniability</em></a>), you must not store file-hosted Sealbox containers in journaling file systems. To prevent possible security issues related to journaling file systems, do one the following:</p>
 <ul>
-<li>Use a partition/device-hosted VeraCrypt volume instead of file-hosted. </li><li>Store the container in a non-journaling file system (for example, FAT32). </li></ul>
+<li>Use a partition/device-hosted Sealbox volume instead of file-hosted. </li><li>Store the container in a non-journaling file system (for example, FAT32). </li></ul>
 </div><div class="ClearBoth"></div></body></html>

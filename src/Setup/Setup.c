@@ -1261,7 +1261,7 @@ BOOL DoRegInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bInstallType)
 				    0, NULL, REG_OPTION_NON_VOLATILE, KEY_WRITE, NULL, &hkey, &dw) != ERROR_SUCCESS)
 			goto error;
 
-		StringCbCopyW (szTmp, sizeof(szTmp), L"VeraCrypt Volume");
+		StringCbCopyW (szTmp, sizeof(szTmp), L"Sealbox Volume");
 		if (RegSetValueEx (hkey, L"", 0, REG_SZ, (BYTE *) szTmp, (wcslen (szTmp) + 1) * sizeof (wchar_t)) != ERROR_SUCCESS)
 			goto error;
 
@@ -1349,7 +1349,7 @@ BOOL DoRegInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bInstallType)
 	if (RegSetValueEx (hkey, L"DisplayVersion", 0, REG_SZ, (BYTE *) szTmp, (wcslen (szTmp) + 1) * sizeof (wchar_t)) != ERROR_SUCCESS)
 		goto error;
 
-	StringCbCopyW (szTmp, sizeof(szTmp), L"VeraCrypt");
+	StringCbCopyW (szTmp, sizeof(szTmp), L"Sealbox");
 	if (RegSetValueEx (hkey, L"DisplayName", 0, REG_SZ, (BYTE *) szTmp, (wcslen (szTmp) + 1) * sizeof (wchar_t)) != ERROR_SUCCESS)
 		goto error;
 
@@ -2161,7 +2161,7 @@ static void SetSystemRestorePoint (HWND hwndDlg, BOOL finalize)
 		RestPtInfo.dwEventType = BEGIN_SYSTEM_CHANGE;
 		RestPtInfo.dwRestorePtType = bUninstall ? APPLICATION_UNINSTALL : APPLICATION_INSTALL | DEVICE_DRIVER_INSTALL;
 		RestPtInfo.llSequenceNumber = 0;
-		StringCbCopyW (RestPtInfo.szDescription, sizeof(RestPtInfo.szDescription), bUninstall ? L"VeraCrypt uninstallation" : L"VeraCrypt installation");
+		StringCbCopyW (RestPtInfo.szDescription, sizeof(RestPtInfo.szDescription), bUninstall ? L"Sealbox uninstallation" : L"Sealbox installation");
 
 		if(!_SRSetRestorePoint (&RestPtInfo, &SMgrStatus))
 		{
@@ -2867,9 +2867,9 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 	}
 
 #ifdef PORTABLE
-	lpszTitle = L"VeraCrypt Portable";
+	lpszTitle = L"Sealbox Portable";
 #else
-	lpszTitle = L"VeraCrypt Setup";
+	lpszTitle = L"Sealbox Setup";
 #endif
 	/* Call InitApp to initialize the common code */
 	InitApp (hInstance, NULL);
@@ -2926,9 +2926,9 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 			else if (!bDevm)
 			{
 #ifndef PORTABLE
-				MessageBox (NULL, L"Error: This installer file does not contain any compressed files.\n\nTo create a self-extracting installation package (with embedded compressed files), run:\n\"VeraCrypt Setup.exe\" /p", L"VeraCrypt", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
+				MessageBox (NULL, L"Error: This installer file does not contain any compressed files.\n\nTo create a self-extracting installation package (with embedded compressed files), run:\n\"VeraCrypt Setup.exe\" /p", L"Sealbox", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
 #else
-				MessageBox (NULL, L"Error: This portable installer file does not contain any compressed files.\n\nTo create a self-extracting portable installation package (with embedded compressed files), run:\n\"VeraCrypt Portable.exe\" /p", L"VeraCrypt", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
+				MessageBox (NULL, L"Error: This portable installer file does not contain any compressed files.\n\nTo create a self-extracting portable installation package (with embedded compressed files), run:\n\"VeraCrypt Portable.exe\" /p", L"Sealbox", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
 #endif
 				exit (1);
 			}

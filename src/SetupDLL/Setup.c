@@ -542,7 +542,7 @@ static void LogSetupEvent (const wstring &message, eMSILogLevel level)
 	if (source)
 	{
 		WORD type = level == MSI_ERROR_LEVEL ? EVENTLOG_ERROR_TYPE : EVENTLOG_WARNING_TYPE;
-		LPCWSTR strings[] = { L"VeraCrypt MSI", message.c_str () };
+		LPCWSTR strings[] = { L"Sealbox MSI", message.c_str () };
 		ReportEventW (source, type, 0, 0xC0000000 + type, NULL, ARRAYSIZE (strings), 0, strings, NULL);
 		DeregisterEventSource (source);
 	}
@@ -608,7 +608,7 @@ static void MSILogAndShowMessage (MSIHANDLE hInstall, eMSILogLevel level, const 
 #ifdef TEST_HARNESS
     if (!hInstall)
     {
-        MessageBox(NULL, wszMessage.c_str(), L"VeraCrypt", 0);
+        MessageBox(NULL, wszMessage.c_str(), L"Sealbox", 0);
         return;
     }
 #endif
@@ -671,7 +671,7 @@ static void MSILogException (MSIHANDLE hInstaller, const Exception &exception)
 	else if (const ParameterIncorrect *parameterError = dynamic_cast<const ParameterIncorrect *> (&exception))
 		message = AppendSrcPos (L"Parameter incorrect.", parameterError->SrcPos);
 	else
-		message = L"VeraCrypt operation failed with an unexpected exception.";
+		message = L"Sealbox operation failed with an unexpected exception.";
 	MSILog (hInstaller, MSI_WARNING_LEVEL, L"%s", message.c_str ());
 }
 
@@ -1442,7 +1442,7 @@ static void SetSystemRestorePoint_Dll (MSIHANDLE hInstaller, BOOL finalize)
 		RestPtInfo.dwEventType = BEGIN_SYSTEM_CHANGE;
 		RestPtInfo.dwRestorePtType = bUninstall ? APPLICATION_UNINSTALL : APPLICATION_INSTALL | DEVICE_DRIVER_INSTALL;
 		RestPtInfo.llSequenceNumber = 0;
-		StringCbCopyW (RestPtInfo.szDescription, sizeof(RestPtInfo.szDescription), bUninstall ? L"VeraCrypt uninstallation" : L"VeraCrypt installation");
+		StringCbCopyW (RestPtInfo.szDescription, sizeof(RestPtInfo.szDescription), bUninstall ? L"Sealbox uninstallation" : L"Sealbox installation");
 
 		if(!_SRSetRestorePoint (&RestPtInfo, &SMgrStatus))
 		{

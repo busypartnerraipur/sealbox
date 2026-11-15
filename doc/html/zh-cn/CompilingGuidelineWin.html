@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，VeraCrypt可提供似是而非的否认性。与文件加密不同，VeraCrypt执行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，Sealbox可提供似是而非的否认性。与文件加密不同，Sealbox执行的数据加密是实时（即时）、自动、透明的，仅需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -33,7 +33,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -53,18 +53,18 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">技术细节</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">从源代码构建VeraCrypt</a>
+<a href="CompilingGuidelines.html">从源代码构建Sealbox</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineWin.html">Windows构建指南</a>
 </p></div>
 
 <div class="wikidoc">
-本指南介绍了如何设置一个能够编译VeraCrypt的Windows系统。此外，还描述了如何编译VeraCrypt。 <br>
+本指南介绍了如何设置一个能够编译Sealbox的Windows系统。此外，还描述了如何编译Sealbox。 <br>
 这里以Windows 10/11系统为例进行说明，但其他Windows系统的操作过程类似。
 </div>
 
 <div class="wikidoc">
-编译当前VeraCrypt Windows二进制文件和驱动程序需要以下组件；可选替代项或仅发布时需要的工具会另行标明：
+编译当前Sealbox Windows二进制文件和驱动程序需要以下组件；可选替代项或仅发布时需要的工具会另行标明：
 
 <ol>
     <li>Microsoft Visual Studio 2022，或作为命令行替代方案的Build Tools for Visual Studio 2022</li>
@@ -90,9 +90,9 @@
 <li><strong><a href="#InstallationOfVS2022">安装Microsoft Visual Studio 2022</a></strong></li>
 <li><strong><a href="#InstallationOfWDK10">安装Windows Driver Kit</a></strong></li>
 <li><strong><a href="#InstallationOfVisualBuildTools">安装Build Tools for Visual Studio 2022</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">下载VeraCrypt源代码文件</a></strong></li>
-<li><strong><a href="#CompileWin32X64">编译VeraCrypt的x64、ARM64和驱动程序版本</a></strong></li>
-<li><strong><a href="#BuildVeraCryptExecutables">构建VeraCrypt可执行文件</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">下载Sealbox源代码文件</a></strong></li>
+<li><strong><a href="#CompileWin32X64">编译Sealbox的x64、ARM64和驱动程序版本</a></strong></li>
+<li><strong><a href="#BuildVeraCryptExecutables">构建Sealbox可执行文件</a></strong></li>
 <li><strong><a href="#ImportCertificates">导入证书</a></strong></li>
 <li><strong><a href="#KnownIssues">已知问题</a></strong></li>
 </ul>
@@ -219,7 +219,7 @@
   <a href="#InstallationOfLegacyBootTools">安装旧版BIOS引导加载程序工具（可选）</a>
   <div class="texttohide">
     <p>
-        使用Visual Studio 2022和当前WDK编译标准VeraCrypt应用程序二进制文件或Windows驱动程序不需要这些工具。仅当你需要重新构建“src\Boot\Windows”中的旧版BIOS引导加载程序，或者构建包含Boot项目的解决方案配置（例如“ReleaseCustomEFI”）时才安装它们。
+        使用Visual Studio 2022和当前WDK编译标准Sealbox应用程序二进制文件或Windows驱动程序不需要这些工具。仅当你需要重新构建“src\Boot\Windows”中的旧版BIOS引导加载程序，或者构建包含Boot项目的解决方案配置（例如“ReleaseCustomEFI”）时才安装它们。
         <ol>
             <li>
                 安装Microsoft Visual C++ 1.52。它可通过付费的Microsoft MSDN订阅获取。如果你没有订阅，也可以从互联网档案馆获取ISO镜像： <br>
@@ -359,12 +359,12 @@
  </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">下载VeraCrypt源代码文件</a>
+  <a href="#DownloadVeraCrypt">下载Sealbox源代码文件</a>
   <div class="texttohide">
     <p>
         <ol>
             <li>
-                访问VeraCrypt的Github仓库：<br>
+                访问Sealbox的Github仓库：<br>
                 <a href="https://github.com/veracrypt/VeraCrypt" target="_blank">https://github.com/veracrypt/VeraCrypt</a>
             </li>
             <li>
@@ -377,7 +377,7 @@
  </div>
  
  <div class="textbox" id="CompileWin32X64">
-  <a href="#CompileWin32X64">编译VeraCrypt的x64、ARM64和驱动程序版本</a>
+  <a href="#CompileWin32X64">编译Sealbox的x64、ARM64和驱动程序版本</a>
   <div class="texttohide">
     <p>
         <ol>
@@ -406,13 +406,13 @@
                 选择“Release|Win32”作为活动配置并构建解决方案，以编译发布打包脚本使用的Setup、Portable、COMReg和SetupDLL项目。标准“Release|x64”和“Release|ARM64”解决方案构建会跳过这些Win32项目，因此准备发布包时必须执行此额外构建。
             </li>
             <li>
-                要构建VeraCrypt驱动程序，请选择“Driver”项目，并分别为“Release|x64”和“Release|ARM64”构建它。
+                要构建Sealbox驱动程序，请选择“Driver”项目，并分别为“Release|x64”和“Release|ARM64”构建它。
             </li>
             <li>
                 仅当需要自定义EFI/引导加载程序发布配置时，才构建“ReleaseCustomEFI|x64”或“ReleaseCustomEFI|ARM64”。这些配置包含Boot项目，并需要上面列出的可选旧版BIOS引导加载程序工具。它们还会使用Win32配置构建Setup、Portable、COMReg和SetupDLL项目。
             </li>
             <li>
-                如果使用Build Tools for Visual Studio 2022而不是Visual Studio IDE，请打开“Developer Command Prompt for VS 2022”或“Developer PowerShell for VS 2022”，切换到VeraCrypt源代码根目录，并运行等效的MSBuild命令（编译不需要管理员权限）：
+                如果使用Build Tools for Visual Studio 2022而不是Visual Studio IDE，请打开“Developer Command Prompt for VS 2022”或“Developer PowerShell for VS 2022”，切换到Sealbox源代码根目录，并运行等效的MSBuild命令（编译不需要管理员权限）：
                 <br>
                 <code>
                     msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=x64 <br>
@@ -438,7 +438,7 @@
  </div>
  
  <div class="textbox" id="BuildVeraCryptExecutables">
-  <a href="#BuildVeraCryptExecutables">构建VeraCrypt可执行文件</a>
+  <a href="#BuildVeraCryptExecutables">构建Sealbox可执行文件</a>
   <div class="texttohide">
     <p>
         <ol>
@@ -462,8 +462,8 @@
  <div class="textbox" id="ImportCertificates">
   <a href="#ImportCertificates">导入证书</a>
   <div class="texttohide">
-    <p> 使用sign_test.bat脚本，你刚刚对VeraCrypt可执行文件进行了签名。这是必要的，因为Windows仅接受由签名证书颁发机构信任的驱动程序。<br>
-    由于你没有使用官方的VeraCrypt签名证书来签署代码，而是使用了公共开发版本，因此你需要导入并信任所使用的证书。
+    <p> 使用sign_test.bat脚本，你刚刚对Sealbox可执行文件进行了签名。这是必要的，因为Windows仅接受由签名证书颁发机构信任的驱动程序。<br>
+    由于你没有使用官方的Sealbox签名证书来签署代码，而是使用了公共开发版本，因此你需要导入并信任所使用的证书。
         <ol>
             <li>
                 打开“src/Signing”文件夹
@@ -513,7 +513,7 @@
                 </ul>
                 有关详细信息，请参阅 <a href="https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12" target="_blank">https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12</a>。<br>
                 <br>
-                另一种方法是在VeraCrypt代码中禁用签名验证。此操作仅应在测试环境中使用，切勿用于生产环境：
+                另一种方法是在Sealbox代码中禁用签名验证。此操作仅应在测试环境中使用，切勿用于生产环境：
                 <ol>
                     <li>
                         打开“src/Common/Dlgcode.c”文件
@@ -534,18 +534,18 @@
                         </p>
                     </li>
                     <li>
-                        再次编译VeraCrypt代码
+                        再次编译Sealbox代码
                     </li>
                 </ol>
             </li>
             <li>
-                <b>自定义构建的VeraCrypt安装过程中驱动程序安装失败</b> <br>
+                <b>自定义构建的Sealbox安装过程中驱动程序安装失败</b> <br>
                 <img src="CompilingGuidelineWin/CertVerifyFails.jpg" width="20%"> <br>
                 Windows会验证每个要安装的驱动程序的签名。<br>
                 出于安全原因，Windows仅允许由Microsoft签名的驱动程序加载。<br>
                 因此，在使用自定义构建时：<br>
                 <ul>
-                    <li>如果你未修改VeraCrypt驱动程序源代码，则可以使用VeraCrypt源代码中包含的由Microsoft签名的驱动程序（位于“src\Release\Setup Files”下）。</li>
+                    <li>如果你未修改Sealbox驱动程序源代码，则可以使用Sealbox源代码中包含的由Microsoft签名的驱动程序（位于“src\Release\Setup Files”下）。</li>
                     <li>如果你进行了修改，<strong>你需要将Windows启动到“测试模式”</strong>。此模式允许Windows加载未由Microsoft签名的驱动程序。但是，即使在“测试模式”下，签名也有特定要求，并且由于以下原因仍可能会失败。</li>
                 </ul>
                 “测试模式”下安装失败的潜在原因：
@@ -555,7 +555,7 @@
                         你可以通过检查可执行文件的属性来验证是否受影响：
                         <ol>
                             <li>
-                                右键单击VeraCrypt安装可执行文件：“src/Release/Setup Files/VeraCrypt Setup 1.XX.exe”
+                                右键单击Sealbox安装可执行文件：“src/Release/Setup Files/VeraCrypt Setup 1.XX.exe”
                             </li>
                             <li>
                                 点击“属性”

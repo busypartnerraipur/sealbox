@@ -5,8 +5,8 @@
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -35,7 +35,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -55,18 +55,18 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">Technical Details</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">Building VeraCrypt From Source</a>
+<a href="CompilingGuidelines.html">Building Sealbox From Source</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineWin.html">Windows Build Guide</a>
 </p></div>
 
 <div class="wikidoc">
-This guide describes how to set up a Windows system that can compile VeraCrypt. Further it is described how VeraCrypt is going to be compiled. <br>
+This guide describes how to set up a Windows system that can compile Sealbox. Further it is described how Sealbox is going to be compiled. <br>
 The procedure for a Windows 10/11 system is described here as an example, but the procedure for other Windows systems is analogous.
 </div>
 
 <div class="wikidoc">
-The following components are required for compiling the current VeraCrypt Windows binaries and drivers; optional alternatives or release-only tools are marked accordingly:
+The following components are required for compiling the current Sealbox Windows binaries and drivers; optional alternatives or release-only tools are marked accordingly:
 
 <ol>
 	<li>Microsoft Visual Studio 2022, or Build Tools for Visual Studio 2022 as a command-line alternative</li>
@@ -92,9 +92,9 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
 <li><strong><a href="#InstallationOfVS2022">Installation of Microsoft Visual Studio 2022</a></strong></li>
 <li><strong><a href="#InstallationOfWDK10">Installation of the Windows Driver Kit</a></strong></li>
 <li><strong><a href="#InstallationOfVisualBuildTools">Installation of the Build Tools for Visual Studio 2022</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">Download VeraCrypt Source Files</a></strong></li>
-<li><strong><a href="#CompileWin32X64">Compile the x64, ARM64 and Driver Builds of VeraCrypt</a></strong></li>
-<li><strong><a href="#BuildVeraCryptExecutables">Build the VeraCrypt Executables</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">Download Sealbox Source Files</a></strong></li>
+<li><strong><a href="#CompileWin32X64">Compile the x64, ARM64 and Driver Builds of Sealbox</a></strong></li>
+<li><strong><a href="#BuildVeraCryptExecutables">Build the Sealbox Executables</a></strong></li>
 <li><strong><a href="#ImportCertificates">Import the Certificates</a></strong></li>
 <li><strong><a href="#KnownIssues">Known Issues</a></strong></li>
 </ul>
@@ -220,7 +220,7 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
   <a href="#InstallationOfLegacyBootTools">Installation of Legacy BIOS Bootloader Tools (optional)</a>
   <div class="texttohide">
     <p>
-		These tools are not required to compile the standard VeraCrypt application binaries or the Windows driver with Visual Studio 2022 and the current WDK. Install them only when you need to rebuild the legacy BIOS bootloader in "src\Boot\Windows" or build solution configurations that include the Boot project, such as "ReleaseCustomEFI".
+		These tools are not required to compile the standard Sealbox application binaries or the Windows driver with Visual Studio 2022 and the current WDK. Install them only when you need to rebuild the legacy BIOS bootloader in "src\Boot\Windows" or build solution configurations that include the Boot project, such as "ReleaseCustomEFI".
 		<ol>
 			<li>
 				Install Microsoft Visual C++ 1.52. It is available via the paid Microsoft MSDN subscription. If you do not have a subscription, the ISO image is also archived at: <br>
@@ -359,12 +359,12 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
  </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">Download VeraCrypt Source Files</a>
+  <a href="#DownloadVeraCrypt">Download Sealbox Source Files</a>
   <div class="texttohide">
     <p>
 		<ol>
 			<li>
-				Visit the VeraCrypt Github repository at: <br>
+				Visit the Sealbox Github repository at: <br>
 				<a href="https://github.com/veracrypt/VeraCrypt" target="_blank">https://github.com/veracrypt/VeraCrypt</a>
 			</li>
 			<li>
@@ -377,7 +377,7 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
  </div>
  
  <div class="textbox" id="CompileWin32X64">
-  <a href="#CompileWin32X64">Compile the x64, ARM64 and Driver Builds of VeraCrypt</a>
+  <a href="#CompileWin32X64">Compile the x64, ARM64 and Driver Builds of Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -406,13 +406,13 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
 				Select "Release|Win32" as the active configuration and build the solution to compile the Setup, Portable, COMReg and SetupDLL projects used by the release packaging scripts. Standard "Release|x64" and "Release|ARM64" solution builds skip these Win32 projects, so this additional build is required when preparing release packages.
 			</li>
 			<li>
-				To build VeraCrypt drivers, select the "Driver" project and build it for "Release|x64" and "Release|ARM64".
+				To build Sealbox drivers, select the "Driver" project and build it for "Release|x64" and "Release|ARM64".
 			</li>
 			<li>
 				Build "ReleaseCustomEFI|x64" or "ReleaseCustomEFI|ARM64" only if you need the custom EFI/bootloader release configurations. These configurations include the Boot project and require the optional legacy BIOS bootloader tools listed above. They also build the Setup, Portable, COMReg and SetupDLL projects using their Win32 configurations.
 			</li>
 			<li>
-				If you are using Build Tools for Visual Studio 2022 instead of the Visual Studio IDE, open "Developer Command Prompt for VS 2022" or "Developer PowerShell for VS 2022", change to the VeraCrypt source root, and run the equivalent MSBuild commands (administrator rights are not required for compiling):
+				If you are using Build Tools for Visual Studio 2022 instead of the Visual Studio IDE, open "Developer Command Prompt for VS 2022" or "Developer PowerShell for VS 2022", change to the Sealbox source root, and run the equivalent MSBuild commands (administrator rights are not required for compiling):
 				<br>
 				<code>
 					msbuild src\VeraCrypt.sln /m /p:Configuration=Release /p:Platform=x64 <br>
@@ -438,7 +438,7 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
  </div>
  
  <div class="textbox" id="BuildVeraCryptExecutables">
-  <a href="#BuildVeraCryptExecutables">Build the VeraCrypt Executables</a>
+  <a href="#BuildVeraCryptExecutables">Build the Sealbox Executables</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -462,8 +462,8 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
  <div class="textbox" id="ImportCertificates">
   <a href="#ImportCertificates">Import the Certificates</a>
   <div class="texttohide">
-    <p> With the sign_test.bat script you just signed the VeraCrypt executables. This is necessary, since Windows only accepts drivers, which are trusted by a signed Certificate Authority. <br>
-	Since you did not use the official VeraCrypt signing certificate to sign your code, but a public development version, you have to import and therefore trust the certificates used.
+    <p> With the sign_test.bat script you just signed the Sealbox executables. This is necessary, since Windows only accepts drivers, which are trusted by a signed Certificate Authority. <br>
+	Since you did not use the official Sealbox signing certificate to sign your code, but a public development version, you have to import and therefore trust the certificates used.
 		<ol>
 			<li>
 				Open the folder "src/Signing"
@@ -518,7 +518,7 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
 				</ul>
 				Please see <a href="https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12" target="_blank">https://sourceforge.net/p/veracrypt/discussion/technical/thread/83d5a2d6e8/#db12</a> for further details.<br>
 				<br>
-				Another approach is to disable the signature verification in the VeraCrypt code. This should be done only for testing purposes and not for production use:
+				Another approach is to disable the signature verification in the Sealbox code. This should be done only for testing purposes and not for production use:
 				<ol>
 					<li>
 						Open the file "src/Common/Dlgcode.c"
@@ -539,18 +539,18 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
 						</p>
 					</li>
 					<li>
-						Compile the VeraCrypt code again
+						Compile the Sealbox code again
 					</li>
 				</ol>
 			</li>
 			<li>
-				<b>Driver Installation Failure during VeraCrypt Setup from Custom Builds</b> <br>
+				<b>Driver Installation Failure during Sealbox Setup from Custom Builds</b> <br>
 				<img src="CompilingGuidelineWin/CertVerifyFails.jpg" width="20%"> <br>
 				Windows validates the signature for every driver which is going to be installed.<br>
 				For security reasons, Windows allows only drivers signed by Microsoft to load.<br>
 				So, when using a custom build:<br>
 				<ul>
-					<li>If you have not modified the VeraCrypt driver source code, you can use the Microsoft-signed drivers included in the VeraCrypt source code (under "src\Release\Setup Files").</li>
+					<li>If you have not modified the Sealbox driver source code, you can use the Microsoft-signed drivers included in the Sealbox source code (under "src\Release\Setup Files").</li>
 					<li>If you have made modifications, <strong>you will need to boot Windows into "Test Mode"</strong>. This mode allows Windows to load drivers that aren't signed by Microsoft. However, even in "Test Mode", there are certain requirements for signatures, and failures can still occur due to reasons discussed below.</li>
 				</ul>
 				Potential Causes for Installation Failure under "Test Mode":
@@ -560,7 +560,7 @@ Below are the procedure steps. Clicking on any of the link takes directly to the
 						You can verify if you are affected by checking the properties of the executable:
 						<ol>
 							<li>
-								Make a right click on the VeraCrypt Setup executable: "src/Release/Setup Files/VeraCrypt Setup 1.XX.exe"
+								Make a right click on the Sealbox Setup executable: "src/Release/Setup Files/VeraCrypt Setup 1.XX.exe"
 							</li>
 							<li>
 								Click on properties

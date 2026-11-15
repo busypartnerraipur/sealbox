@@ -1071,7 +1071,7 @@ BOOL CALLBACK MainDialogProc (HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 		if (lw == IDM_HOMEPAGE )
 		{
 			ArrowWaitCursor ();
-			SafeOpenURL (L"https://veracrypt.jp");
+			SafeOpenURL (L"https://shubhventures.co.in");
 			Sleep (200);
 			NormalCursor ();
 
@@ -1167,7 +1167,7 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 	InitApp (hInstance, lpszCommandLine);
 
 	/* application title */
-	lpszTitle = L"VeraCrypt Expander";
+	lpszTitle = L"Sealbox Expander";
 
 #ifndef _M_ARM64
 	DetectX86Features();

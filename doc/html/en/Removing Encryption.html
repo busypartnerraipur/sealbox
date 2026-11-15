@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -35,14 +35,14 @@
 
 <div class="wikidoc">
 <h1>How to Remove Encryption</h1>
-<p>Please note that VeraCrypt can in-place decrypt only <strong>partitions and drives
+<p>Please note that Sealbox can in-place decrypt only <strong>partitions and drives
 </strong>(select <em>System</em> &gt; <em>Permanently Decrypt System Partition/Drive
 </em>for system partition/drive and select <em>Volumes -&gt; Permanently Decrypt </em>
 for non-system partition/drive). If you need to remove encryption (e.g., if you no longer need encryption) from a
 <strong>file-hosted volume</strong>, please follow these steps:</p>
 <ol>
-<li>Mount the VeraCrypt volume. </li><li>Move all files from the VeraCrypt volume to any location outside the VeraCrypt volume (note that the files will be decrypted on the fly).
-</li><li>Unmount the VeraCrypt volume. </li><li>delete it (the container) just like you delete any other file. </li></ol>
+<li>Mount the Sealbox volume. </li><li>Move all files from the Sealbox volume to any location outside the Sealbox volume (note that the files will be decrypted on the fly).
+</li><li>Unmount the Sealbox volume. </li><li>delete it (the container) just like you delete any other file. </li></ol>
 <p>If in-place decryption of non-system partitions/drives is not desired, it is also possible in this case to follow the steps 1-3 described above.<br>
 <br>
 In all cases, if the steps 1-3 are followed, the following extra operations can be performed:</p>
@@ -60,7 +60,7 @@ In all cases, if the steps 1-3 are followed, the following extra operations can 
 <br>
 If you clicked <em>Add</em>, then in the &lsquo;<em>Add Drive Letter or Path</em>&rsquo; (which should have appeared), select a drive letter you want to assign to the partition and click
 <em>OK</em>. </li><li>In the <em>Computer Management</em> window, right-click the partition you want to decrypt again and select
-<em>Format</em>. The <em>Format</em> window should appear. </li><li>In the <em>Format</em> window, click <em>OK</em>. After the partition is formatted, it will no longer be required to mount it with VeraCrypt to be able to save or load files to/from the partition.
+<em>Format</em>. The <em>Format</em> window should appear. </li><li>In the <em>Format</em> window, click <em>OK</em>. After the partition is formatted, it will no longer be required to mount it with Sealbox to be able to save or load files to/from the partition.
 </li></ol>
 </ol>
 <ul>
@@ -73,7 +73,7 @@ If you clicked <em>Add</em>, then in the &lsquo;<em>Add Drive Letter or Path</em
 <em>Storage</em> sub-tree). </li><li>The &lsquo;<em>Initialize Disk</em>&rsquo; window should appear. Use it to initialize the disk.
 </li><li>In the &lsquo;<em>Computer Management</em>&rsquo; window, right-click the area representing the storage space of the encrypted device and select &lsquo;<em>New Partition</em>&rsquo; or &lsquo;<em>New Simple Volume</em>&rsquo;.
 </li><li>WARNING: Before you continue, make sure you have selected the correct device, as all files stored on it will be lost. The &lsquo;<em>New Partition Wizard</em>&rsquo; or &lsquo;<em>New Simple Volume Wizard</em>&rsquo; window should appear now; follow its
- instructions to create a new partition on the device. After the partition is created, it will no longer be required to mount the device with VeraCrypt to be able to save or load files to/from the device.
+ instructions to create a new partition on the device. After the partition is created, it will no longer be required to mount the device with Sealbox to be able to save or load files to/from the device.
 </li></ol>
 </blockquote>
 </div><div class="ClearBoth"></div></body></html>

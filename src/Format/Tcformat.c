@@ -557,7 +557,7 @@ static BOOL CALLBACK BroadcastSysEncCfgUpdateCallb (HWND hwnd, LPARAM lParam)
 	{
 		wchar_t name[1024] = { 0 };
 		GetWindowText (hwnd, name, ARRAYSIZE (name) - 1);
-		if (hwnd != MainDlg && wcsstr (name, L"VeraCrypt"))
+		if (hwnd != MainDlg && wcsstr (name, L"Sealbox"))
 		{
 			PostMessage (hwnd, TC_APPMSG_SYSENC_CONFIG_UPDATE, 0, 0);
 		}

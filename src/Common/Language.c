@@ -366,7 +366,7 @@ static BOOL LoadLanguageData (int resourceid, BOOL bForceSetPreferredLanguage, B
 									case 'n': *out++ = 13; *out++ = 10; break;
 									default:
 										if (!bForceSilent)
-											MessageBoxA (0, pkey, "VeraCrypt: Unknown '\\' escape sequence in string", MB_ICONERROR);
+											MessageBoxA (0, pkey, "Sealbox: Unknown '\\' escape sequence in string", MB_ICONERROR);
 										return FALSE;
 									}
 								}
@@ -381,7 +381,7 @@ static BOOL LoadLanguageData (int resourceid, BOOL bForceSetPreferredLanguage, B
 						if (len == 0)
 						{
 							if (!bForceSilent)
-								MessageBoxA (0, pkey, "VeraCrypt: Error while decoding UTF-8 string", MB_ICONERROR);
+								MessageBoxA (0, pkey, "Sealbox: Error while decoding UTF-8 string", MB_ICONERROR);
 							return FALSE;
 						}
 
@@ -413,9 +413,9 @@ static BOOL LoadLanguageData (int resourceid, BOOL bForceSetPreferredLanguage, B
 	if (!langFound && incompatibleLangFound && !bForceSilent)
 	{
 		wchar_t message[2048];
-		StringCbPrintfW (message, sizeof (message), L"The selected language pack is for VeraCrypt %hs and is incompatible with VeraCrypt %hs. VeraCrypt will use English.\n\nInstall a compatible language pack in the Languages folder next to VeraCrypt.exe, or select English in Settings > Language.\n\nIf this followed a failed upgrade, run the new VeraCrypt installer again to complete the installation.",
+		StringCbPrintfW (message, sizeof (message), L"The selected language pack is for Sealbox %hs and is incompatible with Sealbox %hs. Sealbox will use English.\n\nInstall a compatible language pack in the Languages folder next to VeraCrypt.exe, or select English in Settings > Language.\n\nIf this followed a failed upgrade, run the new Sealbox installer again to complete the installation.",
 			incompatibleVersion[0] ? incompatibleVersion : "(unknown version)", VERSION_STRING);
-		MessageBoxW (NULL, message, L"VeraCrypt", MB_ICONWARNING);
+		MessageBoxW (NULL, message, L"Sealbox", MB_ICONWARNING);
 	}
 
 	if (bForceSetPreferredLanguage)

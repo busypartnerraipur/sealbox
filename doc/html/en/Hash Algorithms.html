@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -34,15 +34,15 @@
 <div class="wikidoc">
 <h1>Hash Algorithms</h1>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-In the Volume Creation Wizard and in the password change dialog window, you can select a hash algorithm when using PBKDF2-HMAC as the key derivation function. In the Keyfile Generator dialog window, the selected hash algorithm is used by the VeraCrypt Random Number Generator as its pool mixing function. When Argon2id is selected as the key derivation function, no separate hash algorithm selection is available for header key derivation because Argon2id uses its own internal BLAKE2b-512 hash function.
+In the Volume Creation Wizard and in the password change dialog window, you can select a hash algorithm when using PBKDF2-HMAC as the key derivation function. In the Keyfile Generator dialog window, the selected hash algorithm is used by the Sealbox Random Number Generator as its pool mixing function. When Argon2id is selected as the key derivation function, no separate hash algorithm selection is available for header key derivation because Argon2id uses its own internal BLAKE2b-512 hash function.
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-For PBKDF2-HMAC, the user-selected hash algorithm is used by the VeraCrypt Random Number Generator as a pseudorandom &quot;mixing&quot; function, and by the header key derivation function (HMAC based on a hash function, as specified in PKCS #5 v2.0) as a pseudorandom function. When creating a new volume, the Random Number Generator generates the master key, secondary key (XTS mode), and salt. For more
+For PBKDF2-HMAC, the user-selected hash algorithm is used by the Sealbox Random Number Generator as a pseudorandom &quot;mixing&quot; function, and by the header key derivation function (HMAC based on a hash function, as specified in PKCS #5 v2.0) as a pseudorandom function. When creating a new volume, the Random Number Generator generates the master key, secondary key (XTS mode), and salt. For more
  information, please see the section <a href="Random%20Number%20Generator.html" style="text-align:left; color:#0080c0; text-decoration:none">
 Random Number Generator</a> and section <a href="Header%20Key%20Derivation.html" style="text-align:left; color:#0080c0; text-decoration:none">
 Header Key Derivation, Salt, and Iteration Count</a>.</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-VeraCrypt currently supports the following hash algorithms for PBKDF2-HMAC:</div>
+Sealbox currently supports the following hash algorithms for PBKDF2-HMAC:</div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <a href="BLAKE2s-256.html"><strong style="text-align:left">BLAKE2s-256</strong></a>
@@ -56,7 +56,7 @@ VeraCrypt currently supports the following hash algorithms for PBKDF2-HMAC:</div
 <strong style="text-align:left"><a href="Streebog.html">Streebog</a></strong>
 </li></ul>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-VeraCrypt also associates the following hash with Argon2id:</div>
+Sealbox also associates the following hash with Argon2id:</div>
 <ul style="text-align:left; margin-top:18px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
 <li style="text-align:left; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
 <a href="BLAKE2b-512.html"><strong style="text-align:left">BLAKE2b-512</strong></a> (associated with Argon2id; not selectable for PBKDF2-HMAC)

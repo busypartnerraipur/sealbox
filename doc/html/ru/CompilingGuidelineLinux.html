@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
-<meta name="description" content="VeraCrypt это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, VeraCrypt обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, VeraCrypt шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
+<title>Sealbox - Бесплатное надёжное шифрование дисков с открытым исходным кодом</title>
+<meta name="description" content="Sealbox это бесплатное программное обеспечение для шифрования дисков с открытым исходным кодом для Windows, Mac OS X (macOS) и Linux. В случае, если злоумышленник вынуждает вас раскрыть пароль, Sealbox обеспечивает правдоподобное отрицание наличия шифрования. В отличие от пофайлового шифрования, Sealbox шифрует данные в реальном времени (на лету), автоматически, прозрачно, требует очень мало памяти и не использует временные незашифрованные файлы."/>
 <meta name="keywords" content="encryption, security, шифрование, безопасность"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -33,7 +33,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -53,20 +53,20 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">Технические подробности</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">Сборка VeraCrypt из исходного кода</a>
+<a href="CompilingGuidelines.html">Сборка Sealbox из исходного кода</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineLinux.html">Руководство по сборке в Linux</a>
 </p></div>
 
 <div class="wikidoc">
-В этом руководстве описано, как настроить систему Linux для сборки программы VeraCrypt из исходных кодов и как выполнить компиляцию. <br>
+В этом руководстве описано, как настроить систему Linux для сборки программы Sealbox из исходных кодов и как выполнить компиляцию. <br>
 Здесь как пример приведена процедура для Ubuntu 22.04 LTS, процедуры для других версий Linux аналогичны.
 </div>
 
 <div class="wikidoc">
 <br>
 <br>
-Для компиляции VeraCrypt необходимы следующие компоненты:
+Для компиляции Sealbox необходимы следующие компоненты:
 <ol>
 	<li>GNU Make</li>
 	<li>GNU C/C++ Compiler</li>
@@ -88,8 +88,8 @@
 <li><strong><a href="#InstallationOfwxWidgets">Установка wxWidgets 3.2</a></strong></li>
 <li><strong><a href="#InstallationOfFuse">Установка libfuse</a></strong></li>
 <li><strong><a href="#InstallationOfPCSCLite">Установка libpcsclite</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">Загрузка VeraCrypt</a></strong></li>
-<li><strong><a href="#CompileVeraCrypt">Компиляция VeraCrypt</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">Загрузка Sealbox</a></strong></li>
+<li><strong><a href="#CompileVeraCrypt">Компиляция Sealbox</a></strong></li>
 </ul>
 </p>
 <p>Их также можно выполнить, запустив приведённый ниже список команд в терминале или скопировав их в скрипт:<br>
@@ -246,7 +246,7 @@ make
 </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">Загрузка VeraCrypt</a>
+  <a href="#DownloadVeraCrypt">Загрузка Sealbox</a>
   <div class="texttohide">
     <p>
 		<ol>
@@ -267,7 +267,7 @@ make
  </div>
  
  <div class="textbox" id="CompileVeraCrypt">
-  <a href="#CompileVeraCrypt">Компиляция VeraCrypt</a>
+  <a href="#CompileVeraCrypt">Компиляция Sealbox</a>
   <div class="texttohide">
     <p> Примечания: <br>
 	<ul>
@@ -281,7 +281,7 @@ make
 			</code>
 		</li>
 		<li>
-			Если вы не используете системную библиотеку wxWidgets, то придётся загрузить и использовать исходники wxWidgets, как указано выше, но на этот раз необходимо выполнить следующие команды для сборки версии VeraCrypt с графическим интерфейсом (NOGUI не указан): <br>
+			Если вы не используете системную библиотеку wxWidgets, то придётся загрузить и использовать исходники wxWidgets, как указано выше, но на этот раз необходимо выполнить следующие команды для сборки версии Sealbox с графическим интерфейсом (NOGUI не указан): <br>
 			<code>
 			make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources wxbuild <br>
 			make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources
@@ -301,7 +301,7 @@ make
 				</code>
 			</li>
 			<li>
-				Если всё прошло нормально, исполняемый файл VeraCrypt должен находиться в каталоге "Main".
+				Если всё прошло нормально, исполняемый файл Sealbox должен находиться в каталоге "Main".
 			</li>
 		</ol>
 	</p>

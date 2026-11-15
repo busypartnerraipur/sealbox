@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密软件</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，VeraCrypt可提供合理的否认性。与文件加密不同，VeraCrypt进行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密软件</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者迫使您透露密码，Sealbox可提供合理的否认性。与文件加密不同，Sealbox进行的数据加密是实时（即时）、自动、透明的，只需极少内存，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,15 +36,15 @@
 <div class="wikidoc">
 <div>
 <h1>Linux和macOS命令行使用</h1>
-<p>本节适用于Linux和macOS等类Unix系统上的VeraCrypt。Windows命令行语法另见<a href="Command%20Line%20Usage%20for%20Windows.html">Windows命令行使用</a>。</p>
-<p>要在终端中显示已安装VeraCrypt构建的命令行帮助，请运行：</p>
+<p>本节适用于Linux和macOS等类Unix系统上的Sealbox。Windows命令行语法另见<a href="Command%20Line%20Usage%20for%20Windows.html">Windows命令行使用</a>。</p>
+<p>要在终端中显示已安装Sealbox构建的命令行帮助，请运行：</p>
 <p><code>veracrypt -t --help</code></p>
 <p><code>-t</code>或<code>--text</code>选项选择文本用户界面，且必须指定为第一个参数。不带<code>-t</code>时，如果图形用户界面可用，<code>veracrypt --help</code>可能会显示图形帮助窗口。</p>
 
 <h4>语法</h4>
 <p><code>veracrypt [OPTIONS] COMMAND</code></p>
 <p><code>veracrypt [OPTIONS] VOLUME_PATH [MOUNT_DIRECTORY]</code></p>
-<p>如果未明确指定命令但给出了卷路径，VeraCrypt会挂载该卷。省略<code>MOUNT_DIRECTORY</code>时，VeraCrypt使用默认挂载目录。</p>
+<p>如果未明确指定命令但给出了卷路径，Sealbox会挂载该卷。省略<code>MOUNT_DIRECTORY</code>时，Sealbox使用默认挂载目录。</p>
 
 <h4>命令</h4>
 <table border="1" cellspacing="0" cellpadding="1">
@@ -71,7 +71,7 @@
 </tr>
 <tr>
 <td><em>-u</em> 或 <em>--unmount [MOUNTED_VOLUME]</em><br><em>-d</em> 或 <em>--dismount [MOUNTED_VOLUME]</em></td>
-<td>卸载已挂载的卷。如果未指定已挂载的卷，则卸载所有已挂载的VeraCrypt卷。<em>--dismount</em>已弃用；请使用<em>--unmount</em>。</td>
+<td>卸载已挂载的卷。如果未指定已挂载的卷，则卸载所有已挂载的Sealbox卷。<em>--dismount</em>已弃用；请使用<em>--unmount</em>。</td>
 </tr>
 <tr>
 <td><em>--delete-token-keyfiles</em></td>
@@ -119,7 +119,7 @@
 </tr>
 <tr>
 <td><em>--version</em></td>
-<td>显示VeraCrypt版本信息。</td>
+<td>显示Sealbox版本信息。</td>
 </tr>
 <tr>
 <td><em>--volume-properties [MOUNTED_VOLUME]</em></td>
@@ -131,7 +131,7 @@
 <h4>MOUNTED_VOLUME</h4>
 <p>可使用以下任一形式指定已挂载的卷：</p>
 <ul>
-<li>加密VeraCrypt卷的路径。</li>
+<li>加密Sealbox卷的路径。</li>
 <li>卷文件系统的挂载目录（如果已挂载）。</li>
 <li>与<em>--slot</em>一起使用时，指定已挂载卷的槽位号。</li>
 </ul>
@@ -145,11 +145,11 @@
 </tr>
 <tr>
 <td><em>--allow-screencapture</em></td>
-<td>允许在屏幕截图和屏幕录制中包含VeraCrypt窗口。此选项适用于macOS构建。</td>
+<td>允许在屏幕截图和屏幕录制中包含Sealbox窗口。此选项适用于macOS构建。</td>
 </tr>
 <tr>
 <td><em>--background-task</em></td>
-<td>启动VeraCrypt后台任务。</td>
+<td>启动Sealbox后台任务。</td>
 </tr>
 <tr>
 <td><em>--display-password</em></td>
@@ -157,7 +157,7 @@
 </tr>
 <tr>
 <td><em>--encryption=ENCRYPTION_ALGORITHM</em></td>
-<td>创建新卷时使用指定的加密算法。对于级联算法，请使用VeraCrypt显示的算法名称，例如<code>AES-Twofish</code>。</td>
+<td>创建新卷时使用指定的加密算法。对于级联算法，请使用Sealbox显示的算法名称，例如<code>AES-Twofish</code>。</td>
 </tr>
 <tr>
 <td><em>--explore</em></td>
@@ -197,7 +197,7 @@
 </tr>
 <tr>
 <td><em>-m OPTION1[,OPTION2,...]</em> 或 <em>--mount-options=OPTION1[,OPTION2,...]</em></td>
-<td>设置VeraCrypt卷挂载选项。支持的选项为<em>headerbak</em>、<em>nokernelcrypto</em>、<em>readonly</em>或<em>ro</em>、<em>system</em>，以及<em>timestamp</em>或<em>ts</em>。在Linux上，检测到NTFS且未指定文件系统类型时，<em>kernelntfs</em>会为当前挂载启用内核NTFS驱动程序选择。只读保护同时适用于解密设备和文件系统。需要进行日志恢复写入的文件系统可能拒绝以只读方式挂载。</td>
+<td>设置Sealbox卷挂载选项。支持的选项为<em>headerbak</em>、<em>nokernelcrypto</em>、<em>readonly</em>或<em>ro</em>、<em>system</em>，以及<em>timestamp</em>或<em>ts</em>。在Linux上，检测到NTFS且未指定文件系统类型时，<em>kernelntfs</em>会为当前挂载启用内核NTFS驱动程序选择。只读保护同时适用于解密设备和文件系统。需要进行日志恢复写入的文件系统可能拒绝以只读方式挂载。</td>
 </tr>
 <tr>
 <td><em>--new-hash=HASH</em></td>
@@ -233,7 +233,7 @@
 </tr>
 <tr>
 <td><em>--protect-hidden=yes|no</em></td>
-<td>挂载外部卷时对隐藏卷进行写保护。启用后，VeraCrypt会使用隐藏卷凭据确定隐藏区域并防止写入该区域。</td>
+<td>挂载外部卷时对隐藏卷进行写保护。启用后，Sealbox会使用隐藏卷凭据确定隐藏区域并防止写入该区域。</td>
 </tr>
 <tr>
 <td><em>--protection-hash=HASH</em></td>
@@ -253,7 +253,7 @@
 </tr>
 <tr>
 <td><em>--quick</em></td>
-<td>创建普通文件托管卷或设备托管卷时启用快速格式化。创建外部卷时不要使用此选项。在文本模式下，VeraCrypt无法推断普通卷是否将用作外部卷。对于文件容器，快速格式化可能在宿主文件系统中创建稀疏或未写入区域。空间分配行为取决于宿主文件系统对稀疏文件的支持，如果宿主文件系统空间耗尽，后续写入可能失败。</td>
+<td>创建普通文件托管卷或设备托管卷时启用快速格式化。创建外部卷时不要使用此选项。在文本模式下，Sealbox无法推断普通卷是否将用作外部卷。对于文件容器，快速格式化可能在宿主文件系统中创建稀疏或未写入区域。空间分配行为取决于宿主文件系统对稀疏文件的支持，如果宿主文件系统空间耗尽，后续写入可能失败。</td>
 </tr>
 <tr>
 <td><em>--random-source=FILE</em></td>
@@ -299,7 +299,7 @@
 </table>
 
 <h4>安全注意事项</h4>
-<p>在命令行中传递密码、PIM、令牌PIN码或隐藏卷保护密码可能不安全，因为命令行参数可能在进程列表、shell历史记录或系统日志中可见。请尽可能让VeraCrypt以交互方式提示输入敏感值，或在适用时将<em>--stdin</em>与<em>--non-interactive</em>一起使用。用户还必须遵守<a href="Security%20Requirements%20and%20Precautions.html">安全要求和预防措施</a>中列出的要求。</p>
+<p>在命令行中传递密码、PIM、令牌PIN码或隐藏卷保护密码可能不安全，因为命令行参数可能在进程列表、shell历史记录或系统日志中可见。请尽可能让Sealbox以交互方式提示输入敏感值，或在适用时将<em>--stdin</em>与<em>--non-interactive</em>一起使用。用户还必须遵守<a href="Security%20Requirements%20and%20Precautions.html">安全要求和预防措施</a>中列出的要求。</p>
 
 <h4>示例</h4>
 <p>使用文本用户界面创建新卷：</p>
@@ -320,7 +320,7 @@
 <p><code>veracrypt -t -v --list</code></p>
 <p>卸载卷：</p>
 <p><code>veracrypt -u volume.hc</code></p>
-<p>卸载所有已挂载的VeraCrypt卷：</p>
+<p>卸载所有已挂载的Sealbox卷：</p>
 <p><code>veracrypt -u</code></p>
 
 <h4>在文本模式下创建隐藏卷</h4>

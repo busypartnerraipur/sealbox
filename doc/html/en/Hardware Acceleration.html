@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -37,23 +37,23 @@
 Some processors (CPUs) support hardware-accelerated <a href="AES.html" style="text-align:left; color:#0080c0; text-decoration:none">
 AES</a> encryption,* which is typically 4-8 times faster than encryption performed by the purely software implementation on the same processors.</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-By default, VeraCrypt uses hardware-accelerated AES on computers that have a processor where the Intel AES-NI instructions are available. Specifically, VeraCrypt uses the AES-NI instructions that perform so-called AES rounds (i.e. the main portions of the AES
- algorithm).** VeraCrypt does not use any of the AES-NI instructions that perform key generation.</div>
+By default, Sealbox uses hardware-accelerated AES on computers that have a processor where the Intel AES-NI instructions are available. Specifically, Sealbox uses the AES-NI instructions that perform so-called AES rounds (i.e. the main portions of the AES
+ algorithm).** Sealbox does not use any of the AES-NI instructions that perform key generation.</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-Note: By default, VeraCrypt uses hardware-accelerated AES also when an encrypted Windows system is booting or resuming from hibernation (provided that the processor supports the Intel AES-NI instructions).</div>
+Note: By default, Sealbox uses hardware-accelerated AES also when an encrypted Windows system is booting or resuming from hibernation (provided that the processor supports the Intel AES-NI instructions).</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-To find out whether VeraCrypt can use hardware-accelerated AES on your computer, select
+To find out whether Sealbox can use hardware-accelerated AES on your computer, select
 <em style="text-align:left">Settings</em> &gt; <em style="text-align:left">Performance/</em><em>Driver Configuration</em> and check the field labeled '<em style="text-align:left">Processor (CPU) in this computer supports hardware acceleration for AES</em>'.</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-To find out whether a processor you want to purchase supports the Intel AES-NI instructions (also called &quot;AES New Instructions&quot;), which VeraCrypt uses for hardware-accelerated AES, please check the documentation for the processor or contact the vendor/manufacturer.
+To find out whether a processor you want to purchase supports the Intel AES-NI instructions (also called &quot;AES New Instructions&quot;), which Sealbox uses for hardware-accelerated AES, please check the documentation for the processor or contact the vendor/manufacturer.
  Alternatively, click <a href="http://ark.intel.com/search/advanced/?AESTech=true" style="text-align:left; color:#0080c0; text-decoration:none">
 here</a> to view an official list of Intel processors that support the AES-NI instructions. However, note that some Intel processors, which the Intel website lists as AES-NI-supporting, actually support the AES-NI instructions only with a Processor Configuration
  update (for example, i7-2630/2635QM, i7-2670/2675QM, i5-2430/2435M, i5-2410/2415M). In such cases, you should contact the manufacturer of the motherboard/computer for a BIOS update that includes the latest Processor Configuration update for the processor.</div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">
-If you want to disable hardware acceleration of AES (e.g. because you want VeraCrypt to use only a fully open-source implementation of AES), you can do so by selecting<em style="text-align:left"> Settings</em> &gt;
+If you want to disable hardware acceleration of AES (e.g. because you want Sealbox to use only a fully open-source implementation of AES), you can do so by selecting<em style="text-align:left"> Settings</em> &gt;
 <em style="text-align:left">Performance and Driver Options </em>and disabling the option '<em style="text-align:left">Accelerate AES encryption/decryption by using the AES instructions of the processor</em>'. Note that when this setting is changed, the operating
- system needs to be restarted to ensure that all VeraCrypt components internally perform the requested change of mode. Also note that when you create a VeraCrypt Rescue Disk, the state of this option is written to the Rescue Disk and used whenever you boot
- from it (affecting the pre-boot and initial boot phase). To create a new VeraCrypt Rescue Disk, select
+ system needs to be restarted to ensure that all Sealbox components internally perform the requested change of mode. Also note that when you create a Sealbox Rescue Disk, the state of this option is written to the Rescue Disk and used whenever you boot
+ from it (affecting the pre-boot and initial boot phase). To create a new Sealbox Rescue Disk, select
 <em style="text-align:left">System</em> &gt; <em style="text-align:left">Create Rescue Disk</em>.</div>
 <p>&nbsp;</p>
 <hr align="left" size="1" width="189" style="text-align:left; height:0px; border-width:0px 1px 1px; border-style:solid; border-color:#000000">

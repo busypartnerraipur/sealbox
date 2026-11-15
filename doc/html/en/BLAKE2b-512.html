@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -40,10 +40,10 @@
 BLAKE2b is the 64-bit-word variant of BLAKE2 and the successor of BLAKE-512. BLAKE2b and BLAKE2s are specified in RFC 7693.
 </p>
 <p>
-VeraCrypt uses BLAKE2b with its maximum output size of 64 bytes (512 bits) internally in <a href="Argon2id.html" style="text-align:left; color:#0080c0; text-decoration:none">Argon2id</a>. For non-system volume header key derivation, BLAKE2b-512 is reached by selecting the Argon2 key derivation algorithm in VeraCrypt; this corresponds to Argon2id internally. In hash-oriented contexts such as random pool mixing and keyfile generation, the same underlying hash may be displayed as BLAKE2b-512.
+Sealbox uses BLAKE2b with its maximum output size of 64 bytes (512 bits) internally in <a href="Argon2id.html" style="text-align:left; color:#0080c0; text-decoration:none">Argon2id</a>. For non-system volume header key derivation, BLAKE2b-512 is reached by selecting the Argon2 key derivation algorithm in Sealbox; this corresponds to Argon2id internally. In hash-oriented contexts such as random pool mixing and keyfile generation, the same underlying hash may be displayed as BLAKE2b-512.
 </p>
 <p>
-BLAKE2b-512 is not offered as a separate PBKDF2-HMAC hash algorithm. To use BLAKE2b-512 in VeraCrypt non-system volume header key derivation, select <a href="Argon2id.html" style="text-align:left; color:#0080c0; text-decoration:none">Argon2id</a>; no separate hash algorithm selection is available for Argon2id.
+BLAKE2b-512 is not offered as a separate PBKDF2-HMAC hash algorithm. To use BLAKE2b-512 in Sealbox non-system volume header key derivation, select <a href="Argon2id.html" style="text-align:left; color:#0080c0; text-decoration:none">Argon2id</a>; no separate hash algorithm selection is available for Argon2id.
 </p>
 </div>
 <div style="text-align:left; margin-top:19px; margin-bottom:19px; padding-top:0px; padding-bottom:0px">

@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title> VeraCrypt - 为偏执狂提供强大安全保障的免费开源磁盘加密工具 </title>
-<meta name="description" content="VeraCrypt 是一款适用于 Windows、Mac OS X 和 Linux 的免费开源磁盘加密软件。在攻击者强迫您透露密码的情况下，VeraCrypt 提供了似是而非的否认能力。与文件加密不同，VeraCrypt 执行的数据加密是实时（即时）、自动、透明的，只需要很少的内存，并且不涉及临时未加密文件。" />
+<title> Sealbox - 为偏执狂提供强大安全保障的免费开源磁盘加密工具 </title>
+<meta name="description" content="Sealbox 是一款适用于 Windows、Mac OS X 和 Linux 的免费开源磁盘加密软件。在攻击者强迫您透露密码的情况下，Sealbox 提供了似是而非的否认能力。与文件加密不同，Sealbox 执行的数据加密是实时（即时）、自动、透明的，只需要很少的内存，并且不涉及临时未加密文件。" />
 <meta name="keywords" content="加密, 安全" />
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style>
@@ -33,7 +33,7 @@
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt" /></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox" /></a>
 </div>
 
 <div id="menu">
@@ -53,20 +53,20 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Technical%20Details.html">技术细节</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="CompilingGuidelines.html">从源代码构建 VeraCrypt</a>
+<a href="CompilingGuidelines.html">从源代码构建 Sealbox</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="CompilingGuidelineLinux.html">Linux 构建指南</a>
 </p></div>
 
 <div class="wikidoc">
-本指南介绍了如何设置 Linux 系统以从源代码构建 VeraCrypt，以及如何进行编译。<br>
+本指南介绍了如何设置 Linux 系统以从源代码构建 Sealbox，以及如何进行编译。<br>
 这里以 Ubuntu 22.04 LTS 系统为例进行说明，其他 Linux 系统的操作过程类似。
 </div>
 
 <div class="wikidoc">
 <br>
 <br>
-编译 VeraCrypt 需要以下组件：
+编译 Sealbox 需要以下组件：
 <ol>
     <li>GNU Make</li>
     <li>GNU C/C++ 编译器</li>
@@ -88,8 +88,8 @@
 <li><strong><a href="#InstallationOfwxWidgets">安装 wxWidgets 3.2</a></strong></li>
 <li><strong><a href="#InstallationOfFuse">安装 libfuse</a></strong></li>
 <li><strong><a href="#InstallationOfPCSCLite">安装 libpcsclite</a></strong></li>
-<li><strong><a href="#DownloadVeraCrypt">下载 VeraCrypt</a></strong></li>
-<li><strong><a href="#CompileVeraCrypt">编译 VeraCrypt</a></strong></li>
+<li><strong><a href="#DownloadVeraCrypt">下载 Sealbox</a></strong></li>
+<li><strong><a href="#CompileVeraCrypt">编译 Sealbox</a></strong></li>
 </ul>
 </p>
 <p>也可以在终端中运行以下命令列表，或将它们复制到脚本中执行：<br>
@@ -246,7 +246,7 @@ make
 </div>
  
  <div class="textbox" id="DownloadVeraCrypt">
-  <a href="#DownloadVeraCrypt">下载 VeraCrypt</a>
+  <a href="#DownloadVeraCrypt">下载 Sealbox</a>
   <div class="texttohide">
     <p>
         <ol>
@@ -267,7 +267,7 @@ make
  </div>
  
  <div class="textbox" id="CompileVeraCrypt">
-  <a href="#CompileVeraCrypt">编译 VeraCrypt</a>
+  <a href="#CompileVeraCrypt">编译 Sealbox</a>
   <div class="texttohide">
     <p> 备注：<br>
     <ul>
@@ -281,7 +281,7 @@ make
             </code>
         </li>
         <li>
-            如果您不使用系统的 wxWidgets 库，则需要像上述备注一样下载并使用 wxWidgets 源代码，但这次应运行以下命令来构建 VeraCrypt 的 GUI 版本（不指定 NOGUI）：<br>
+            如果您不使用系统的 wxWidgets 库，则需要像上述备注一样下载并使用 wxWidgets 源代码，但这次应运行以下命令来构建 Sealbox 的 GUI 版本（不指定 NOGUI）：<br>
             <code>
             make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources wxbuild <br>
             make WXSTATIC=1 WX_ROOT=/path/to/wxWidgetsSources
@@ -301,7 +301,7 @@ make
                 </code>
             </li>
             <li>
-                如果成功，VeraCrypt 可执行文件应该位于 'Main' 目录中。
+                如果成功，Sealbox 可执行文件应该位于 'Main' 目录中。
             </li>
         </ol>
     </p>

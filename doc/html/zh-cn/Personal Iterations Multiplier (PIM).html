@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
-<meta name="description" content="VeraCrypt是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，VeraCrypt可提供似是而非的否认。与文件加密不同，VeraCrypt进行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"/>
+<title>Sealbox - 为偏执者提供强大安全保障的免费开源磁盘加密工具</title>
+<meta name="description" content="Sealbox是一款适用于Windows、Mac OS X和Linux的免费开源磁盘加密软件。若攻击者强迫您透露密码，Sealbox可提供似是而非的否认。与文件加密不同，Sealbox进行的数据加密是实时（即时）、自动、透明的，所需内存极少，且不涉及临时未加密文件。"/>
 <meta name="keywords" content="加密, 安全"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -36,7 +36,7 @@
 <div class="wikidoc">
 <h1>PIM</h1>
 <div>
-<p>PIM代表“个人迭代乘数”。它是VeraCrypt 1.12版本引入的一个参数，其值控制头部密钥推导函数使用的计算参数。该值可以通过密码对话框或命令行指定。</p>
+<p>PIM代表“个人迭代乘数”。它是Sealbox 1.12版本引入的一个参数，其值控制头部密钥推导函数使用的计算参数。该值可以通过密码对话框或命令行指定。</p>
 <p>PIM的确切含义取决于所使用的密钥推导函数（KDF）：</p>
 
 <h3>PBKDF2-HMAC密钥推导</h3>
@@ -69,7 +69,7 @@ m_cost(pim) = min(64 MiB + (pim - 1) * 32 MiB, 1024 MiB)<br/>
 <li>PIM = 32：内存成本 = 1024 MiB，时间成本 = 14 次迭代</li>
 </ul>
 
-<p>如果未指定PIM值，VeraCrypt将对PBKDF2-HMAC使用1.12版本之前的默认参数（请参阅
+<p>如果未指定PIM值，Sealbox将对PBKDF2-HMAC使用1.12版本之前的默认参数（请参阅
     <a href="Header%20Key%20Derivation.html">
     头部密钥推导</a>）。对于Argon2id，默认参数相当于PIM = 12：
 </p>
@@ -83,8 +83,8 @@ m_cost(pim) = min(64 MiB + (pim - 1) * 32 MiB, 1024 MiB)<br/>
 <li><strong>Argon2id默认值：</strong>内存成本 = 416 MiB，时间成本 = 6 次迭代（相当于PIM = 12）</li>
 </ul>
 
-<p>在1.12版本之前，VeraCrypt卷的安全性仅基于密码强度，因为VeraCrypt使用固定的迭代次数。<br>
-随着PIM的引入，VeraCrypt卷基于（密码，PIM，密钥推导函数）组合形成多维安全空间，可在控制挂载/引导操作性能的同时更灵活地调整所需的安全级别。</p>
+<p>在1.12版本之前，Sealbox卷的安全性仅基于密码强度，因为Sealbox使用固定的迭代次数。<br>
+随着PIM的引入，Sealbox卷基于（密码，PIM，密钥推导函数）组合形成多维安全空间，可在控制挂载/引导操作性能的同时更灵活地调整所需的安全级别。</p>
 <h3>PIM的使用</h3>
 不强制要求指定PIM。</div>
 <div><br>
@@ -95,11 +95,11 @@ m_cost(pim) = min(64 MiB + (pim - 1) * 32 MiB, 1024 MiB)<br/>
 <div>使用较高的PIM值可以通过提高KDF成本参数来增强安全性，但会导致挂载/引导时间变慢。</div>
 <div>使用较小的PIM值，挂载/引导速度会更快，但如果使用弱密码，可能会降低安全性。</div>
 <div>&nbsp;</div>
-<div>在创建卷或对系统进行加密时，当密码长度小于20个字符时，VeraCrypt会强制PIM值大于或等于某个最小值。进行此检查是为了确保对于短密码，安全级别至少等于空PIM提供的默认级别。</div>
+<div>在创建卷或对系统进行加密时，当密码长度小于20个字符时，Sealbox会强制PIM值大于或等于某个最小值。进行此检查是为了确保对于短密码，安全级别至少等于空PIM提供的默认级别。</div>
 <div>&nbsp;</div>
 <div>对于短密码，Argon2id卷的PIM最小值为<strong>12</strong>，不使用SHA-512或Whirlpool的系统加密为<strong>98</strong>，其他使用PBKDF2-HMAC的情况为
 <strong>485</strong>。对于长度为20个字符及以上的密码，PIM最小值为
-<strong>1</strong>。在所有情况下，将PIM留空或将其值设置为0将使VeraCrypt使用如
+<strong>1</strong>。在所有情况下，将PIM留空或将其值设置为0将使Sealbox使用如
 <a href="Header%20Key%20Derivation.html">
 头部密钥推导</a>部分所述的默认KDF参数。</div>
 <div><br>

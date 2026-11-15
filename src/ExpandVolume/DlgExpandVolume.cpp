@@ -698,7 +698,7 @@ void ExpandVolumeWizard (HWND hwndDlg, wchar_t *lpszVolume)
 		MessageBoxW (hwndDlg,
 			L"Expanding a device hosted legacy volume with no NTFS file system\n"
 			L"is unsupported.\n"
-			L"Note that expanding the VeraCrypt volume itself is not neccessary\n"
+			L"Note that expanding the Sealbox volume itself is not neccessary\n"
 			L"for legacy volumes.\n",
 			lpszTitle, MB_OK|MB_ICONEXCLAMATION);
 		goto ret;

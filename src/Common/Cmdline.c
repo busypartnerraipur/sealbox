@@ -51,7 +51,7 @@ BOOL CALLBACK CommandHelpDlgProc (HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM 
 
 		*tmp = 0;
 
-		StringCchCopyW (tmp, 8192, L"VeraCrypt " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX) L"  (64-bit)");
+		StringCchCopyW (tmp, 8192, L"Sealbox " _T(VERSION_STRING) _T(VERSION_STRING_SUFFIX) L"  (64-bit)");
 #if (defined(_DEBUG) || defined(DEBUG))
 		StringCchCatW (tmp, 8192, L"  (debug)");
 #endif

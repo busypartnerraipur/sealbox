@@ -557,7 +557,7 @@ namespace VeraCrypt
 						tempDir += '/';
 
 					const char suffix[] = ".command";
-					string templ = tempDir + "VeraCrypt-fsck-XXXXXXXX" + suffix;
+					string templ = tempDir + "Sealbox-fsck-XXXXXXXX" + suffix;
 					vector <char> templBuf (templ.begin(), templ.end());
 					templBuf.push_back ('\0');
 
@@ -747,7 +747,7 @@ namespace VeraCrypt
 			if (!AuxiliaryControlFileHasVirtualDevice (auxMountPoint, virtualDev))
 			{
 				stringstream logMessage;
-				logMessage << "VeraCrypt auxiliary mount did not report hdiutil device after mount: "
+				logMessage << "Sealbox auxiliary mount did not report hdiutil device after mount: "
 					<< string (auxMountPoint) << FuseService::GetControlPath()
 					<< ", expected " << string (virtualDev);
 				SystemLog::WriteError (logMessage.str());
@@ -775,7 +775,7 @@ namespace VeraCrypt
 		if (!AuxiliaryControlFileHasVirtualDevice (auxMountPoint, virtualDev, 10))
 		{
 			stringstream logMessage;
-			logMessage << "VeraCrypt auxiliary mount did not report hdiutil device after mount: "
+			logMessage << "Sealbox auxiliary mount did not report hdiutil device after mount: "
 				<< string (auxMountPoint) << FuseService::GetControlPath()
 				<< ", expected " << string (virtualDev)
 				<< "; continuing with hdiutil device";

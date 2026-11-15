@@ -219,7 +219,7 @@ namespace VeraCrypt
 		{
 #ifdef TC_FREEBSD
 			if (IsFreeBSDSecurityDoasPackage (path))
-				throw ElevationFailed (SRC_POS, "doas", 1, "The FreeBSD security/doas package is incompatible with VeraCrypt elevation. Install security/opendoas or sudo.");
+				throw ElevationFailed (SRC_POS, "doas", 1, "The FreeBSD security/doas package is incompatible with Sealbox elevation. Install security/opendoas or sudo.");
 #endif
 			return { PrivilegeHelperType::Doas, "doas", path };
 		}
@@ -843,7 +843,7 @@ namespace VeraCrypt
 		ThrowSerializedExceptionIfAny (errOutput);
 		string errorOutput = CombineElevationErrorOutput (errOutput, authOutput);
 		if (errorOutput.empty())
-			errorOutput = "Timed out while waiting for the elevated VeraCrypt service to start";
+			errorOutput = "Timed out while waiting for the elevated Sealbox service to start";
 
 		TerminateChildProcessAsync (childPid);
 		throw ElevationFailed (SRC_POS, helperName, 1, errorOutput);

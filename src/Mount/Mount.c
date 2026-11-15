@@ -8227,7 +8227,7 @@ BOOL CALLBACK MainDialogProc (HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 			else
 				StringCbCopyW (szRescueDiskExtension, sizeof (szRescueDiskExtension), L"iso");
 			
-			StringCbCopyW (szDefaultRescueDiskName, sizeof (szDefaultRescueDiskName), L"VeraCrypt Rescue Disk.");		
+			StringCbCopyW (szDefaultRescueDiskName, sizeof (szDefaultRescueDiskName), L"Sealbox Rescue Disk.");		
 			StringCbCatW  (szDefaultRescueDiskName, sizeof (szDefaultRescueDiskName), szRescueDiskExtension);
 
 			if (UsePreferences)
@@ -9403,7 +9403,7 @@ BOOL CALLBACK MainDialogProc (HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
 		if ((lw == IDOK || lw == IDM_MOUNT_VOLUME || lw == IDM_MOUNT_VOLUME_OPTIONS || lw == IDC_MOUNTALL || lw == IDM_MOUNTALL)
 			&& LOWORD (GetSelectedLong (GetDlgItem (hwndDlg, IDC_DRIVELIST))) == 0xffff)
 		{
-			MessageBoxW (hwndDlg, GetString ("SELECT_FREE_DRIVE"), L"VeraCrypt", MB_ICONEXCLAMATION);
+			MessageBoxW (hwndDlg, GetString ("SELECT_FREE_DRIVE"), L"Sealbox", MB_ICONEXCLAMATION);
 			return 1;
 		}
 
@@ -11083,7 +11083,7 @@ static void SystemFavoritesServiceLogBootLoaderUpdateError (const wchar_t *opera
 		message += detail;
 	}
 	else
-		message += L": unexpected VeraCrypt exception.";
+		message += L": unexpected Sealbox exception.";
 	SystemFavoritesServiceLogError (message);
 }
 
@@ -11282,9 +11282,9 @@ static void SystemFavoritesServiceUpdateLoaderProcessing (BOOL bForce, const GUI
 		}
 		// Service startup bypasses the GUI language initialization.
 		if (result.WarningMask & VC_EFI_BOOT_CHAIN_WARNING_VERACRYPT_LOADER)
-			SystemFavoritesServiceLogWarning (L"Secure Boot compatibility check: VeraCrypt could not validate the installed DCS files against an embedded loader set and confirm that its known signing CAs are allowed by db and not listed by dbx. Do not boot with Secure Boot enabled until the policy and loader set have been repaired.");
+			SystemFavoritesServiceLogWarning (L"Secure Boot compatibility check: Sealbox could not validate the installed DCS files against an embedded loader set and confirm that its known signing CAs are allowed by db and not listed by dbx. Do not boot with Secure Boot enabled until the policy and loader set have been repaired.");
 		if (result.WarningMask & VC_EFI_BOOT_CHAIN_WARNING_WINDOWS_LOADER)
-			SystemFavoritesServiceLogWarning (L"Secure Boot compatibility check: the Windows boot manager used by VeraCrypt (bootmgfw_ms.vc) is missing or unreadable, its embedded signer is unrecognized, or its known signing CA is not allowed by db or is listed by dbx. The handoff to Windows may fail when Secure Boot is enabled.");
+			SystemFavoritesServiceLogWarning (L"Secure Boot compatibility check: the Windows boot manager used by Sealbox (bootmgfw_ms.vc) is missing or unreadable, its embedded signer is unrecognized, or its known signing CA is not allowed by db or is listed by dbx. The handoff to Windows may fail when Secure Boot is enabled.");
 		else if (result.WarningMask & VC_EFI_BOOT_CHAIN_WARNING_WINDOWS_MIGRATION)
 			SystemFavoritesServiceLogWarning (L"Secure Boot transition check: bootmgfw_ms.vc is still signed by Microsoft Windows Production PCA 2011 although firmware db already contains Windows UEFI CA 2023. Complete the Windows 2023 boot manager update before applying the PCA 2011 dbx revocation. This check covers the active Windows boot manager only. Decryption fallback and rescue-disk backups require separate verification; recreating rescue media can reuse an older stored loader.");
 		SystemFavoritesServiceLastEfiBootChainWarningMask = result.WarningMask;
@@ -11722,7 +11722,7 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 	RegisterRedTick(hInstance);
 
 	/* Allocate, dup, then store away the application title */
-	lpszTitle = L"VeraCrypt";
+	lpszTitle = L"Sealbox";
 
 	status = DriverAttach ();
 	if (status != 0)
@@ -11798,7 +11798,7 @@ BOOL TaskBarIconAdd (HWND hwnd)
 		| LR_SHARED
 		| LR_DEFAULTCOLOR);
 
-	StringCbCopyW (tnid.szTip, sizeof(tnid.szTip), L"VeraCrypt");
+	StringCbCopyW (tnid.szTip, sizeof(tnid.szTip), L"Sealbox");
 
 	return Shell_NotifyIconW (NIM_ADD, &tnid);
 }

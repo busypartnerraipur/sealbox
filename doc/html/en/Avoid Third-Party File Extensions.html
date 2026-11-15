@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -32,9 +32,9 @@
 </p></div>
 
 <div class="wikidoc">
-	<h1>Understanding the Risks of Using Third-Party File Extensions with VeraCrypt</h1>
+	<h1>Understanding the Risks of Using Third-Party File Extensions with Sealbox</h1>
 	<div>
-	  <p>While VeraCrypt provides robust encryption capabilities to secure your data, using third-party file extensions for File Containers or Keyfiles could risk making the encrypted data inaccessible.<br />
+	  <p>While Sealbox provides robust encryption capabilities to secure your data, using third-party file extensions for File Containers or Keyfiles could risk making the encrypted data inaccessible.<br />
 	  This guide provides an in-depth explanation of the associated risks, and it outlines recommendations for best practices to mitigate these risks.</p>
 	</div>
 	
@@ -54,7 +54,7 @@
 	  <p>Similar risks are associated with Keyfiles:</p>
 	  <ul>
 		<li>Keyfile Corruption: Inadvertently modifying a Keyfile with a third-party application can make it unusable for decryption.</li>
-		<li>Overwritten Data: Third-party applications may overwrite the portion of the Keyfile that VeraCrypt uses for decryption.</li>
+		<li>Overwritten Data: Third-party applications may overwrite the portion of the Keyfile that Sealbox uses for decryption.</li>
 		<li>Unintentional Changes: Accidental changes can make it impossible to mount the volume unless you have an unaltered backup of the Keyfile.</li>
 	  </ul>
 	</div>
@@ -76,7 +76,7 @@
 	  <ul>
 		<li>Use neutral file extensions for File Containers and Keyfiles to minimize the risk of automatic file association.</li>
 		<li>Keep secure backups of your File Containers and Keyfiles in locations isolated from network access.</li>
-		<li>Disable auto-open settings for the specific file extensions you use for VeraCrypt File Containers and Keyfiles.</li>
+		<li>Disable auto-open settings for the specific file extensions you use for Sealbox File Containers and Keyfiles.</li>
 		<li>Always double-check file associations and be cautious when using a new device or third-party application.</li>
 	  </ul>
 	</div>

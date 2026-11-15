@@ -5,7 +5,7 @@
 	<!-- FullProductVersion's first 3 parts MUST BE incremented at each release in order 
 			for upgrades to work ; Windows Installer ignores the 4th part -->
 	<?define var.FullProductVersion = 1.26.31?>
-	<?define var.ProductName = VeraCrypt $(var.FullProductVersion)?>
+	<?define var.ProductName = Sealbox $(var.FullProductVersion)?>
 	<?define var.StartMenuFolderName = VeraCrypt?>
 
 	<!-- Unique GUID identifying this family of product (32-bit and 64-bit have the same) -->
@@ -26,7 +26,7 @@
 	<!-- Lang will be defined in a .wxl file which will be passed to the WIX linker 'light' -->
 	<Product 	Id="$(var.ProductGuid)"
 				Language="!(loc.Lang)" 
-				Manufacturer="AM Crypto"
+				Manufacturer="Shubh Ventures"
 				Name="$(var.ProductName)"
 				Version="$(var.FullProductVersion)"
 				UpgradeCode="$(var.UpgradeCode)">
@@ -43,10 +43,10 @@
 					InstallerVersion="500"
 					InstallPrivileges="elevated"
 					Keywords="VeraCrypt MSI Installer"
-					Manufacturer="AM Crypto"
+					Manufacturer="Shubh Ventures"
 					Languages="0"
 					Platform="arm64"
-					Description="VeraCrypt $(var.FullProductVersion) ARM64 MSI Installer"
+					Description="Sealbox $(var.FullProductVersion) ARM64 MSI Installer"
 					Comments="MSI Installer of VeraCrypt for Windows ARM64 editions"
 		/>
 
@@ -2562,7 +2562,7 @@
 			
 				<Condition>INSTALLSTARTMENUSHORTCUT</Condition>
 				<util:InternetShortcut 	Id="VCWebsiteStartMenuShortcut"
-										Name="VeraCrypt Website"
+										Name="Sealbox Website"
 										Target="https://veracrypt.jp"
 										Type="url"
 										IconFile="VeraCrypt.ico">

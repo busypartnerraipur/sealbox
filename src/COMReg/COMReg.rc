@@ -43,12 +43,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "AM Crypto"
-            VALUE "FileDescription", "VeraCrypt COMReg"
+            VALUE "CompanyName", "Shubh Ventures"
+            VALUE "LegalCopyright", "Copyright (C) 2026 Shubh Ventures. Based on VeraCrypt (C) AM Crypto/IDRIX and TrueCrypt."
+            VALUE "FileDescription", "Sealbox COMReg"
             VALUE "FileVersion", "1.26.31"
-            VALUE "LegalTrademarks", "VeraCrypt"
+            VALUE "LegalTrademarks", "Sealbox"
             VALUE "OriginalFilename", "VeraCrypt COMReg.exe"
-            VALUE "ProductName", "VeraCrypt"
+            VALUE "ProductName", "Sealbox"
             VALUE "ProductVersion", "1.26.31"
         END
     END

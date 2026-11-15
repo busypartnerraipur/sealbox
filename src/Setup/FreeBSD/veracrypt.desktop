@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=VeraCrypt
-GenericName=VeraCrypt volume manager
-Comment=Create and mount VeraCrypt encrypted volumes
+Name=Sealbox
+GenericName=Sealbox volume manager
+Comment=Create and mount Sealbox encrypted volumes
 Icon=veracrypt
 Exec=/usr/bin/veracrypt %f
 Categories=Security;Utility;Filesystem

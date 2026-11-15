@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>VeraCrypt - Free Open source disk encryption with strong security for the Paranoid</title>
-<meta name="description" content="VeraCrypt is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, VeraCrypt provides plausible deniability. In contrast to file encryption, data encryption performed by VeraCrypt is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
+<title>Sealbox - Free Open source disk encryption with strong security for the Paranoid</title>
+<meta name="description" content="Sealbox is free open-source disk encryption software for Windows, Mac OS X and Linux. In case an attacker forces you to reveal the password, Sealbox provides plausible deniability. In contrast to file encryption, data encryption performed by Sealbox is real-time (on-the-fly), automatic, transparent, needs very little memory, and does not involve temporary unencrypted files."/>
 <meta name="keywords" content="encryption, security"/>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 <div>
-<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="VeraCrypt"/></a>
+<a href="Documentation.html"><img src="VeraCrypt128x128.png" alt="Sealbox"/></a>
 </div>
 
 <div id="menu">
@@ -30,28 +30,28 @@
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
 <a href="Security%20Requirements%20and%20Precautions.html">Security Requirements and Precautions</a>
 <img src="arrow_right.gif" alt=">>" style="margin-top: 5px">
-<a href="VeraCrypt%20Memory%20Protection.html">VeraCrypt Memory Protection</a>
+<a href="VeraCrypt%20Memory%20Protection.html">Sealbox Memory Protection</a>
 </p></div>
 
 <div class="wikidoc">
-<h1>VeraCrypt Memory Protection Mechanism</h1>
+<h1>Sealbox Memory Protection Mechanism</h1>
 <h2>Introduction</h2>
-<p>VeraCrypt always strives to enhance user experience while maintaining the highest level of security. The memory protection mechanism is one such security feature. However, understanding the need for accessibility, we have also provided an option to disable this mechanism for certain users. This page provides in-depth information on both.</p>
+<p>Sealbox always strives to enhance user experience while maintaining the highest level of security. The memory protection mechanism is one such security feature. However, understanding the need for accessibility, we have also provided an option to disable this mechanism for certain users. This page provides in-depth information on both.</p>
 <h2>Memory Protection Mechanism: An Overview</h2>
 <p>
-The memory protection mechanism ensures that non-administrator processes are prohibited from accessing the VeraCrypt process memory. This serves two primary purposes:
+The memory protection mechanism ensures that non-administrator processes are prohibited from accessing the Sealbox process memory. This serves two primary purposes:
 <ul>
-	<li>Security Against Malicious Activities: The mechanism prevents non-admin processes from injecting harmful data or code inside the VeraCrypt process.</li>
-	<li>Protection of Sensitive Data: Although VeraCrypt is designed to not leave sensitive data in memory, this feature offers an extra layer of assurance by ensuring other non-admin processes cannot access or extract potentially sensitive information.</li>
+	<li>Security Against Malicious Activities: The mechanism prevents non-admin processes from injecting harmful data or code inside the Sealbox process.</li>
+	<li>Protection of Sensitive Data: Although Sealbox is designed to not leave sensitive data in memory, this feature offers an extra layer of assurance by ensuring other non-admin processes cannot access or extract potentially sensitive information.</li>
 </ul>
 </p>
 <h2>Why Introduce An Option To Disable Memory Protection?</h2>
 <p>
-	Some accessibility tools, like screen readers, require access to a software's process memory to effectively interpret and interact with its user interface (UI). VeraCrypt's memory protection unintentionally hindered the functioning of such tools. To ensure that users relying on accessibility tools can still use VeraCrypt without impediments, we introduced this option.
+	Some accessibility tools, like screen readers, require access to a software's process memory to effectively interpret and interact with its user interface (UI). Sealbox's memory protection unintentionally hindered the functioning of such tools. To ensure that users relying on accessibility tools can still use Sealbox without impediments, we introduced this option.
 </p>
 <h2>How to Enable/Disable the Memory Protection Mechanism?</h2>
 <p>
-	By default, the memory protection mechanism is enabled. However, you can disable through VeraCrypt main UI or during installation.
+	By default, the memory protection mechanism is enabled. However, you can disable through Sealbox main UI or during installation.
 	<ol>
 		<li>During installation:
 			<ul>
@@ -62,7 +62,7 @@ The memory protection mechanism ensures that non-administrator processes are pro
 		</li>
 		<li>Post-Installation:
 			<ul>
-				<li>Open VeraCrypt main UI and navigate to the menu Settings -> "Performance/Driver Configuration".</li>
+				<li>Open Sealbox main UI and navigate to the menu Settings -> "Performance/Driver Configuration".</li>
 				<li>Locate and check/uncheck the <b>"Disable memory protection for Accessibility tools compatibility"</b> option as per your needs. You will be notified that an OS reboot is required for the change to take effect.</li>
 				<li>Click <b>OK</b>.</li>
 			</ul>
@@ -81,8 +81,8 @@ The memory protection mechanism ensures that non-administrator processes are pro
 <p>
 While disabling the memory protection mechanism can be essential for some users, it's crucial to understand the risks:
 <ul>
-	<li><b>Potential Exposure:</b> Disabling the mechanism could expose the VeraCrypt process memory to malicious processes.</li>
-	<li><b>Best Practice:</b> If you don't require accessibility tools to use VeraCrypt, it's recommended to leave the memory protection enabled.</li>
+	<li><b>Potential Exposure:</b> Disabling the mechanism could expose the Sealbox process memory to malicious processes.</li>
+	<li><b>Best Practice:</b> If you don't require accessibility tools to use Sealbox, it's recommended to leave the memory protection enabled.</li>
 </ul>
 </p>
 <h2>FAQ</h2>
@@ -92,10 +92,10 @@ While disabling the memory protection mechanism can be essential for some users,
 </p>
 <p>
 	<b>Q: How do I know if the memory protection mechanism is enabled or disabled?</b><br>
-	<b>A:</b> You can check the status of the memory protection mechanism in the VeraCrypt main UI. Navigate to the menu Settings -> "Performance/Driver Configuration". If the <b>"Disable memory protection for Accessibility tools compatibility"</b> option is checked, the memory protection mechanism is disabled. If the option is unchecked, the memory protection mechanism is enabled.
+	<b>A:</b> You can check the status of the memory protection mechanism in the Sealbox main UI. Navigate to the menu Settings -> "Performance/Driver Configuration". If the <b>"Disable memory protection for Accessibility tools compatibility"</b> option is checked, the memory protection mechanism is disabled. If the option is unchecked, the memory protection mechanism is enabled.
 </p>
 <p>
-	<b>Q: Will disabling memory protection reduce the encryption strength of VeraCrypt?</b><br>
+	<b>Q: Will disabling memory protection reduce the encryption strength of Sealbox?</b><br>
 	<b>A:</b> No, the encryption algorithms and their strength remain the same. Only the protection against potential memory snooping and injection by non-admin processes is affected.
 </p>
 <p>
