@@ -2894,7 +2894,13 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 	{
 		/* Create self-extracting package */
 
-		MakeSelfExtractingPackage (NULL, SetupFilesDir, FALSE);
+		BOOL bPkgOk = MakeSelfExtractingPackage (NULL, SetupFilesDir, FALSE);
+		{
+			/* Sealbox: in automated builds exit immediately with a meaningful exit code */
+			wchar_t v[8];
+			if (GetEnvironmentVariableW (L"SEALBOX_PKG_NOGUI", v, ARRAYSIZE (v)) > 0)
+				exit (bPkgOk ? 0 : 1);
+		}
 	}
 	else
 	{

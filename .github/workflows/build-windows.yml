@@ -94,6 +94,8 @@ jobs:
 
       - name: Package installer (unsigned, uses the Microsoft-signed VeraCrypt driver)
         shell: cmd
+        env:
+          SEALBOX_PKG_NOGUI: "1"
         run: |
           cd "src\Release\Setup Files"
           copy ..\..\LICENSE .
@@ -118,9 +120,16 @@ jobs:
           copy "..\..\..\doc\EFI-DCS\*.pdf" docs\EFI-DCS\.
           if exist docs.zip del docs.zip
           tar -a -cf docs.zip docs
+          if exist package.log del package.log
           "VeraCrypt Setup.exe" /p
+          set SETUP_RC=%ERRORLEVEL%
           "VeraCrypt Portable.exe" /p
+          set PORTABLE_RC=%ERRORLEVEL%
+          echo ---- package.log ----
+          if exist package.log type package.log
+          echo Setup /p exit code %SETUP_RC%, Portable /p exit code %PORTABLE_RC%
           dir
+          if not exist "VeraCrypt Setup 1.*.exe" exit /b 1
 
       - name: Build MSI (x64)
         shell: cmd

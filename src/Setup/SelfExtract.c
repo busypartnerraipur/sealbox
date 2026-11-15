@@ -10,6 +10,7 @@
  code distribution packages.
 */
 
+#include <stdio.h>
 #include "Tcdefs.h"
 
 #include "zlib.h"
@@ -74,20 +75,42 @@ void DeobfuscateMagEndMarker (void)
 }
 
 
+/* Sealbox: when the environment variable SEALBOX_PKG_NOGUI is set (automated builds),
+   package messages are appended to 'package.log' next to the setup files instead of
+   being shown in a message box, which would block a build server forever. */
+static BOOL PkgNoGui (void)
+{
+	wchar_t v[8];
+	return GetEnvironmentVariableW (L"SEALBOX_PKG_NOGUI", v, ARRAYSIZE (v)) > 0;
+}
+
+static void PkgLog (const wchar_t *level, const wchar_t *msg)
+{
+	FILE *f = _wfopen (L"package.log", L"a, ccs=UTF-8");
+	if (f)
+	{
+		fwprintf (f, L"[%s] %s\n", level, msg);
+		fclose (f);
+	}
+}
+
 static void PkgError (wchar_t *msg)
 {
+	if (PkgNoGui ()) { PkgLog (L"ERROR", msg); return; }
 	MessageBox (NULL, msg, L"Sealbox", MB_ICONERROR | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
 
 static void PkgWarning (wchar_t *msg)
 {
+	if (PkgNoGui ()) { PkgLog (L"WARNING", msg); return; }
 	MessageBox (NULL, msg, L"Sealbox", MB_ICONWARNING | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
 
 static void PkgInfo (wchar_t *msg)
 {
+	if (PkgNoGui ()) { PkgLog (L"INFO", msg); return; }
 	MessageBox (NULL, msg, L"Sealbox", MB_ICONINFORMATION | MB_SETFOREGROUND | MB_TOPMOST);
 }
 
