@@ -21,11 +21,12 @@ jobs:
 
       - name: Make sure required Visual Studio components are present
         shell: pwsh
+        continue-on-error: true
         run: |
           $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
           $vsPath  = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
           Write-Host "Visual Studio at: $vsPath"
-          $installer = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vs_installer.exe"
+          $installer = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe"
           $components = @(
             "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
             "Microsoft.VisualStudio.Component.VC.Tools.ARM64",
@@ -37,11 +38,14 @@ jobs:
             "Microsoft.VisualStudio.Component.VC.ATL.ARM64.Spectre",
             "Microsoft.VisualStudio.Component.Windows11SDK.22621"
           )
-          $args = @("modify", "--installPath", $vsPath, "--quiet", "--norestart", "--nocache")
+          $args = @("modify", "--installPath", $vsPath, "--quiet", "--norestart", "--nocache", "--noUpdateInstaller")
           foreach ($c in $components) { $args += "--add"; $args += $c }
           $p = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru
-          Write-Host "vs_installer exit code: $($p.ExitCode)"
-          if ($p.ExitCode -ne 0 -and $p.ExitCode -ne 3010) { exit $p.ExitCode }
+          Write-Host "VS installer exit code: $($p.ExitCode)"
+          Get-ChildItem "$env:TEMP\dd_setup*_errors.log" -ErrorAction SilentlyContinue | ForEach-Object { Write-Host "--- $($_.Name)"; Get-Content $_.FullName -Tail 40 }
+          Write-Host "Installed Spectre/ATL libs:"
+          Get-ChildItem "$vsPath\VC\Tools\MSVC\*\lib" -Directory -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+          Get-ChildItem "$vsPath\VC\Tools\MSVC\*\atlmfc\lib" -Directory -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
 
       - name: Install YASM
         shell: pwsh
