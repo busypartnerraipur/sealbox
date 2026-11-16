@@ -56,6 +56,16 @@ Copyright:     Copyright (C) 2026 Shubh Ventures. All rights reserved.
 - The resulting installer and executables are unsigned, so Windows SmartScreen shows
   a warning on first run until a code-signing certificate is used.
 
+## Installer behaviour added for Sealbox
+
+- Default install folder: C:\Program Files\Sealbox (an existing VeraCrypt installation's
+  folder is reused if one is found in the registry, as upstream does).
+- Start-menu folder and shortcuts are named Sealbox.
+- Installation password: src/Setup/SealboxLicense.h holds the SHA-256 hash of the
+  password customers must enter before setup starts (src/Setup/SealboxPassword.c,
+  dialog IDD_SEALBOX_PASSWORD). Empty hash = no prompt. The MSI installer is not built
+  because it has no password prompt.
+
 ## Still to do before release
 
 - Code-sign the installer and executables (an ordinary OV certificate is enough,

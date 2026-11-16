@@ -1882,7 +1882,7 @@ BOOL DoShortcutsUninstall (HWND hwndDlg, wchar_t *szDestDir)
 	if (bSlash == FALSE)
 		StringCbCatW (szLinkDir, sizeof(szLinkDir), L"\\");
 
-	StringCbCatW (szLinkDir, sizeof(szLinkDir), L"VeraCrypt");
+	StringCbCatW (szLinkDir, sizeof(szLinkDir), L"Sealbox");
 
 	// Global start menu
 	{
@@ -1890,7 +1890,7 @@ BOOL DoShortcutsUninstall (HWND hwndDlg, wchar_t *szDestDir)
 		wchar_t path[TC_MAX_PATH];
 
 		SHGetSpecialFolderPath (hwndDlg, path, CSIDL_COMMON_PROGRAMS, 0);
-		StringCbCatW (path, sizeof(path), L"\\VeraCrypt");
+		StringCbCatW (path, sizeof(path), L"\\Sealbox");
 
 		if (_wstat (path, &st) == 0)
 		{
@@ -1900,22 +1900,22 @@ BOOL DoShortcutsUninstall (HWND hwndDlg, wchar_t *szDestDir)
 	}
 
 	// Start menu entries
-	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt.lnk");
+	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox.lnk");
 	RemoveMessage (hwndDlg, szTmp2);
 	if (StatDeleteFile (szTmp2, FALSE) == FALSE)
 		goto error;
 
-	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCryptExpander.lnk");
+	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox Expander.lnk");
 	RemoveMessage (hwndDlg, szTmp2);
 	if (StatDeleteFile (szTmp2, FALSE) == FALSE)
 		goto error;
 
-	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt Website.url");
+	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox Website.url");
 	RemoveMessage (hwndDlg, szTmp2);
 	if (StatDeleteFile (szTmp2, FALSE) == FALSE)
 		goto error;
 
-	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt User's Guide.lnk");
+	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox User's Guide.lnk");
 	StatDeleteFile (szTmp2, FALSE);
 
 	// Start menu group
@@ -1930,7 +1930,7 @@ BOOL DoShortcutsUninstall (HWND hwndDlg, wchar_t *szDestDir)
 	else
 		SHGetSpecialFolderPath (hwndDlg, szLinkDir, CSIDL_DESKTOPDIRECTORY, 0);
 
-	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt.lnk");
+	StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox.lnk");
 
 	RemoveMessage (hwndDlg, szTmp2);
 	if (StatDeleteFile (szTmp2, FALSE) == FALSE)
@@ -1968,7 +1968,7 @@ BOOL DoShortcutsInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bProgGroup, BOOL
 	if (bSlash == FALSE)
 		StringCbCatW (szLinkDir, sizeof(szLinkDir), L"\\");
 
-	StringCbCatW (szLinkDir, sizeof(szLinkDir), L"VeraCrypt");
+	StringCbCatW (szLinkDir, sizeof(szLinkDir), L"Sealbox");
 
 	StringCbCopyW (szDir, sizeof(szDir), szDestDir);
 	x = wcslen (szDestDir);
@@ -1998,20 +1998,20 @@ BOOL DoShortcutsInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bProgGroup, BOOL
 		}
 
 		StringCbPrintfW (szTmp, sizeof(szTmp), L"%s%s", szDir, L"VeraCrypt.exe");
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt.lnk");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox.lnk");
 
 		IconMessage (hwndDlg, szTmp2);
 		if (CreateLink (szTmp, L"", szTmp2, NULL, -1) != S_OK)
 			goto error;
 
 		StringCbPrintfW (szTmp, sizeof(szTmp), L"%s%s", szDir, L"VeraCryptExpander.exe");
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCryptExpander.lnk");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox Expander.lnk");
 
 		IconMessage (hwndDlg, szTmp2);
 		if (CreateLink (szTmp, L"", szTmp2, NULL, -1) != S_OK)
 			goto error;
 
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt Website.url");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox Website.url");
 		IconMessage (hwndDlg, szTmp2);
 		f = _wfopen (szTmp2, L"w");
 		if (f)
@@ -2024,10 +2024,10 @@ BOOL DoShortcutsInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bProgGroup, BOOL
 		else
 			goto error;
 
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Uninstall VeraCrypt.lnk");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Uninstall Sealbox.lnk");
 		StatDeleteFile (szTmp2, FALSE);
 
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt User's Guide.lnk");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox User's Guide.lnk");
 		StatDeleteFile (szTmp2, FALSE);
 	}
 
@@ -2049,7 +2049,7 @@ BOOL DoShortcutsInstall (HWND hwndDlg, wchar_t *szDestDir, BOOL bProgGroup, BOOL
 			SHGetSpecialFolderPath (hwndDlg, szLinkDir, CSIDL_DESKTOPDIRECTORY, 0);
 
 		StringCbPrintfW (szTmp, sizeof(szTmp), L"%s%s", szDir, L"VeraCrypt.exe");
-		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\VeraCrypt.lnk");
+		StringCbPrintfW (szTmp2, sizeof(szTmp2), L"%s%s", szLinkDir, L"\\Sealbox.lnk");
 
 		IconMessage (hwndDlg, szTmp2);
 
@@ -2981,6 +2981,10 @@ int WINAPI wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, wchar_t *lpsz
 
 		if (!bUninstall)
 		{
+			/* Sealbox: installation password (see SealboxLicense.h) */
+			if (!SealboxAskInstallPassword (hInstance))
+				exit (1);
+
 			if (!bDevm && !LocalizationActive)
 			{
 				BOOL bHasPreferredLanguage = (strlen (GetPreferredLangId ()) > 0)? TRUE : FALSE;

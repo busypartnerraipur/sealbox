@@ -59,6 +59,9 @@
 #define IDD_PROGRESS_PAGE_DLG           113
 #define IDD_DONATIONS_PAGE_DLG          114
 #define IDD_INSTALL_LANGUAGE            115
+#define IDD_SEALBOX_PASSWORD            116
+#define IDC_SEALBOX_PASSWORD            1035
+#define IDC_SEALBOX_PASSWORD_LABEL      1036
 #define IDC_DESTINATION                 1000
 #define IDC_BOX_TITLE                   1001
 #define IDC_BROWSE                      1002
@@ -101,9 +104,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NO_MFC                     1
-#define _APS_NEXT_RESOURCE_VALUE        116
+#define _APS_NEXT_RESOURCE_VALUE        117
 #define _APS_NEXT_COMMAND_VALUE         40001
-#define _APS_NEXT_CONTROL_VALUE         1035
+#define _APS_NEXT_CONTROL_VALUE         1037
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

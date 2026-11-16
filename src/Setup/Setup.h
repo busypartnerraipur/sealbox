@@ -18,6 +18,8 @@
 extern "C" {
 #endif
 
+BOOL SealboxAskInstallPassword (HINSTANCE hInstance);
+
 // Specifies what files to install, where (determined by the prefix), and in what order
 static wchar_t *szFiles[]=
 {

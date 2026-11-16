@@ -251,6 +251,7 @@ copy Debug\VeraCryptSetup.exe "..\Debug\Setup Files\VeraCrypt Setup.exe" &gt;NUL
   <ItemGroup>
     <ClCompile Include="ComSetup.cpp" />
     <ClCompile Include="Dir.c" />
+    <ClCompile Include="SealboxPassword.c" />
     <ClCompile Include="SelfExtract.c" />
     <ClCompile Include="Setup.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>

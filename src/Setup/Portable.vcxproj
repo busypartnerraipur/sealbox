@@ -249,6 +249,7 @@ copy PortableDebug\VeraCryptPortable.exe "..\Debug\Setup Files\VeraCrypt Portabl
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dir.c" />
+    <ClCompile Include="SealboxPassword.c" />
     <ClCompile Include="SelfExtract.c" />
     <ClCompile Include="Setup.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>

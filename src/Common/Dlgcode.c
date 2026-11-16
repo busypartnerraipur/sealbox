@@ -15290,7 +15290,7 @@ void GetInstallationPath (HWND hwndDlg, wchar_t* szInstallPath, DWORD cchSize, B
 				StringCbCopyW (path, sizeof (path), s.c_str());
 		}
 
-		StringCbCatW (path, sizeof(path), L"\\VeraCrypt\\");
+		StringCbCatW (path, sizeof(path), L"\\Sealbox\\");
 		StringCchCopyW (szInstallPath, cchSize, path);
 	}
 

@@ -131,13 +131,6 @@ jobs:
           dir
           if not exist "VeraCrypt Setup 1.*.exe" exit /b 1
 
-      - name: Build MSI (x64)
-        shell: cmd
-        continue-on-error: true
-        run: |
-          cd "src\Release\Setup Files"
-          call build_msi_x64.bat 1.26.31
-
       - name: Collect Sealbox files
         shell: pwsh
         run: |
@@ -145,7 +138,6 @@ jobs:
           New-Item -ItemType Directory -Force -Path dist | Out-Null
           Get-ChildItem $src -Filter "VeraCrypt Setup 1.*.exe"    | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
           Get-ChildItem $src -Filter "VeraCrypt Portable 1.*.exe" | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
-          Get-ChildItem $src -Filter "*.msi" -ErrorAction SilentlyContinue | ForEach-Object { Copy-Item $_.FullName ("dist\" + ($_.Name -replace '^VeraCrypt','Sealbox')) }
           Get-ChildItem dist
 
       - name: Upload installer
