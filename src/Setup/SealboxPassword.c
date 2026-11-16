@@ -54,6 +54,7 @@ static INT_PTR CALLBACK SealboxPasswordDlgProc (HWND hwndDlg, UINT msg, WPARAM w
 	case WM_INITDIALOG:
 		attempts = 0;
 		SendDlgItemMessage (hwndDlg, IDC_SEALBOX_PASSWORD, EM_LIMITTEXT, 256, 0);
+		SendDlgItemMessage (hwndDlg, IDC_SEALBOX_PASSWORD, EM_SETPASSWORDCHAR, (WPARAM) L'\x25CF', 0);
 		SetFocus (GetDlgItem (hwndDlg, IDC_SEALBOX_PASSWORD));
 		return 0;
 
@@ -79,6 +80,16 @@ static INT_PTR CALLBACK SealboxPasswordDlgProc (HWND hwndDlg, UINT msg, WPARAM w
 			MessageBoxW (hwndDlg, L"The installation password is incorrect.\n\nIf you purchased Sealbox, please use the password you received from Shubh Ventures (shubhventures.co.in).", L"Sealbox Setup", MB_ICONEXCLAMATION);
 			SetDlgItemTextW (hwndDlg, IDC_SEALBOX_PASSWORD, L"");
 			SetFocus (GetDlgItem (hwndDlg, IDC_SEALBOX_PASSWORD));
+			return 1;
+		}
+		if (LOWORD (wParam) == IDC_SEALBOX_SHOW_PASSWORD)
+		{
+			/* "eye" toggle: show or hide the typed password */
+			BOOL show = (IsDlgButtonChecked (hwndDlg, IDC_SEALBOX_SHOW_PASSWORD) == BST_CHECKED);
+			HWND hEdit = GetDlgItem (hwndDlg, IDC_SEALBOX_PASSWORD);
+			SendMessage (hEdit, EM_SETPASSWORDCHAR, show ? 0 : (WPARAM) L'\x25CF', 0);
+			InvalidateRect (hEdit, NULL, TRUE);
+			SetFocus (hEdit);
 			return 1;
 		}
 		if (LOWORD (wParam) == IDCANCEL)

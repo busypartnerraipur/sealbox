@@ -11,4 +11,4 @@
  Note: the TrueCrypt licence requires the source code to be public, so this protects
  the official installer only; it is a licence key for customers, not copy protection.
 */
-#define SEALBOX_INSTALL_PASSWORD_SHA256 "6f9eca736400097008e0d252757389fc8b6b8a28a681820ef0b4eea4cadf4dfc"
+#define SEALBOX_INSTALL_PASSWORD_SHA256 "da946b0afcf3ae8cbe4f4c36c36f46715c1e4dff73ebbef44179cf8e747fafb7"
